@@ -1,0 +1,8 @@
+/* Tooltips - Simi UI */
+.tooltip-wrapper{position:relative;display:inline-block}
+.tooltip-text{visibility:hidden;background-color:#111827;color:white;text-align:center;padding:0.5rem 1rem;border-radius:6px;position:absolute;z-index:1000;bottom:125%;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:0.875rem;opacity:0;transition:opacity 0.3s}
+.tooltip-wrapper:hover .tooltip-text{visibility:visible;opacity:1}
+.tooltip-top{bottom:125%;left:50%;transform:translateX(-50%)}
+.tooltip-bottom{top:125%;bottom:auto;left:50%;transform:translateX(-50%)}
+.tooltip-left{left:auto;right:110%;bottom:50%;transform:translateY(50%)}
+.tooltip-right{left:110%;bottom:50%;transform:translateY(50%)}

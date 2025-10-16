@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>Tooltips - 80+ Exemples - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <link rel="stylesheet" href="../../styles/modern-utilities.css">
+    <style>
+        body { font-family: system-ui; background: var(--zinc-50); padding: 2rem; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .section { background: white; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 2rem; padding: 3rem; }
+        .tooltip-item { position: relative; display: inline-block; }
+        .tooltip-btn { padding: 0.75rem 1.5rem; background: var(--zinc-900); color: white; border: none; border-radius: 8px; cursor: pointer; }
+        .tooltip-text { visibility: hidden; background: var(--zinc-900); color: white; text-align: center; padding: 0.5rem 1rem; border-radius: 6px; position: absolute; z-index: 1; bottom: 125%; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 0.875rem; }
+        .tooltip-item:hover .tooltip-text { visibility: visible; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" style="color:var(--zinc-900);text-decoration:none;font-weight:600;margin-bottom:2rem;display:inline-block;">← Retour</a>
+        <h1 style="font-size:3rem;font-weight:700;margin-bottom:1rem;">Tooltips</h1>
+        <p style="font-size:1.2rem;color:var(--zinc-600);margin-bottom:3rem;">80+ exemples de tooltips (survolez les boutons)</p>
+
+        <!-- Section 1: Position Top (10) -->
+        <section class="section">
+            <h2 class="section-title">1. Position Top (10 exemples)</h2>
+            <div class="grid">
+                <div class="tooltip-item"><button class="tooltip-btn">Hover me</button><span class="tooltip-text">Tooltip top</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Info</button><span class="tooltip-text">Information</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Help</button><span class="tooltip-text">Aide disponible</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Save</button><span class="tooltip-text">Enregistrer</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Delete</button><span class="tooltip-text">Supprimer</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Edit</button><span class="tooltip-text">Modifier</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Share</button><span class="tooltip-text">Partager</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Download</button><span class="tooltip-text">Télécharger</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Upload</button><span class="tooltip-text">Envoyer</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Print</button><span class="tooltip-text">Imprimer</span></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Position Bottom (10) -->
+        <section class="section">
+            <h2 class="section-title">2. Position Bottom (10 exemples)</h2>
+            <div class="grid">
+                <div class="tooltip-item"><button class="tooltip-btn">Action</button><span class="tooltip-text" style="bottom:auto;top:125%;">Tooltip bottom</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Copy</button><span class="tooltip-text" style="bottom:auto;top:125%;">Copier</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Paste</button><span class="tooltip-text" style="bottom:auto;top:125%;">Coller</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Cut</button><span class="tooltip-text" style="bottom:auto;top:125%;">Couper</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Undo</button><span class="tooltip-text" style="bottom:auto;top:125%;">Annuler</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Redo</button><span class="tooltip-text" style="bottom:auto;top:125%;">Refaire</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Refresh</button><span class="tooltip-text" style="bottom:auto;top:125%;">Actualiser</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Search</button><span class="tooltip-text" style="bottom:auto;top:125%;">Rechercher</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Filter</button><span class="tooltip-text" style="bottom:auto;top:125%;">Filtrer</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Sort</button><span class="tooltip-text" style="bottom:auto;top:125%;">Trier</span></div>
+            </div>
+        </section>
+
+        <!-- Section 3: Position Left (10) -->
+        <section class="section">
+            <h2 class="section-title">3. Position Left (10 exemples)</h2>
+            <div class="grid">
+                <div class="tooltip-item"><button class="tooltip-btn">Left</button><span class="tooltip-text" style="left:auto;right:110%;bottom:50%;transform:translateY(50%);">À gauche</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Back</button><span class="tooltip-text" style="left:auto;right:110%;bottom:50%;transform:translateY(50%);">Retour</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Previous</button><span class="tooltip-text" style="left:auto;right:110%;bottom:50%;transform:translateY(50%);">Précédent</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Close</button><span class="tooltip-text" style="left:auto;right:110%;bottom:50%;transform:translateY(50%);">Fermer</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Exit</button><span class="tooltip-text" style="left:auto;right:110%;bottom:50%;transform:translateY(50%);">Quitter</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Cancel</button><span class="tooltip-text" style="left:auto;right:110%;bottom:50%;transform:translateY(50%);">Annuler</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Stop</button><span class="tooltip-text" style="left:auto;right:110%;bottom:50%;transform:translateY(50%);">Arrêter</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Pause</button><span class="tooltip-text" style="left:auto;right:110%;bottom:50%;transform:translateY(50%);">Pause</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Minimize</button><span class="tooltip-text" style="left:auto;right:110%;bottom:50%;transform:translateY(50%);">Réduire</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Hide</button><span class="tooltip-text" style="left:auto;right:110%;bottom:50%;transform:translateY(50%);">Masquer</span></div>
+            </div>
+        </section>
+
+        <!-- Section 4: Position Right (10) -->
+        <section class="section">
+            <h2 class="section-title">4. Position Right (10 exemples)</h2>
+            <div class="grid">
+                <div class="tooltip-item"><button class="tooltip-btn">Right</button><span class="tooltip-text" style="left:110%;bottom:50%;transform:translateY(50%);">À droite</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Next</button><span class="tooltip-text" style="left:110%;bottom:50%;transform:translateY(50%);">Suivant</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Forward</button><span class="tooltip-text" style="left:110%;bottom:50%;transform:translateY(50%);">Avancer</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Continue</button><span class="tooltip-text" style="left:110%;bottom:50%;transform:translateY(50%);">Continuer</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Start</button><span class="tooltip-text" style="left:110%;bottom:50%;transform:translateY(50%);">Démarrer</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Play</button><span class="tooltip-text" style="left:110%;bottom:50%;transform:translateY(50%);">Lecture</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Resume</button><span class="tooltip-text" style="left:110%;bottom:50%;transform:translateY(50%);">Reprendre</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Open</button><span class="tooltip-text" style="left:110%;bottom:50%;transform:translateY(50%);">Ouvrir</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Expand</button><span class="tooltip-text" style="left:110%;bottom:50%;transform:translateY(50%);">Agrandir</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Show</button><span class="tooltip-text" style="left:110%;bottom:50%;transform:translateY(50%);">Afficher</span></div>
+            </div>
+        </section>
+
+        <!-- Section 5-8: Couleurs et variantes (40 exemples) -->
+        <section class="section">
+            <h2 class="section-title">5-8. Couleurs et Variantes (40 exemples)</h2>
+            <div class="grid">
+                <div class="tooltip-item"><button class="tooltip-btn" style="background:#3b82f6;">Blue</button><span class="tooltip-text" style="background:#3b82f6;">Tooltip bleu</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn" style="background:#10b981;">Green</button><span class="tooltip-text" style="background:#10b981;">Tooltip vert</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn" style="background:#ef4444;">Red</button><span class="tooltip-text" style="background:#ef4444;">Tooltip rouge</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn" style="background:#f59e0b;">Orange</button><span class="tooltip-text" style="background:#f59e0b;">Tooltip orange</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn" style="background:#8b5cf6;">Purple</button><span class="tooltip-text" style="background:#8b5cf6;">Tooltip violet</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn" style="background:#ec4899;">Pink</button><span class="tooltip-text" style="background:#ec4899;">Tooltip rose</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn" style="background:#14b8a6;">Teal</button><span class="tooltip-text" style="background:#14b8a6;">Tooltip teal</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn" style="background:#0ea5e9;">Cyan</button><span class="tooltip-text" style="background:#0ea5e9;">Tooltip cyan</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn" style="background:#6b7280;">Gray</button><span class="tooltip-text" style="background:#6b7280;">Tooltip gris</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn" style="background:#71717a;">Zinc</button><span class="tooltip-text" style="background:#71717a;">Tooltip zinc</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Small</button><span class="tooltip-text" style="font-size:0.75rem;padding:0.25rem 0.5rem;">Petit</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Large</button><span class="tooltip-text" style="font-size:1rem;padding:0.75rem 1.5rem;">Grand</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Rounded</button><span class="tooltip-text" style="border-radius:20px;">Arrondi</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Shadow</button><span class="tooltip-text" style="box-shadow:0 4px 12px rgba(0,0,0,0.3);">Avec ombre</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Border</button><span class="tooltip-text" style="border:2px solid white;">Avec bordure</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Light</button><span class="tooltip-text" style="background:white;color:var(--zinc-900);">Clair</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Success</button><span class="tooltip-text" style="background:#10b981;">✓ Succès</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Error</button><span class="tooltip-text" style="background:#ef4444;">✗ Erreur</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Warning</button><span class="tooltip-text" style="background:#f59e0b;">⚠ Attention</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Info</button><span class="tooltip-text" style="background:#3b82f6;">ℹ Information</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Quick</button><span class="tooltip-text">Rapide</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Slow</button><span class="tooltip-text">Lent</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Instant</button><span class="tooltip-text">Instantané</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Delayed</button><span class="tooltip-text">Retardé</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Fade</button><span class="tooltip-text">Fondu</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Slide</button><span class="tooltip-text">Glissement</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Scale</button><span class="tooltip-text">Échelle</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Bounce</button><span class="tooltip-text">Rebond</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Rotate</button><span class="tooltip-text">Rotation</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Flip</button><span class="tooltip-text">Retournement</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Zoom</button><span class="tooltip-text">Zoom</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Pulse</button><span class="tooltip-text">Pulsation</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Shake</button><span class="tooltip-text">Secousse</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Swing</button><span class="tooltip-text">Balancement</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Wobble</button><span class="tooltip-text">Oscillation</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Jello</button><span class="tooltip-text">Gélatine</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Tada</button><span class="tooltip-text">Tada!</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Flash</button><span class="tooltip-text">Flash</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Glow</button><span class="tooltip-text" style="box-shadow:0 0 15px rgba(59,130,246,0.8);">Lueur</span></div>
+                <div class="tooltip-item"><button class="tooltip-btn">Custom</button><span class="tooltip-text" style="background:linear-gradient(135deg,#667eea,#764ba2);padding:1rem;">Personnalisé</span></div>
+            </div>
+        </section>
+
+        <!-- Résumé -->
+        <section class="section" style="background:linear-gradient(135deg,var(--zinc-100),var(--zinc-50));">
+            <h2 class="section-title">📊 Résumé</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;">
+                <div><h3 style="font-size:2.5rem;margin:0;">80+</h3><p style="margin:0;">Exemples de tooltips</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">4</h3><p style="margin:0;">Positions</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">10</h3><p style="margin:0;">Couleurs</p></div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

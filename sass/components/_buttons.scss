@@ -1,0 +1,93 @@
+/**
+ * Composant Boutons - Styles SASS
+ * Tous les styles de boutons avec variantes
+ */
+
+// Bouton de base
+.simi-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $btn-padding-y $btn-padding-x;
+    font-size: $btn-font-size;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-base;
+    border-radius: $btn-border-radius;
+    border: $border-width solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+    @include transition(all, 0.2s);
+    
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
+    }
+    
+    &:disabled,
+    &.disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+// Variantes de couleurs
+.simi-btn-primary {
+    @include button-variant($primary);
+}
+
+.simi-btn-secondary {
+    @include button-variant($secondary);
+}
+
+.simi-btn-success {
+    @include button-variant($success);
+}
+
+.simi-btn-danger {
+    @include button-variant($danger);
+}
+
+.simi-btn-warning {
+    @include button-variant($warning, $gray-900);
+}
+
+.simi-btn-info {
+    @include button-variant($info, $gray-900);
+}
+
+// Boutons outline
+.simi-btn-outline-primary {
+    @include button-outline-variant($primary);
+}
+
+.simi-btn-outline-secondary {
+    @include button-outline-variant($secondary);
+}
+
+.simi-btn-outline-success {
+    @include button-outline-variant($success);
+}
+
+.simi-btn-outline-danger {
+    @include button-outline-variant($danger);
+}
+
+// Tailles
+.simi-btn-sm {
+    padding: 0.375rem 0.875rem;
+    font-size: $font-size-sm;
+}
+
+.simi-btn-lg {
+    padding: 0.875rem 1.75rem;
+    font-size: $font-size-lg;
+}
+
+// Pleine largeur
+.simi-btn-block {
+    width: 100%;
+    display: flex;
+}

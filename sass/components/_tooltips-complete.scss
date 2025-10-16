@@ -1,0 +1,158 @@
+// Tooltips Complete - SCSS - Tous les styles des exemples
+@import '../variables';
+
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background-color: $gray-900;
+    color: $white;
+    text-align: center;
+    padding: $spacing-2 $spacing-4;
+    border-radius: $radius;
+    position: absolute;
+    z-index: $z-tooltip;
+    white-space: nowrap;
+    font-size: $font-size-sm;
+    opacity: 0;
+    transition: opacity $transition-slow, visibility $transition-slow;
+    pointer-events: none;
+    box-shadow: $shadow-md;
+    
+    .tooltip-wrapper:hover & {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        border-width: 5px;
+        border-style: solid;
+    }
+}
+
+// Tooltip Positions
+.tooltip-top {
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    
+    &::after {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-color: $gray-900 transparent transparent transparent;
+    }
+}
+
+.tooltip-bottom {
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    
+    &::after {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-color: transparent transparent $gray-900 transparent;
+    }
+}
+
+.tooltip-left {
+    right: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+    
+    &::after {
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border-color: transparent transparent transparent $gray-900;
+    }
+}
+
+.tooltip-right {
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+    
+    &::after {
+        right: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border-color: transparent $gray-900 transparent transparent;
+    }
+}
+
+// Tooltip Colors
+.tooltip-primary {
+    background: $primary;
+    
+    &::after {
+        border-top-color: $primary;
+        border-bottom-color: $primary;
+        border-left-color: $primary;
+        border-right-color: $primary;
+    }
+}
+
+.tooltip-success {
+    background: $success;
+    
+    &::after {
+        border-top-color: $success;
+        border-bottom-color: $success;
+        border-left-color: $success;
+        border-right-color: $success;
+    }
+}
+
+.tooltip-danger {
+    background: $danger;
+    
+    &::after {
+        border-top-color: $danger;
+        border-bottom-color: $danger;
+        border-left-color: $danger;
+        border-right-color: $danger;
+    }
+}
+
+.tooltip-warning {
+    background: $warning;
+    
+    &::after {
+        border-top-color: $warning;
+        border-bottom-color: $warning;
+        border-left-color: $warning;
+        border-right-color: $warning;
+    }
+}
+
+.tooltip-light {
+    background: $white;
+    color: $gray-900;
+    border: 1px solid $gray-200;
+    
+    &::after {
+        border-top-color: $white;
+        border-bottom-color: $white;
+        border-left-color: $white;
+        border-right-color: $white;
+    }
+}
+
+// Tooltip Sizes
+.tooltip-sm {
+    padding: $spacing-1 $spacing-2;
+    font-size: $font-size-xs;
+}
+
+.tooltip-lg {
+    padding: $spacing-3 $spacing-6;
+    font-size: $font-size-base;
+}

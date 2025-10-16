@@ -1,0 +1,85 @@
+// Alerts - SCSS
+@import '../variables';
+@import '../mixins';
+
+.alert {
+    @include alert-base;
+}
+
+// Alert Variants
+.alert-primary {
+    @include alert-variant(lighten($primary, 40%), $primary, darken($primary, 30%));
+}
+
+.alert-success {
+    @include alert-variant(lighten($success, 45%), $success, darken($success, 40%));
+}
+
+.alert-danger {
+    @include alert-variant(lighten($danger, 40%), $danger, darken($danger, 35%));
+}
+
+.alert-warning {
+    @include alert-variant(lighten($warning, 40%), $warning, darken($warning, 40%));
+}
+
+.alert-info {
+    @include alert-variant(lighten($info, 40%), $info, darken($info, 35%));
+}
+
+// Alert Dismissible
+.alert-dismissible {
+    position: relative;
+    padding-right: $spacing-12;
+}
+
+.alert-close {
+    position: absolute;
+    top: 50%;
+    right: $spacing-4;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: $font-size-xl;
+    cursor: pointer;
+    color: currentColor;
+    opacity: 0.6;
+    padding: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius-sm;
+    transition: all $transition-base;
+    
+    &:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+// Alert Outline
+.alert-outline {
+    background-color: transparent;
+    border: 2px solid;
+    border-left-width: 4px;
+    
+    &.alert-primary { border-color: $primary; color: $primary; }
+    &.alert-success { border-color: $success; color: $success; }
+    &.alert-danger { border-color: $danger; color: $danger; }
+    &.alert-warning { border-color: $warning; color: $warning; }
+    &.alert-info { border-color: $info; color: $info; }
+}
+
+// Alert Solid
+.alert-solid {
+    color: $white;
+    border-left-width: 0;
+    
+    &.alert-primary { background-color: $primary; }
+    &.alert-success { background-color: $success; }
+    &.alert-danger { background-color: $danger; }
+    &.alert-warning { background-color: $warning; }
+    &.alert-info { background-color: $info; }
+}

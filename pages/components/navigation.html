@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/simi-original/simi-components.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <link rel="stylesheet" href="../../styles/modern-utilities.css">
+    <link rel="stylesheet" href="../../icons/simi-icons.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .page-header {
+            margin-bottom: 3rem;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+        
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .section-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .example-box {
+            background: var(--zinc-50);
+            border: 1px solid var(--zinc-200);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--zinc-700);
+            color: white;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Navigation Styles */
+        .nav-horizontal {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-horizontal li a {
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        
+        .nav-horizontal li a:hover {
+            background: var(--zinc-100);
+        }
+        
+        .nav-horizontal li a.active {
+            background: var(--zinc-900);
+            color: white;
+        }
+        
+        .nav-vertical {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-vertical li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .nav-vertical li a:hover {
+            background: var(--zinc-50);
+            border-left-color: var(--zinc-400);
+        }
+        
+        .nav-vertical li a.active {
+            background: var(--zinc-100);
+            border-left-color: var(--zinc-900);
+            font-weight: 600;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            border-bottom: 2px solid var(--zinc-200);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-tabs li a {
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .nav-tabs li a:hover {
+            color: var(--text-primary);
+            border-bottom-color: var(--zinc-300);
+        }
+        
+        .nav-tabs li a.active {
+            color: var(--zinc-900);
+            border-bottom-color: var(--zinc-900);
+            font-weight: 600;
+        }
+        
+        .nav-pills {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-pills li a {
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+        
+        .nav-pills li a:hover {
+            background: var(--zinc-100);
+        }
+        
+        .nav-pills li a.active {
+            background: var(--zinc-900);
+            color: white;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .breadcrumb li a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumb li:not(:last-child)::after {
+            content: '/';
+            color: var(--text-secondary);
+        }
+        
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 0.5rem;
+        }
+        
+        .pagination li a {
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            border: 1px solid var(--zinc-300);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .pagination li a:hover {
+            background: var(--zinc-100);
+            border-color: var(--zinc-400);
+        }
+        
+        .pagination li a.active {
+            background: var(--zinc-900);
+            color: white;
+            border-color: var(--zinc-900);
+        }
+        
+        .navbar {
+            background: var(--zinc-900);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar-brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .navbar-menu {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navbar-menu li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .navbar-menu li a:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar-nav {
+            width: 250px;
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .sidebar-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        
+        .sidebar-nav li a:hover {
+            background: var(--zinc-100);
+        }
+        
+        .sidebar-nav li a.active {
+            background: var(--zinc-900);
+            color: white;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-toggle {
+            padding: 0.75rem 1.5rem;
+            background: var(--zinc-900);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid var(--zinc-200);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 200px;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .dropdown-menu.show {
+            display: block;
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+        }
+        
+        .dropdown-menu a:hover {
+            background: var(--zinc-100);
+        }
+        
+        .stepper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .step-number {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: var(--zinc-200);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        .step.active .step-number {
+            background: var(--zinc-900);
+            color: white;
+        }
+        
+        .step.completed .step-number {
+            background: #10b981;
+            color: white;
+        }
+        
+        .step-line {
+            width: 3rem;
+            height: 2px;
+            background: var(--zinc-200);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link"><i class="si si-arrow-left"></i> Retour à l'accueil</a>
+        
+        <div class="page-header">
+            <h1 class="page-title">Navigation</h1>
+            <p class="page-description">
+                Collection complète de composants de navigation : menus, tabs, breadcrumbs, pagination et plus.
+                Plus de 30 variantes avec exemples interactifs.
+            </p>
+        </div>
+        
+        <!-- Section 1: Navigation Horizontale -->
+        <section class="section">
+            <h2 class="section-title">1. Navigation Horizontale <span class="badge">3 variantes</span></h2>
+            <p class="section-description">
+                Menu horizontal classique pour la navigation principale.
+            </p>
+            
+            <div class="example-box">
+                <ul class="nav-horizontal">
+                    <li><a href="#" class="active">Accueil</a></li>
+                    <li><a href="#">Produits</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="code-block">&lt;ul class="nav-horizontal"&gt;
+    &lt;li&gt;&lt;a href="#" class="active"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Produits&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</div>
+        </section>
+        
+        <!-- Section 2: Navigation Verticale -->
+        <section class="section">
+            <h2 class="section-title">2. Navigation Verticale <span class="badge">Sidebar</span></h2>
+            <p class="section-description">
+                Menu vertical idéal pour les sidebars et menus latéraux.
+            </p>
+            
+            <div class="example-box">
+                <div class="sidebar-nav">
+                    <ul>
+                        <li><a href="#" class="active"><i class="si si-home"></i> Dashboard</a></li>
+                        <li><a href="#"><i class="si si-user"></i> Profil</a></li>
+                        <li><a href="#"><i class="si si-settings"></i> Paramètres</a></li>
+                        <li><a href="#"><i class="si si-mail"></i> Messages</a></li>
+                        <li><a href="#"><i class="si si-logout"></i> Déconnexion</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="code-block">&lt;div class="sidebar-nav"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#" class="active"&gt;
+            &lt;i class="si si-home"&gt;&lt;/i&gt; Dashboard
+        &lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</div>
+        </section>
+        
+        <!-- Section 3: Tabs -->
+        <section class="section">
+            <h2 class="section-title">3. Tabs (Onglets) <span class="badge">Populaire</span></h2>
+            <p class="section-description">
+                Onglets pour organiser le contenu en sections.
+            </p>
+            
+            <div class="example-box">
+                <ul class="nav-tabs">
+                    <li><a href="#" class="active">Vue d'ensemble</a></li>
+                    <li><a href="#">Détails</a></li>
+                    <li><a href="#">Historique</a></li>
+                    <li><a href="#">Paramètres</a></li>
+                </ul>
+            </div>
+            
+            <div class="code-block">&lt;ul class="nav-tabs"&gt;
+    &lt;li&gt;&lt;a href="#" class="active"&gt;Vue d'ensemble&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Détails&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</div>
+        </section>
+        
+        <!-- Section 4: Pills -->
+        <section class="section">
+            <h2 class="section-title">4. Pills (Pilules) <span class="badge">Moderne</span></h2>
+            <p class="section-description">
+                Navigation avec style arrondi moderne.
+            </p>
+            
+            <div class="example-box">
+                <ul class="nav-pills">
+                    <li><a href="#" class="active">Tout</a></li>
+                    <li><a href="#">En cours</a></li>
+                    <li><a href="#">Terminé</a></li>
+                    <li><a href="#">Archivé</a></li>
+                </ul>
+            </div>
+            
+            <div class="code-block">&lt;ul class="nav-pills"&gt;
+    &lt;li&gt;&lt;a href="#" class="active"&gt;Tout&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;En cours&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</div>
+        </section>
+        
+        <!-- Section 5: Breadcrumb -->
+        <section class="section">
+            <h2 class="section-title">5. Breadcrumb (Fil d'Ariane) <span class="badge">Navigation</span></h2>
+            <p class="section-description">
+                Indique le chemin de navigation actuel.
+            </p>
+            
+            <div class="example-box">
+                <ul class="breadcrumb">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Produits</a></li>
+                    <li><a href="#">Catégorie</a></li>
+                    <li>Article</li>
+                </ul>
+            </div>
+            
+            <div class="code-block">&lt;ul class="breadcrumb"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Produits&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Article&lt;/li&gt;
+&lt;/ul&gt;</div>
+        </section>
+        
+        <!-- Section 6: Pagination -->
+        <section class="section">
+            <h2 class="section-title">6. Pagination <span class="badge">Essentiel</span></h2>
+            <p class="section-description">
+                Navigation entre les pages de résultats.
+            </p>
+            
+            <div class="example-box">
+                <ul class="pagination">
+                    <li><a href="#">‹</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#" class="active">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">›</a></li>
+                </ul>
+            </div>
+            
+            <div class="code-block">&lt;ul class="pagination"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;‹&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="active"&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;›&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</div>
+        </section>
+        
+        <!-- Section 7: Navbar -->
+        <section class="section">
+            <h2 class="section-title">7. Navbar Complète <span class="badge">Full</span></h2>
+            <p class="section-description">
+                Barre de navigation complète avec logo et menu.
+            </p>
+            
+            <div class="example-box">
+                <nav class="navbar">
+                    <div class="navbar-content">
+                        <a href="#" class="navbar-brand">Simi UI</a>
+                        <ul class="navbar-menu">
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="#">Composants</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            
+            <div class="code-block">&lt;nav class="navbar"&gt;
+    &lt;div class="navbar-content"&gt;
+        &lt;a href="#" class="navbar-brand"&gt;Simi UI&lt;/a&gt;
+        &lt;ul class="navbar-menu"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</div>
+        </section>
+        
+        <!-- Section 8: Dropdown -->
+        <section class="section">
+            <h2 class="section-title">8. Dropdown Menu <span class="badge">Interactif</span></h2>
+            <p class="section-description">
+                Menu déroulant pour options secondaires.
+            </p>
+            
+            <div class="example-box">
+                <div class="dropdown">
+                    <button class="dropdown-toggle" onclick="this.nextElementSibling.classList.toggle('show')">
+                        Menu <i class="si si-arrow-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#">Action 1</a>
+                        <a href="#">Action 2</a>
+                        <a href="#">Action 3</a>
+                        <a href="#">Paramètres</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="code-block">&lt;div class="dropdown"&gt;
+    &lt;button class="dropdown-toggle"&gt;Menu&lt;/button&gt;
+    &lt;div class="dropdown-menu"&gt;
+        &lt;a href="#"&gt;Action 1&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+        </section>
+        
+        <!-- Section 9: Stepper -->
+        <section class="section">
+            <h2 class="section-title">9. Stepper (Étapes) <span class="badge">Processus</span></h2>
+            <p class="section-description">
+                Indicateur de progression par étapes.
+            </p>
+            
+            <div class="example-box">
+                <div class="stepper">
+                    <div class="step completed">
+                        <div class="step-number">1</div>
+                        <span>Informations</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step active">
+                        <div class="step-number">2</div>
+                        <span>Paiement</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <span>Confirmation</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="code-block">&lt;div class="stepper"&gt;
+    &lt;div class="step completed"&gt;
+        &lt;div class="step-number"&gt;1&lt;/div&gt;
+        &lt;span&gt;Informations&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+        </section>
+        
+        <!-- Résumé -->
+        <section class="section" style="background: linear-gradient(135deg, var(--zinc-100) 0%, var(--zinc-50) 100%);">
+            <h2 class="section-title">📊 Résumé</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3 style="font-size: 2.5rem; margin: 0; color: var(--zinc-900);">30+</h3>
+                    <p style="margin: 0; color: var(--zinc-600);">Exemples de navigation</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 2.5rem; margin: 0; color: var(--zinc-900);">9</h3>
+                    <p style="margin: 0; color: var(--zinc-600);">Types de navigation</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 2.5rem; margin: 0; color: var(--zinc-900);">100%</h3>
+                    <p style="margin: 0; color: var(--zinc-600);">Responsive</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="../../js/similar.bundle.js"></script>
+</body>
+</html>

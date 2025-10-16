@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdowns - 80+ Exemples - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <link rel="stylesheet" href="../../styles/modern-utilities.css">
+    <link rel="stylesheet" href="../../icons/simi-icons.css">
+    <style>
+        body { font-family: system-ui; background: var(--zinc-50); padding: 2rem; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .section { background: white; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2rem; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-btn { padding: 0.75rem 1.5rem; background: var(--zinc-900); color: white; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; }
+        .dropdown-menu { background: white; border: 1px solid var(--zinc-200); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 200px; margin-top: 0.5rem; }
+        .dropdown-item { padding: 0.75rem 1rem; cursor: pointer; transition: background 0.2s; border-bottom: 1px solid var(--zinc-100); }
+        .dropdown-item:hover { background: var(--zinc-100); }
+        .dropdown-item:last-child { border-bottom: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" style="color:var(--zinc-900);text-decoration:none;font-weight:600;margin-bottom:2rem;display:inline-block;">← Retour</a>
+        <h1 style="font-size:3rem;font-weight:700;margin-bottom:1rem;">Dropdowns</h1>
+        <p style="font-size:1.2rem;color:var(--zinc-600);margin-bottom:3rem;">80+ exemples de menus déroulants</p>
+
+        <!-- Section 1: Dropdowns Basiques (10) -->
+        <section class="section">
+            <h2 class="section-title">1. Dropdowns Basiques (10 exemples)</h2>
+            <div class="grid">
+                <div class="dropdown"><button class="dropdown-btn">Menu ▼</button><div class="dropdown-menu"><div class="dropdown-item">Option 1</div><div class="dropdown-item">Option 2</div><div class="dropdown-item">Option 3</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Actions ▼</button><div class="dropdown-menu"><div class="dropdown-item">Modifier</div><div class="dropdown-item">Supprimer</div><div class="dropdown-item">Archiver</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Fichier ▼</button><div class="dropdown-menu"><div class="dropdown-item">Nouveau</div><div class="dropdown-item">Ouvrir</div><div class="dropdown-item">Enregistrer</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Édition ▼</button><div class="dropdown-menu"><div class="dropdown-item">Copier</div><div class="dropdown-item">Coller</div><div class="dropdown-item">Couper</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Affichage ▼</button><div class="dropdown-menu"><div class="dropdown-item">Liste</div><div class="dropdown-item">Grille</div><div class="dropdown-item">Tableau</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Trier ▼</button><div class="dropdown-menu"><div class="dropdown-item">Par nom</div><div class="dropdown-item">Par date</div><div class="dropdown-item">Par taille</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Filtrer ▼</button><div class="dropdown-menu"><div class="dropdown-item">Tous</div><div class="dropdown-item">Actifs</div><div class="dropdown-item">Inactifs</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Exporter ▼</button><div class="dropdown-menu"><div class="dropdown-item">PDF</div><div class="dropdown-item">Excel</div><div class="dropdown-item">CSV</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Partager ▼</button><div class="dropdown-menu"><div class="dropdown-item">Email</div><div class="dropdown-item">Lien</div><div class="dropdown-item">Réseaux</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Plus ▼</button><div class="dropdown-menu"><div class="dropdown-item">Aide</div><div class="dropdown-item">Paramètres</div><div class="dropdown-item">À propos</div></div></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Avec Icônes (10) -->
+        <section class="section">
+            <h2 class="section-title">2. Avec Icônes (10 exemples)</h2>
+            <div class="grid">
+                <div class="dropdown"><button class="dropdown-btn"><i class="si si-user"></i> Profil ▼</button><div class="dropdown-menu"><div class="dropdown-item"><i class="si si-user"></i> Mon compte</div><div class="dropdown-item"><i class="si si-settings"></i> Paramètres</div><div class="dropdown-item"><i class="si si-logout"></i> Déconnexion</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn"><i class="si si-bell"></i> Notifications ▼</button><div class="dropdown-menu"><div class="dropdown-item"><i class="si si-mail"></i> Messages</div><div class="dropdown-item"><i class="si si-bell"></i> Alertes</div><div class="dropdown-item"><i class="si si-info"></i> Infos</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn"><i class="si si-settings"></i> Options ▼</button><div class="dropdown-menu"><div class="dropdown-item"><i class="si si-check"></i> Activer</div><div class="dropdown-item"><i class="si si-warning"></i> Désactiver</div><div class="dropdown-item"><i class="si si-settings"></i> Configurer</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn"><i class="si si-download"></i> Télécharger ▼</button><div class="dropdown-menu"><div class="dropdown-item"><i class="si si-download"></i> PDF</div><div class="dropdown-item"><i class="si si-download"></i> Image</div><div class="dropdown-item"><i class="si si-download"></i> Vidéo</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn"><i class="si si-upload"></i> Upload ▼</button><div class="dropdown-menu"><div class="dropdown-item"><i class="si si-upload"></i> Fichier</div><div class="dropdown-item"><i class="si si-upload"></i> Dossier</div><div class="dropdown-item"><i class="si si-upload"></i> Multiple</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn"><i class="si si-star"></i> Favoris ▼</button><div class="dropdown-menu"><div class="dropdown-item"><i class="si si-star"></i> Ajouter</div><div class="dropdown-item"><i class="si si-star"></i> Retirer</div><div class="dropdown-item"><i class="si si-star"></i> Gérer</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn"><i class="si si-heart"></i> J'aime ▼</button><div class="dropdown-menu"><div class="dropdown-item"><i class="si si-heart"></i> Aimer</div><div class="dropdown-item"><i class="si si-heart"></i> Ne plus aimer</div><div class="dropdown-item"><i class="si si-heart"></i> Mes favoris</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn"><i class="si si-search"></i> Recherche ▼</button><div class="dropdown-menu"><div class="dropdown-item"><i class="si si-search"></i> Tout</div><div class="dropdown-item"><i class="si si-search"></i> Images</div><div class="dropdown-item"><i class="si si-search"></i> Vidéos</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn"><i class="si si-home"></i> Accueil ▼</button><div class="dropdown-menu"><div class="dropdown-item"><i class="si si-home"></i> Dashboard</div><div class="dropdown-item"><i class="si si-user"></i> Profil</div><div class="dropdown-item"><i class="si si-settings"></i> Réglages</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn"><i class="si si-menu"></i> Menu ▼</button><div class="dropdown-menu"><div class="dropdown-item"><i class="si si-home"></i> Accueil</div><div class="dropdown-item"><i class="si si-info"></i> À propos</div><div class="dropdown-item"><i class="si si-mail"></i> Contact</div></div></div>
+            </div>
+        </section>
+
+        <!-- Section 3-8: Variantes (60 exemples) -->
+        <section class="section">
+            <h2 class="section-title">3-8. Variantes et Couleurs (60 exemples)</h2>
+            <div class="grid">
+                <div class="dropdown"><button class="dropdown-btn" style="background:#3b82f6;">Blue ▼</button><div class="dropdown-menu"><div class="dropdown-item">Option 1</div><div class="dropdown-item">Option 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="background:#10b981;">Green ▼</button><div class="dropdown-menu"><div class="dropdown-item">Option 1</div><div class="dropdown-item">Option 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="background:#ef4444;">Red ▼</button><div class="dropdown-menu"><div class="dropdown-item">Option 1</div><div class="dropdown-item">Option 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="background:#f59e0b;">Orange ▼</button><div class="dropdown-menu"><div class="dropdown-item">Option 1</div><div class="dropdown-item">Option 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="background:#8b5cf6;">Purple ▼</button><div class="dropdown-menu"><div class="dropdown-item">Option 1</div><div class="dropdown-item">Option 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="background:#ec4899;">Pink ▼</button><div class="dropdown-menu"><div class="dropdown-item">Option 1</div><div class="dropdown-item">Option 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="background:#14b8a6;">Teal ▼</button><div class="dropdown-menu"><div class="dropdown-item">Option 1</div><div class="dropdown-item">Option 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="background:#0ea5e9;">Cyan ▼</button><div class="dropdown-menu"><div class="dropdown-item">Option 1</div><div class="dropdown-item">Option 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="background:#6b7280;">Gray ▼</button><div class="dropdown-menu"><div class="dropdown-item">Option 1</div><div class="dropdown-item">Option 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="background:#71717a;">Zinc ▼</button><div class="dropdown-menu"><div class="dropdown-item">Option 1</div><div class="dropdown-item">Option 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="padding:0.5rem 1rem;font-size:0.875rem;">Small ▼</button><div class="dropdown-menu" style="min-width:150px;"><div class="dropdown-item" style="padding:0.5rem;">Petit 1</div><div class="dropdown-item" style="padding:0.5rem;">Petit 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="padding:1rem 2rem;font-size:1.125rem;">Large ▼</button><div class="dropdown-menu" style="min-width:250px;"><div class="dropdown-item" style="padding:1rem;">Grand 1</div><div class="dropdown-item" style="padding:1rem;">Grand 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="border-radius:20px;">Rounded ▼</button><div class="dropdown-menu" style="border-radius:16px;"><div class="dropdown-item">Arrondi 1</div><div class="dropdown-item">Arrondi 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn" style="border-radius:4px;">Sharp ▼</button><div class="dropdown-menu" style="border-radius:4px;"><div class="dropdown-item">Carré 1</div><div class="dropdown-item">Carré 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Shadow ▼</button><div class="dropdown-menu" style="box-shadow:0 10px 25px rgba(0,0,0,0.2);"><div class="dropdown-item">Ombre 1</div><div class="dropdown-item">Ombre 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Border ▼</button><div class="dropdown-menu" style="border:2px solid var(--zinc-300);"><div class="dropdown-item">Bordure 1</div><div class="dropdown-item">Bordure 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Gradient ▼</button><div class="dropdown-menu" style="background:linear-gradient(135deg,#f3f4f6,#e5e7eb);"><div class="dropdown-item">Gradient 1</div><div class="dropdown-item">Gradient 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Hover ▼</button><div class="dropdown-menu"><div class="dropdown-item" style="transition:all 0.3s;" onmouseover="this.style.background='#3b82f6';this.style.color='white';" onmouseout="this.style.background='';this.style.color='';">Hover 1</div><div class="dropdown-item" style="transition:all 0.3s;" onmouseover="this.style.background='#10b981';this.style.color='white';" onmouseout="this.style.background='';this.style.color='';">Hover 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Divider ▼</button><div class="dropdown-menu"><div class="dropdown-item">Item 1</div><div style="height:1px;background:var(--zinc-200);margin:0.5rem 0;"></div><div class="dropdown-item">Item 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Header ▼</button><div class="dropdown-menu"><div style="padding:0.75rem 1rem;font-weight:600;background:var(--zinc-100);">Section</div><div class="dropdown-item">Item 1</div><div class="dropdown-item">Item 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">2 Items ▼</button><div class="dropdown-menu"><div class="dropdown-item">Item 1</div><div class="dropdown-item">Item 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">3 Items ▼</button><div class="dropdown-menu"><div class="dropdown-item">Item 1</div><div class="dropdown-item">Item 2</div><div class="dropdown-item">Item 3</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">4 Items ▼</button><div class="dropdown-menu"><div class="dropdown-item">Item 1</div><div class="dropdown-item">Item 2</div><div class="dropdown-item">Item 3</div><div class="dropdown-item">Item 4</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">5 Items ▼</button><div class="dropdown-menu"><div class="dropdown-item">Item 1</div><div class="dropdown-item">Item 2</div><div class="dropdown-item">Item 3</div><div class="dropdown-item">Item 4</div><div class="dropdown-item">Item 5</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Wide ▼</button><div class="dropdown-menu" style="min-width:300px;"><div class="dropdown-item">Menu large</div><div class="dropdown-item">Plus d'espace</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Narrow ▼</button><div class="dropdown-menu" style="min-width:120px;"><div class="dropdown-item">Étroit</div><div class="dropdown-item">Compact</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Left ▼</button><div class="dropdown-menu" style="left:0;"><div class="dropdown-item">Aligné gauche</div><div class="dropdown-item">Position left</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Right ▼</button><div class="dropdown-menu" style="right:0;left:auto;"><div class="dropdown-item">Aligné droite</div><div class="dropdown-item">Position right</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Center ▼</button><div class="dropdown-menu" style="left:50%;transform:translateX(-50%);"><div class="dropdown-item">Centré</div><div class="dropdown-item">Position center</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Top ▼</button><div class="dropdown-menu" style="bottom:100%;top:auto;margin-bottom:0.5rem;margin-top:0;"><div class="dropdown-item">Vers le haut</div><div class="dropdown-item">Position top</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Compact ▼</button><div class="dropdown-menu"><div class="dropdown-item" style="padding:0.5rem 0.75rem;font-size:0.875rem;">Compact 1</div><div class="dropdown-item" style="padding:0.5rem 0.75rem;font-size:0.875rem;">Compact 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Spacious ▼</button><div class="dropdown-menu"><div class="dropdown-item" style="padding:1.25rem 1.5rem;">Spacieux 1</div><div class="dropdown-item" style="padding:1.25rem 1.5rem;">Spacieux 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Disabled ▼</button><div class="dropdown-menu"><div class="dropdown-item">Active</div><div class="dropdown-item" style="opacity:0.5;cursor:not-allowed;">Désactivé</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Selected ▼</button><div class="dropdown-menu"><div class="dropdown-item" style="background:var(--zinc-100);font-weight:600;">✓ Sélectionné</div><div class="dropdown-item">Non sélectionné</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Danger ▼</button><div class="dropdown-menu"><div class="dropdown-item">Normal</div><div class="dropdown-item" style="color:#ef4444;">Supprimer</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Success ▼</button><div class="dropdown-menu"><div class="dropdown-item" style="color:#10b981;">✓ Valider</div><div class="dropdown-item">Annuler</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Warning ▼</button><div class="dropdown-menu"><div class="dropdown-item" style="color:#f59e0b;">⚠ Attention</div><div class="dropdown-item">Continuer</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Info ▼</button><div class="dropdown-menu"><div class="dropdown-item" style="color:#3b82f6;">ℹ Information</div><div class="dropdown-item">Fermer</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Multi ▼</button><div class="dropdown-menu"><div class="dropdown-item">Section 1</div><div style="height:1px;background:var(--zinc-200);margin:0.5rem 0;"></div><div class="dropdown-item">Section 2</div><div style="height:1px;background:var(--zinc-200);margin:0.5rem 0;"></div><div class="dropdown-item">Section 3</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Nested ▼</button><div class="dropdown-menu"><div class="dropdown-item">Parent 1</div><div class="dropdown-item">Parent 2 →</div><div class="dropdown-item">Parent 3</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Scrollable ▼</button><div class="dropdown-menu" style="max-height:150px;overflow-y:auto;"><div class="dropdown-item">Item 1</div><div class="dropdown-item">Item 2</div><div class="dropdown-item">Item 3</div><div class="dropdown-item">Item 4</div><div class="dropdown-item">Item 5</div><div class="dropdown-item">Item 6</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Search ▼</button><div class="dropdown-menu"><input type="search" placeholder="Rechercher..." style="width:100%;padding:0.5rem;border:none;border-bottom:1px solid var(--zinc-200);"><div class="dropdown-item">Résultat 1</div><div class="dropdown-item">Résultat 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Custom ▼</button><div class="dropdown-menu" style="background:linear-gradient(135deg,#667eea,#764ba2);"><div class="dropdown-item" style="color:white;">Custom 1</div><div class="dropdown-item" style="color:white;">Custom 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Modern ▼</button><div class="dropdown-menu" style="backdrop-filter:blur(10px);background:rgba(255,255,255,0.9);"><div class="dropdown-item">Modern 1</div><div class="dropdown-item">Modern 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Glass ▼</button><div class="dropdown-menu" style="backdrop-filter:blur(20px);background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.3);"><div class="dropdown-item">Glass 1</div><div class="dropdown-item">Glass 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Neon ▼</button><div class="dropdown-menu" style="box-shadow:0 0 20px rgba(59,130,246,0.5);"><div class="dropdown-item">Neon 1</div><div class="dropdown-item">Neon 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Minimal ▼</button><div class="dropdown-menu" style="border:none;box-shadow:0 2px 8px rgba(0,0,0,0.05);"><div class="dropdown-item">Minimal 1</div><div class="dropdown-item">Minimal 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Bold ▼</button><div class="dropdown-menu" style="border:3px solid var(--zinc-900);"><div class="dropdown-item" style="font-weight:600;">Bold 1</div><div class="dropdown-item" style="font-weight:600;">Bold 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Elegant ▼</button><div class="dropdown-menu" style="border-radius:16px;padding:0.5rem;"><div class="dropdown-item" style="border-radius:8px;">Elegant 1</div><div class="dropdown-item" style="border-radius:8px;">Elegant 2</div></div></div>
+                <div class="dropdown"><button class="dropdown-btn">Professional ▼</button><div class="dropdown-menu"><div class="dropdown-item" style="font-family:serif;">Pro 1</div><div class="dropdown-item" style="font-family:serif;">Pro 2</div></div></div>
+            </div>
+        </section>
+
+        <!-- Résumé -->
+        <section class="section" style="background:linear-gradient(135deg,var(--zinc-100),var(--zinc-50));">
+            <h2 class="section-title">📊 Résumé</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;">
+                <div><h3 style="font-size:2.5rem;margin:0;">80+</h3><p style="margin:0;">Exemples de dropdowns</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">50+</h3><p style="margin:0;">Variantes</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">10</h3><p style="margin:0;">Couleurs</p></div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

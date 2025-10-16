@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 140" width="360" height="140">
+  <defs>
+    <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#99F6E4"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="wave3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CCFBF1"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Vague 1 -->
+  <path d="M0 60 C40 20, 100 100, 180 40 S300 100, 360 50 L360 140 L0 140 Z"
+        fill="url(#wave1)" opacity="0.9"/>
+
+  <!-- Vague 2 -->
+  <path d="M0 80 C60 40, 140 120, 220 50 S340 110, 360 70 L360 140 L0 140 Z"
+        fill="url(#wave2)" opacity="0.85"/>
+
+  <!-- Vague 3 -->
+  <path d="M0 100 C50 60, 150 140, 250 70 S360 130, 360 90 L360 140 L0 140 Z"
+        fill="url(#wave3)" opacity="0.8"/>
+
+  <!-- Texte -->
+  <text x="40" y="35" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="#0F172A">Simi</text>
+  <text x="120" y="35" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="#0284C7">UI</text>
+</svg>

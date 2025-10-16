@@ -1,0 +1,264 @@
+// Navigation Complete - SCSS - Tous les styles des exemples
+@import '../variables';
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-4 $spacing-8;
+    background-color: $white;
+    box-shadow: $shadow;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-brand {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $gray-900;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: $spacing-6;
+    align-items: center;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-link {
+    color: $gray-600;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    padding: $spacing-2 $spacing-4;
+    border-radius: $radius;
+    transition: all $transition-base;
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    
+    &:hover {
+        color: $gray-900;
+        background-color: $gray-100;
+    }
+    
+    &.active {
+        color: $primary;
+        background-color: lighten($primary, 40%);
+        font-weight: $font-weight-semibold;
+    }
+}
+
+// Navbar Dark
+.navbar-dark {
+    background-color: $gray-900;
+    
+    .navbar-brand {
+        color: $white;
+    }
+    
+    .nav-link {
+        color: $gray-300;
+        
+        &:hover {
+            color: $white;
+            background-color: $gray-800;
+        }
+        
+        &.active {
+            color: $primary;
+            background-color: darken($primary, 35%);
+        }
+    }
+}
+
+// Navbar Transparent
+.navbar-transparent {
+    background: transparent;
+    box-shadow: none;
+}
+
+// Navbar Glass
+.navbar-glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+// Sidebar
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: $white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: $spacing-6;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: $spacing-4 0 $spacing-6;
+    border-bottom: 1px solid $gray-200;
+    margin-bottom: $spacing-4;
+}
+
+.sidebar-title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $gray-900;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    .nav-link {
+        display: block;
+        padding: $spacing-3 $spacing-4;
+        margin-bottom: $spacing-2;
+        border-radius: $radius;
+        
+        &.active {
+            background: lighten($primary, 40%);
+            color: $primary;
+        }
+    }
+}
+
+// Sidebar Dark
+.sidebar-dark {
+    background: $gray-900;
+    color: $white;
+    
+    .sidebar-title {
+        color: $white;
+    }
+    
+    .nav-link {
+        color: $gray-300;
+        
+        &:hover {
+            background: $gray-800;
+            color: $white;
+        }
+        
+        &.active {
+            background: darken($primary, 35%);
+            color: $primary;
+        }
+    }
+}
+
+// Breadcrumb
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: $spacing-2;
+    align-items: center;
+}
+
+.breadcrumb-item {
+    color: $gray-600;
+    font-size: $font-size-sm;
+    
+    a {
+        color: $gray-600;
+        text-decoration: none;
+        
+        &:hover {
+            color: $gray-900;
+        }
+    }
+    
+    &.active {
+        color: $gray-900;
+        font-weight: $font-weight-medium;
+    }
+    
+    & + .breadcrumb-item::before {
+        content: "/";
+        margin-right: $spacing-2;
+        color: $gray-300;
+    }
+}
+
+// Tabs
+.tabs {
+    display: flex;
+    border-bottom: 2px solid $gray-200;
+    gap: $spacing-2;
+}
+
+.tab {
+    padding: $spacing-3 $spacing-6;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: $gray-600;
+    font-weight: $font-weight-medium;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all $transition-base;
+    
+    &:hover {
+        color: $gray-900;
+        background: $gray-50;
+    }
+    
+    &.active {
+        color: $primary;
+        border-bottom-color: $primary;
+    }
+}
+
+// Pagination
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: $spacing-2;
+}
+
+.page-item {
+    display: inline-block;
+}
+
+.page-link {
+    padding: $spacing-2 $spacing-3;
+    border: 1px solid $gray-200;
+    border-radius: $radius;
+    color: $gray-600;
+    text-decoration: none;
+    transition: all $transition-base;
+    
+    &:hover {
+        background: $gray-100;
+        color: $gray-900;
+    }
+}
+
+.page-item.active .page-link {
+    background: $primary;
+    color: $white;
+    border-color: $primary;
+}
+
+.page-item.disabled .page-link {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

@@ -1,0 +1,65 @@
+// Tooltips - SCSS
+@import '../variables';
+
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background-color: $gray-900;
+    color: $white;
+    text-align: center;
+    padding: $spacing-2 $spacing-4;
+    border-radius: $radius;
+    position: absolute;
+    z-index: $z-tooltip;
+    white-space: nowrap;
+    font-size: $font-size-sm;
+    opacity: 0;
+    transition: opacity $transition-slow, visibility $transition-slow;
+    pointer-events: none;
+    box-shadow: $shadow-md;
+    
+    .tooltip-wrapper:hover & {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+// Tooltip Positions
+.tooltip-top {
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip-bottom {
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip-left {
+    right: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tooltip-right {
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// Tooltip Colors
+.tooltip-primary { background: $primary; }
+.tooltip-success { background: $success; }
+.tooltip-danger { background: $danger; }
+.tooltip-warning { background: $warning; }
+.tooltip-light {
+    background: $white;
+    color: $gray-900;
+    border: 1px solid $gray-200;
+}

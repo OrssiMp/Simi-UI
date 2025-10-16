@@ -1,0 +1,8 @@
+// Dropdowns - SCSS
+@import '../variables';
+
+.dropdown{position:relative;display:inline-block}
+.dropdown-toggle{padding:$spacing-2+0.125rem $spacing-5;background:$gray-900;color:$white;border:none;border-radius:$radius;cursor:pointer;display:flex;align-items:center;gap:$spacing-2;font-weight:$font-weight-medium;transition:all $transition-base;&:hover{background:$gray-800}}
+.dropdown-menu{display:none;position:absolute;background:$white;border:1px solid $gray-200;border-radius:$radius-md;box-shadow:$shadow-lg;min-width:200px;margin-top:$spacing-2;z-index:$z-dropdown;padding:$spacing-2 0;.dropdown.active &{display:block}}
+.dropdown-item{padding:$spacing-3 $spacing-4;cursor:pointer;transition:background $transition-base;color:$gray-700;&:hover{background:$gray-100;color:$gray-900}}
+.dropdown-divider{height:1px;background:$gray-200;margin:$spacing-2 0}

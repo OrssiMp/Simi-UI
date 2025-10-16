@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutons - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/simi-original/simi-components.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <style>
+        :root {
+            --sidebar-width: 280px;
+            --header-height: 70px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--theme-bg-secondary, #f8f9fa);
+            margin: 0;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background-color: var(--theme-bg-primary, white);
+            border-bottom: 1px solid var(--theme-border-color, #dee2e6);
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            z-index: 1000;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--theme-primary, #0d6efd);
+            text-decoration: none;
+        }
+        
+        .main-content {
+            margin-left: 0;
+            margin-top: var(--header-height);
+            padding: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--theme-text-primary, #212529);
+        }
+        
+        .page-description {
+            font-size: 1.1rem;
+            color: var(--theme-text-secondary, #6c757d);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .component-section {
+            background-color: var(--theme-bg-primary, white);
+            border: 1px solid var(--theme-border-color, #dee2e6);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--theme-text-primary, #212529);
+        }
+        
+        .component-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background-color: var(--theme-bg-secondary, #f8f9fa);
+            border-radius: 8px;
+        }
+        
+        .code-block {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #3e4451;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        
+        .copy-btn:hover {
+            background-color: #4e5561;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="../../index.html" class="header-logo">
+            <span>← Simi UI</span>
+        </a>
+    </header>
+    
+    <main class="main-content">
+        <h1 class="page-title">Boutons</h1>
+        <p class="page-description">
+            Collection complète de boutons avec différents styles, tailles et états. 
+            Utilisez les classes <code>simi-btn</code> pour créer des boutons élégants et accessibles.
+        </p>
+        
+        <!-- Boutons de base -->
+        <section class="component-section">
+            <h2 class="section-title">Boutons de base</h2>
+            <div class="component-demo">
+                <button class="simi-btn simi-btn-primary">Primary</button>
+                <button class="simi-btn simi-btn-secondary">Secondary</button>
+                <button class="simi-btn simi-btn-success">Success</button>
+                <button class="simi-btn simi-btn-danger">Danger</button>
+                <button class="btn btn-warning">Warning (BS)</button>
+                <button class="btn btn-info">Info (BS)</button>
+            </div>
+            <div class="code-block">
+                <button class="copy-btn" onclick="SimiUI.copyToClipboard(this.nextElementSibling.textContent)">Copier</button>
+                <pre>&lt;button class="simi-btn simi-btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="simi-btn simi-btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="simi-btn simi-btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="simi-btn simi-btn-danger"&gt;Danger&lt;/button&gt;</pre>
+            </div>
+        </section>
+        
+        <!-- Boutons outline -->
+        <section class="component-section">
+            <h2 class="section-title">Boutons Outline</h2>
+            <div class="component-demo">
+                <button class="simi-btn simi-btn-outline-primary">Primary</button>
+                <button class="simi-btn simi-btn-outline-secondary">Secondary</button>
+                <button class="simi-btn simi-btn-outline-success">Success</button>
+                <button class="simi-btn simi-btn-outline-danger">Danger</button>
+            </div>
+            <div class="code-block">
+                <button class="copy-btn" onclick="SimiUI.copyToClipboard(this.nextElementSibling.textContent)">Copier</button>
+                <pre>&lt;button class="simi-btn simi-btn-outline-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="simi-btn simi-btn-outline-secondary"&gt;Secondary&lt;/button&gt;</pre>
+            </div>
+        </section>
+        
+        <!-- Tailles -->
+        <section class="component-section">
+            <h2 class="section-title">Tailles de boutons</h2>
+            <div class="component-demo" style="align-items: center;">
+                <button class="simi-btn simi-btn-primary simi-btn-sm">Petit</button>
+                <button class="simi-btn simi-btn-primary">Normal</button>
+                <button class="simi-btn simi-btn-primary simi-btn-lg">Grand</button>
+            </div>
+            <div class="code-block">
+                <button class="copy-btn" onclick="SimiUI.copyToClipboard(this.nextElementSibling.textContent)">Copier</button>
+                <pre>&lt;button class="simi-btn simi-btn-primary simi-btn-sm"&gt;Petit&lt;/button&gt;
+&lt;button class="simi-btn simi-btn-primary"&gt;Normal&lt;/button&gt;
+&lt;button class="simi-btn simi-btn-primary simi-btn-lg"&gt;Grand&lt;/button&gt;</pre>
+            </div>
+        </section>
+        
+        <!-- Boutons Bootstrap natifs -->
+        <section class="component-section">
+            <h2 class="section-title">Boutons Bootstrap (de similar.css)</h2>
+            <div class="component-demo">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-danger">Danger</button>
+                <button class="btn btn-warning">Warning</button>
+                <button class="btn btn-info">Info</button>
+                <button class="btn btn-light">Light</button>
+                <button class="btn btn-dark">Dark</button>
+            </div>
+            <div class="code-block">
+                <button class="copy-btn" onclick="SimiUI.copyToClipboard(this.nextElementSibling.textContent)">Copier</button>
+                <pre>&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;</pre>
+            </div>
+        </section>
+        
+        <!-- Boutons Tailwind -->
+        <section class="component-section">
+            <h2 class="section-title">Styles Tailwind (de similar.css)</h2>
+            <div class="component-demo">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Tailwind Blue
+                </button>
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    Tailwind Green
+                </button>
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Tailwind Red
+                </button>
+                <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full">
+                    Rounded Full
+                </button>
+            </div>
+            <div class="code-block">
+                <button class="copy-btn" onclick="SimiUI.copyToClipboard(this.nextElementSibling.textContent)">Copier</button>
+                <pre>&lt;button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"&gt;
+    Tailwind Blue
+&lt;/button&gt;</pre>
+            </div>
+        </section>
+        
+        <!-- États -->
+        <section class="component-section">
+            <h2 class="section-title">États des boutons</h2>
+            <div class="component-demo">
+                <button class="simi-btn simi-btn-primary">Normal</button>
+                <button class="simi-btn simi-btn-primary" disabled>Désactivé</button>
+                <button class="btn btn-primary" disabled>BS Désactivé</button>
+            </div>
+            <div class="code-block">
+                <button class="copy-btn" onclick="SimiUI.copyToClipboard(this.nextElementSibling.textContent)">Copier</button>
+                <pre>&lt;button class="simi-btn simi-btn-primary" disabled&gt;Désactivé&lt;/button&gt;</pre>
+            </div>
+        </section>
+        
+        <!-- Bouton pleine largeur -->
+        <section class="component-section">
+            <h2 class="section-title">Bouton pleine largeur</h2>
+            <div class="component-demo" style="display: block;">
+                <button class="simi-btn simi-btn-primary simi-btn-block">Bouton pleine largeur</button>
+            </div>
+            <div class="code-block">
+                <button class="copy-btn" onclick="SimiUI.copyToClipboard(this.nextElementSibling.textContent)">Copier</button>
+                <pre>&lt;button class="simi-btn simi-btn-primary simi-btn-block"&gt;Bouton pleine largeur&lt;/button&gt;</pre>
+            </div>
+        </section>
+    </main>
+    
+    <script src="../../js/similar.bundle.js"></script>
+</body>
+</html>

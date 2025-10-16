@@ -1,0 +1,195 @@
+// Dropdowns Complete - SCSS - Tous les styles des exemples
+@import '../variables';
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    padding: $spacing-2 + 0.125rem $spacing-5;
+    background: $gray-900;
+    color: $white;
+    border: none;
+    border-radius: $radius;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    font-weight: $font-weight-medium;
+    transition: all $transition-base;
+    
+    &:hover {
+        background: $gray-800;
+    }
+    
+    &::after {
+        content: "▼";
+        font-size: $font-size-xs;
+        margin-left: $spacing-1;
+    }
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: $white;
+    border: 1px solid $gray-200;
+    border-radius: $radius-md;
+    box-shadow: $shadow-lg;
+    min-width: 200px;
+    margin-top: $spacing-2;
+    z-index: $z-dropdown;
+    padding: $spacing-2 0;
+    animation: dropdownSlideIn $transition-base ease;
+    
+    .dropdown.active & {
+        display: block;
+    }
+}
+
+@keyframes dropdownSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    padding: $spacing-3 $spacing-4;
+    cursor: pointer;
+    transition: background $transition-base;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    color: $gray-700;
+    font-size: $font-size-sm + 0.0625rem;
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+    
+    &:hover {
+        background: $gray-100;
+        color: $gray-900;
+    }
+    
+    &:active {
+        background: $gray-200;
+    }
+    
+    &.active {
+        background: lighten($primary, 40%);
+        color: $primary;
+        font-weight: $font-weight-medium;
+    }
+    
+    &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: $gray-200;
+    margin: $spacing-2 0;
+}
+
+.dropdown-header {
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $gray-600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+// Dropdown Positions
+.dropdown-right .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+.dropdown-left .dropdown-menu {
+    left: 0;
+}
+
+.dropdown-up .dropdown-menu {
+    bottom: 100%;
+    top: auto;
+    margin-bottom: $spacing-2;
+    margin-top: 0;
+}
+
+// Dropdown Colors
+.dropdown-primary .dropdown-toggle {
+    background: $primary;
+    
+    &:hover {
+        background: $primary-dark;
+    }
+}
+
+.dropdown-success .dropdown-toggle {
+    background: $success;
+    
+    &:hover {
+        background: $success-dark;
+    }
+}
+
+.dropdown-danger .dropdown-toggle {
+    background: $danger;
+    
+    &:hover {
+        background: $danger-dark;
+    }
+}
+
+// Dropdown Sizes
+.dropdown-sm {
+    .dropdown-toggle {
+        padding: $spacing-2 $spacing-4;
+        font-size: $font-size-sm;
+    }
+    
+    .dropdown-menu {
+        min-width: 150px;
+    }
+}
+
+.dropdown-lg {
+    .dropdown-toggle {
+        padding: $spacing-3 $spacing-6;
+        font-size: $font-size-lg;
+    }
+    
+    .dropdown-menu {
+        min-width: 250px;
+    }
+}
+
+// Dropdown Dark Menu
+.dropdown-menu-dark {
+    background: $gray-900;
+    border-color: $gray-700;
+    
+    .dropdown-item {
+        color: $gray-300;
+        
+        &:hover {
+            background: $gray-800;
+            color: $white;
+        }
+    }
+    
+    .dropdown-divider {
+        background: $gray-700;
+    }
+}

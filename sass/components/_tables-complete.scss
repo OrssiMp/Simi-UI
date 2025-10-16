@@ -1,0 +1,175 @@
+// Tables Complete - SCSS - Tous les styles des exemples
+@import '../variables';
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background: $white;
+    
+    th, td {
+        padding: $spacing-3 $spacing-4;
+        border-bottom: 1px solid $gray-200;
+    }
+    
+    th {
+        font-weight: $font-weight-semibold;
+        background-color: $gray-50;
+        color: $gray-900;
+        text-transform: uppercase;
+        font-size: $font-size-sm;
+        letter-spacing: 0.05em;
+    }
+    
+    tbody tr {
+        transition: background-color $transition-base;
+    }
+}
+
+// Table Variants
+.table-bordered {
+    border: 1px solid $gray-200;
+    
+    th, td {
+        border: 1px solid $gray-200;
+    }
+}
+
+.table-striped tbody tr:nth-child(even) {
+    background-color: $gray-50;
+}
+
+.table-hover tbody tr:hover {
+    background-color: $gray-100;
+    cursor: pointer;
+}
+
+// Table Sizes
+.table-sm {
+    th, td {
+        padding: $spacing-2 $spacing-3;
+        font-size: $font-size-sm;
+    }
+}
+
+.table-lg {
+    th, td {
+        padding: $spacing-4 $spacing-6;
+        font-size: $font-size-lg;
+    }
+}
+
+// Table Colors
+.table-primary { background-color: lighten($primary, 40%); }
+.table-success { background-color: lighten($success, 45%); }
+.table-danger { background-color: lighten($danger, 40%); }
+.table-warning { background-color: lighten($warning, 40%); }
+.table-info { background-color: lighten($info, 40%); }
+
+// Responsive Table
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+// Table Layout
+.table-fixed { table-layout: fixed; }
+.table-auto { table-layout: auto; }
+
+// Table Dark
+.table-dark {
+    background: $gray-900;
+    color: $white;
+    
+    th {
+        background: $gray-800;
+        color: $white;
+        border-color: $gray-700;
+    }
+    
+    td {
+        border-color: $gray-700;
+    }
+    
+    tbody tr:hover {
+        background: $gray-800;
+    }
+}
+
+// Table Sticky Header
+.table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+// Table Compact/Spacious
+.table-compact {
+    th, td {
+        padding: $spacing-2;
+        font-size: $font-size-sm;
+    }
+}
+
+.table-spacious {
+    th, td {
+        padding: $spacing-5 $spacing-6;
+    }
+}
+
+// Table Row States
+.table tbody tr {
+    &.active {
+        background: lighten($primary, 40%);
+        font-weight: $font-weight-medium;
+    }
+    
+    &.selected {
+        background: lighten($info, 40%);
+    }
+}
+
+// Table Actions
+.table-actions {
+    display: flex;
+    gap: $spacing-2;
+    justify-content: flex-end;
+    
+    button {
+        padding: $spacing-1 $spacing-2;
+        font-size: $font-size-sm;
+        border: none;
+        border-radius: $radius-sm;
+        cursor: pointer;
+        transition: all $transition-base;
+    }
+}
+
+// Table Badge
+.table-badge {
+    display: inline-block;
+    padding: $spacing-1 $spacing-3;
+    border-radius: $radius-lg;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    
+    &.success {
+        background: lighten($success, 45%);
+        color: darken($success, 40%);
+    }
+    
+    &.danger {
+        background: lighten($danger, 40%);
+        color: darken($danger, 35%);
+    }
+    
+    &.warning {
+        background: lighten($warning, 40%);
+        color: darken($warning, 40%);
+    }
+    
+    &.info {
+        background: lighten($info, 40%);
+        color: darken($info, 35%);
+    }
+}

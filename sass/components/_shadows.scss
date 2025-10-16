@@ -1,0 +1,10 @@
+// Shadows - SCSS
+@import '../variables';
+
+.shadow-none{box-shadow:none}
+.shadow-sm{box-shadow:$shadow-sm}
+.shadow{box-shadow:$shadow}
+.shadow-md{box-shadow:$shadow-md}
+.shadow-lg{box-shadow:$shadow-lg}
+.shadow-xl{box-shadow:$shadow-xl}
+.shadow-2xl{box-shadow:$shadow-2xl}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards - 80+ Exemples - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <link rel="stylesheet" href="../../styles/modern-utilities.css">
+    <link rel="stylesheet" href="../../icons/simi-icons.css">
+    <style>
+        body { font-family: system-ui; background: var(--zinc-50); padding: 2rem; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .back-link { color: var(--zinc-900); text-decoration: none; font-weight: 600; margin-bottom: 2rem; display: inline-block; }
+        .page-title { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+        .page-desc { font-size: 1.2rem; color: var(--zinc-600); margin-bottom: 3rem; }
+        .section { background: white; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card { background: white; border: 1px solid var(--zinc-200); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .card-img { width: 100%; height: 200px; background: linear-gradient(135deg, var(--zinc-100), var(--zinc-200)); border-radius: 8px; margin-bottom: 1rem; }
+        .card-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .card-text { color: var(--zinc-600); margin-bottom: 1rem; }
+        .card-btn { background: var(--zinc-900); color: white; padding: 0.5rem 1rem; border-radius: 6px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Retour à l'accueil</a>
+        <h1 class="page-title">Cards</h1>
+        <p class="page-desc">80+ exemples de cartes pour tous vos besoins</p>
+
+        <!-- Section 1: Cards Basiques (10 exemples) -->
+        <section class="section">
+            <h2 class="section-title">1. Cards Basiques (10 exemples)</h2>
+            <div class="grid">
+                <div class="card"><h3 class="card-title">Card 1</h3><p class="card-text">Contenu de la carte basique</p></div>
+                <div class="card"><h3 class="card-title">Card 2</h3><p class="card-text">Avec bordure simple</p></div>
+                <div class="card"><h3 class="card-title">Card 3</h3><p class="card-text">Padding standard</p></div>
+                <div class="card"><h3 class="card-title">Card 4</h3><p class="card-text">Border radius 12px</p></div>
+                <div class="card"><h3 class="card-title">Card 5</h3><p class="card-text">Hover effect inclus</p></div>
+                <div class="card"><h3 class="card-title">Card 6</h3><p class="card-text">Transition smooth</p></div>
+                <div class="card"><h3 class="card-title">Card 7</h3><p class="card-text">Shadow subtile</p></div>
+                <div class="card"><h3 class="card-title">Card 8</h3><p class="card-text">Background blanc</p></div>
+                <div class="card"><h3 class="card-title">Card 9</h3><p class="card-text">Responsive design</p></div>
+                <div class="card"><h3 class="card-title">Card 10</h3><p class="card-text">Mobile friendly</p></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Cards avec Images (10 exemples) -->
+        <section class="section">
+            <h2 class="section-title">2. Cards avec Images (10 exemples)</h2>
+            <div class="grid">
+                <div class="card"><div class="card-img"></div><h3 class="card-title">Image Card 1</h3><p class="card-text">Avec image en haut</p></div>
+                <div class="card"><div class="card-img"></div><h3 class="card-title">Image Card 2</h3><p class="card-text">Gradient background</p></div>
+                <div class="card"><div class="card-img"></div><h3 class="card-title">Image Card 3</h3><p class="card-text">Border radius 8px</p></div>
+                <div class="card"><div class="card-img"></div><h3 class="card-title">Image Card 4</h3><p class="card-text">200px height</p></div>
+                <div class="card"><div class="card-img"></div><h3 class="card-title">Image Card 5</h3><p class="card-text">Full width image</p></div>
+                <div class="card"><div class="card-img"></div><h3 class="card-title">Image Card 6</h3><p class="card-text">Aspect ratio 16:9</p></div>
+                <div class="card"><div class="card-img"></div><h3 class="card-title">Image Card 7</h3><p class="card-text">Object fit cover</p></div>
+                <div class="card"><div class="card-img"></div><h3 class="card-title">Image Card 8</h3><p class="card-text">Lazy loading ready</p></div>
+                <div class="card"><div class="card-img"></div><h3 class="card-title">Image Card 9</h3><p class="card-text">Optimized display</p></div>
+                <div class="card"><div class="card-img"></div><h3 class="card-title">Image Card 10</h3><p class="card-text">Perfect alignment</p></div>
+            </div>
+        </section>
+
+        <!-- Section 3: Cards avec Boutons (10 exemples) -->
+        <section class="section">
+            <h2 class="section-title">3. Cards avec Boutons (10 exemples)</h2>
+            <div class="grid">
+                <div class="card"><h3 class="card-title">Action Card 1</h3><p class="card-text">Avec bouton d'action</p><button class="card-btn">Action</button></div>
+                <div class="card"><h3 class="card-title">Action Card 2</h3><p class="card-text">Bouton primaire</p><button class="card-btn">Cliquer</button></div>
+                <div class="card"><h3 class="card-title">Action Card 3</h3><p class="card-text">Call to action</p><button class="card-btn">En savoir plus</button></div>
+                <div class="card"><h3 class="card-title">Action Card 4</h3><p class="card-text">Bouton centré</p><button class="card-btn">Découvrir</button></div>
+                <div class="card"><h3 class="card-title">Action Card 5</h3><p class="card-text">Interaction rapide</p><button class="card-btn">Voir</button></div>
+                <div class="card"><h3 class="card-title">Action Card 6</h3><p class="card-text">Bouton moderne</p><button class="card-btn">Acheter</button></div>
+                <div class="card"><h3 class="card-title">Action Card 7</h3><p class="card-text">Style Zinc</p><button class="card-btn">Commander</button></div>
+                <div class="card"><h3 class="card-title">Action Card 8</h3><p class="card-text">Hover effect</p><button class="card-btn">Réserver</button></div>
+                <div class="card"><h3 class="card-title">Action Card 9</h3><p class="card-text">Transition smooth</p><button class="card-btn">S'inscrire</button></div>
+                <div class="card"><h3 class="card-title">Action Card 10</h3><p class="card-text">Cursor pointer</p><button class="card-btn">Commencer</button></div>
+            </div>
+        </section>
+
+        <!-- Section 4: Cards Colorées (10 exemples) -->
+        <section class="section">
+            <h2 class="section-title">4. Cards Colorées (10 exemples)</h2>
+            <div class="grid">
+                <div class="card" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);"><h3 class="card-title">Blue Card</h3><p class="card-text">Gradient bleu</p></div>
+                <div class="card" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0);"><h3 class="card-title">Green Card</h3><p class="card-text">Gradient vert</p></div>
+                <div class="card" style="background: linear-gradient(135deg, #fef3c7, #fde68a);"><h3 class="card-title">Yellow Card</h3><p class="card-text">Gradient jaune</p></div>
+                <div class="card" style="background: linear-gradient(135deg, #fecaca, #fca5a5);"><h3 class="card-title">Red Card</h3><p class="card-text">Gradient rouge</p></div>
+                <div class="card" style="background: linear-gradient(135deg, #e9d5ff, #d8b4fe);"><h3 class="card-title">Purple Card</h3><p class="card-text">Gradient violet</p></div>
+                <div class="card" style="background: linear-gradient(135deg, #fed7aa, #fdba74);"><h3 class="card-title">Orange Card</h3><p class="card-text">Gradient orange</p></div>
+                <div class="card" style="background: linear-gradient(135deg, #fbcfe8, #f9a8d4);"><h3 class="card-title">Pink Card</h3><p class="card-text">Gradient rose</p></div>
+                <div class="card" style="background: linear-gradient(135deg, #a5f3fc, #67e8f9);"><h3 class="card-title">Cyan Card</h3><p class="card-text">Gradient cyan</p></div>
+                <div class="card" style="background: linear-gradient(135deg, #f3f4f6, #e5e7eb);"><h3 class="card-title">Gray Card</h3><p class="card-text">Gradient gris</p></div>
+                <div class="card" style="background: linear-gradient(135deg, #fafafa, #e4e4e7);"><h3 class="card-title">Zinc Card</h3><p class="card-text">Gradient zinc</p></div>
+            </div>
+        </section>
+
+        <!-- Section 5: Cards Pricing (10 exemples) -->
+        <section class="section">
+            <h2 class="section-title">5. Cards Pricing (10 exemples)</h2>
+            <div class="grid">
+                <div class="card"><h3 class="card-title">Gratuit</h3><p style="font-size:2rem;font-weight:700;">0€</p><p class="card-text">Pour commencer</p><button class="card-btn">Choisir</button></div>
+                <div class="card"><h3 class="card-title">Basique</h3><p style="font-size:2rem;font-weight:700;">9€</p><p class="card-text">Par mois</p><button class="card-btn">Choisir</button></div>
+                <div class="card"><h3 class="card-title">Pro</h3><p style="font-size:2rem;font-weight:700;">29€</p><p class="card-text">Par mois</p><button class="card-btn">Choisir</button></div>
+                <div class="card"><h3 class="card-title">Business</h3><p style="font-size:2rem;font-weight:700;">99€</p><p class="card-text">Par mois</p><button class="card-btn">Choisir</button></div>
+                <div class="card"><h3 class="card-title">Starter</h3><p style="font-size:2rem;font-weight:700;">19€</p><p class="card-text">Par mois</p><button class="card-btn">Choisir</button></div>
+                <div class="card"><h3 class="card-title">Premium</h3><p style="font-size:2rem;font-weight:700;">49€</p><p class="card-text">Par mois</p><button class="card-btn">Choisir</button></div>
+                <div class="card"><h3 class="card-title">Enterprise</h3><p style="font-size:2rem;font-weight:700;">199€</p><p class="card-text">Par mois</p><button class="card-btn">Choisir</button></div>
+                <div class="card"><h3 class="card-title">Team</h3><p style="font-size:2rem;font-weight:700;">79€</p><p class="card-text">Par mois</p><button class="card-btn">Choisir</button></div>
+                <div class="card"><h3 class="card-title">Custom</h3><p style="font-size:2rem;font-weight:700;">Sur devis</p><p class="card-text">Contactez-nous</p><button class="card-btn">Contact</button></div>
+                <div class="card"><h3 class="card-title">Lifetime</h3><p style="font-size:2rem;font-weight:700;">999€</p><p class="card-text">Paiement unique</p><button class="card-btn">Acheter</button></div>
+            </div>
+        </section>
+
+        <!-- Section 6: Cards Stats (10 exemples) -->
+        <section class="section">
+            <h2 class="section-title">6. Cards Stats (10 exemples)</h2>
+            <div class="grid">
+                <div class="card"><h3 class="card-title">Utilisateurs</h3><p style="font-size:2.5rem;font-weight:700;color:var(--zinc-900);">1,234</p><p class="card-text">+12% ce mois</p></div>
+                <div class="card"><h3 class="card-title">Ventes</h3><p style="font-size:2.5rem;font-weight:700;color:var(--zinc-900);">5,678</p><p class="card-text">+8% ce mois</p></div>
+                <div class="card"><h3 class="card-title">Revenus</h3><p style="font-size:2.5rem;font-weight:700;color:var(--zinc-900);">€45K</p><p class="card-text">+15% ce mois</p></div>
+                <div class="card"><h3 class="card-title">Visiteurs</h3><p style="font-size:2.5rem;font-weight:700;color:var(--zinc-900);">89K</p><p class="card-text">+22% ce mois</p></div>
+                <div class="card"><h3 class="card-title">Conversions</h3><p style="font-size:2.5rem;font-weight:700;color:var(--zinc-900);">3.2%</p><p class="card-text">+0.5% ce mois</p></div>
+                <div class="card"><h3 class="card-title">Taux rebond</h3><p style="font-size:2.5rem;font-weight:700;color:var(--zinc-900);">42%</p><p class="card-text">-5% ce mois</p></div>
+                <div class="card"><h3 class="card-title">Durée session</h3><p style="font-size:2.5rem;font-weight:700;color:var(--zinc-900);">4:32</p><p class="card-text">+18s ce mois</p></div>
+                <div class="card"><h3 class="card-title">Pages/visite</h3><p style="font-size:2.5rem;font-weight:700;color:var(--zinc-900);">5.8</p><p class="card-text">+0.3 ce mois</p></div>
+                <div class="card"><h3 class="card-title">Nouveaux</h3><p style="font-size:2.5rem;font-weight:700;color:var(--zinc-900);">67%</p><p class="card-text">+3% ce mois</p></div>
+                <div class="card"><h3 class="card-title">Fidèles</h3><p style="font-size:2.5rem;font-weight:700;color:var(--zinc-900);">33%</p><p class="card-text">Stable</p></div>
+            </div>
+        </section>
+
+        <!-- Section 7: Cards avec Icônes (10 exemples) -->
+        <section class="section">
+            <h2 class="section-title">7. Cards avec Icônes (10 exemples)</h2>
+            <div class="grid">
+                <div class="card"><i class="si si-home" style="font-size:2rem;margin-bottom:1rem;"></i><h3 class="card-title">Accueil</h3><p class="card-text">Page d'accueil</p></div>
+                <div class="card"><i class="si si-user" style="font-size:2rem;margin-bottom:1rem;"></i><h3 class="card-title">Profil</h3><p class="card-text">Votre profil</p></div>
+                <div class="card"><i class="si si-settings" style="font-size:2rem;margin-bottom:1rem;"></i><h3 class="card-title">Paramètres</h3><p class="card-text">Configuration</p></div>
+                <div class="card"><i class="si si-mail" style="font-size:2rem;margin-bottom:1rem;"></i><h3 class="card-title">Messages</h3><p class="card-text">Vos messages</p></div>
+                <div class="card"><i class="si si-bell" style="font-size:2rem;margin-bottom:1rem;"></i><h3 class="card-title">Notifications</h3><p class="card-text">Alertes</p></div>
+                <div class="card"><i class="si si-heart" style="font-size:2rem;margin-bottom:1rem;"></i><h3 class="card-title">Favoris</h3><p class="card-text">Vos favoris</p></div>
+                <div class="card"><i class="si si-star" style="font-size:2rem;margin-bottom:1rem;"></i><h3 class="card-title">Premium</h3><p class="card-text">Compte premium</p></div>
+                <div class="card"><i class="si si-search" style="font-size:2rem;margin-bottom:1rem;"></i><h3 class="card-title">Recherche</h3><p class="card-text">Rechercher</p></div>
+                <div class="card"><i class="si si-download" style="font-size:2rem;margin-bottom:1rem;"></i><h3 class="card-title">Télécharger</h3><p class="card-text">Downloads</p></div>
+                <div class="card"><i class="si si-upload" style="font-size:2rem;margin-bottom:1rem;"></i><h3 class="card-title">Upload</h3><p class="card-text">Envoyer fichiers</p></div>
+            </div>
+        </section>
+
+        <!-- Section 8: Cards Horizontales (10 exemples) -->
+        <section class="section">
+            <h2 class="section-title">8. Cards Horizontales (10 exemples)</h2>
+            <div style="display:flex;flex-direction:column;gap:1rem;">
+                <div class="card" style="display:flex;gap:1rem;"><div class="card-img" style="width:150px;height:100px;margin:0;"></div><div><h3 class="card-title">Card Horizontale 1</h3><p class="card-text">Layout horizontal</p></div></div>
+                <div class="card" style="display:flex;gap:1rem;"><div class="card-img" style="width:150px;height:100px;margin:0;"></div><div><h3 class="card-title">Card Horizontale 2</h3><p class="card-text">Image à gauche</p></div></div>
+                <div class="card" style="display:flex;gap:1rem;"><div class="card-img" style="width:150px;height:100px;margin:0;"></div><div><h3 class="card-title">Card Horizontale 3</h3><p class="card-text">Contenu à droite</p></div></div>
+                <div class="card" style="display:flex;gap:1rem;"><div class="card-img" style="width:150px;height:100px;margin:0;"></div><div><h3 class="card-title">Card Horizontale 4</h3><p class="card-text">Flex layout</p></div></div>
+                <div class="card" style="display:flex;gap:1rem;"><div class="card-img" style="width:150px;height:100px;margin:0;"></div><div><h3 class="card-title">Card Horizontale 5</h3><p class="card-text">Gap 1rem</p></div></div>
+                <div class="card" style="display:flex;gap:1rem;"><div class="card-img" style="width:150px;height:100px;margin:0;"></div><div><h3 class="card-title">Card Horizontale 6</h3><p class="card-text">Responsive</p></div></div>
+                <div class="card" style="display:flex;gap:1rem;"><div class="card-img" style="width:150px;height:100px;margin:0;"></div><div><h3 class="card-title">Card Horizontale 7</h3><p class="card-text">Mobile friendly</p></div></div>
+                <div class="card" style="display:flex;gap:1rem;"><div class="card-img" style="width:150px;height:100px;margin:0;"></div><div><h3 class="card-title">Card Horizontale 8</h3><p class="card-text">Compact design</p></div></div>
+                <div class="card" style="display:flex;gap:1rem;"><div class="card-img" style="width:150px;height:100px;margin:0;"></div><div><h3 class="card-title">Card Horizontale 9</h3><p class="card-text">Modern style</p></div></div>
+                <div class="card" style="display:flex;gap:1rem;"><div class="card-img" style="width:150px;height:100px;margin:0;"></div><div><h3 class="card-title">Card Horizontale 10</h3><p class="card-text">Perfect alignment</p></div></div>
+            </div>
+        </section>
+
+        <!-- Résumé -->
+        <section class="section" style="background: linear-gradient(135deg, var(--zinc-100), var(--zinc-50));">
+            <h2 class="section-title">📊 Résumé</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;">
+                <div><h3 style="font-size:2.5rem;margin:0;">80+</h3><p style="margin:0;color:var(--zinc-600);">Exemples de cards</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">8</h3><p style="margin:0;color:var(--zinc-600);">Catégories</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">100%</h3><p style="margin:0;color:var(--zinc-600);">Responsive</p></div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+// Tables - SCSS
+@import '../variables';
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background: $white;
+    
+    th, td {
+        padding: $spacing-3 $spacing-4;
+        border-bottom: 1px solid $gray-200;
+    }
+    
+    th {
+        font-weight: $font-weight-semibold;
+        background-color: $gray-50;
+        color: $gray-900;
+        text-transform: uppercase;
+        font-size: $font-size-sm;
+        letter-spacing: 0.05em;
+    }
+    
+    tbody tr {
+        transition: background-color $transition-base;
+    }
+}
+
+// Table Variants
+.table-bordered {
+    border: 1px solid $gray-200;
+    
+    th, td {
+        border: 1px solid $gray-200;
+    }
+}
+
+.table-striped tbody tr:nth-child(even) {
+    background-color: $gray-50;
+}
+
+.table-hover tbody tr:hover {
+    background-color: $gray-100;
+    cursor: pointer;
+}
+
+// Table Sizes
+.table-sm {
+    th, td {
+        padding: $spacing-2 $spacing-3;
+        font-size: $font-size-sm;
+    }
+}
+
+.table-lg {
+    th, td {
+        padding: $spacing-4 $spacing-6;
+        font-size: $font-size-lg;
+    }
+}
+
+// Table Colors
+.table-primary { background-color: lighten($primary, 40%); }
+.table-success { background-color: lighten($success, 45%); }
+.table-danger { background-color: lighten($danger, 40%); }
+.table-warning { background-color: lighten($warning, 40%); }
+.table-info { background-color: lighten($info, 40%); }
+
+// Responsive Table
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+// Table Layout
+.table-fixed { table-layout: fixed; }
+.table-auto { table-layout: auto; }

@@ -1,0 +1,43 @@
+/* Navigation Complete - Simi UI - Tous les styles des exemples */
+
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background-color:white;box-shadow:0 1px 3px rgba(0,0,0,0.1);position:sticky;top:0;z-index:100}
+.navbar-brand{font-size:1.5rem;font-weight:700;color:#111827;text-decoration:none;display:flex;align-items:center;gap:0.5rem}
+.navbar-nav{display:flex;list-style:none;margin:0;padding:0;gap:1.5rem;align-items:center}
+.nav-item{display:inline-block}
+.nav-link{color:#6b7280;text-decoration:none;font-weight:500;padding:0.5rem 1rem;border-radius:6px;transition:all 0.2s;display:flex;align-items:center;gap:0.5rem}
+.nav-link:hover{color:#111827;background-color:#f3f4f6}
+.nav-link.active{color:#3b82f6;background-color:#dbeafe;font-weight:600}
+.navbar-dark{background-color:#111827}
+.navbar-dark .navbar-brand{color:white}
+.navbar-dark .nav-link{color:#d1d5db}
+.navbar-dark .nav-link:hover{color:white;background-color:#1f2937}
+.navbar-dark .nav-link.active{color:#3b82f6;background-color:#1e3a8a}
+.navbar-transparent{background:transparent;box-shadow:none}
+.navbar-glass{background:rgba(255,255,255,0.8);backdrop-filter:blur(10px)}
+.sidebar{width:250px;height:100vh;background:white;box-shadow:2px 0 5px rgba(0,0,0,0.1);padding:1.5rem;position:fixed;left:0;top:0;overflow-y:auto}
+.sidebar-header{padding:1rem 0 1.5rem;border-bottom:1px solid #e5e7eb;margin-bottom:1rem}
+.sidebar-title{font-size:1.25rem;font-weight:700;color:#111827}
+.sidebar-nav{list-style:none;padding:0;margin:0}
+.sidebar-nav .nav-link{display:block;padding:0.75rem 1rem;margin-bottom:0.5rem;border-radius:6px}
+.sidebar-nav .nav-link.active{background:#dbeafe;color:#3b82f6}
+.sidebar-dark{background:#111827;color:white}
+.sidebar-dark .sidebar-title{color:white}
+.sidebar-dark .nav-link{color:#d1d5db}
+.sidebar-dark .nav-link:hover{background:#1f2937;color:white}
+.sidebar-dark .nav-link.active{background:#1e3a8a;color:#3b82f6}
+.breadcrumb{display:flex;list-style:none;padding:0;margin:0;gap:0.5rem;align-items:center}
+.breadcrumb-item{color:#6b7280;font-size:0.875rem}
+.breadcrumb-item a{color:#6b7280;text-decoration:none}
+.breadcrumb-item a:hover{color:#111827}
+.breadcrumb-item.active{color:#111827;font-weight:500}
+.breadcrumb-item+.breadcrumb-item::before{content:"/";margin-right:0.5rem;color:#d1d5db}
+.tabs{display:flex;border-bottom:2px solid #e5e7eb;gap:0.5rem}
+.tab{padding:0.75rem 1.5rem;border:none;background:none;cursor:pointer;color:#6b7280;font-weight:500;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s}
+.tab:hover{color:#111827;background:#f9fafb}
+.tab.active{color:#3b82f6;border-bottom-color:#3b82f6}
+.pagination{display:flex;list-style:none;padding:0;margin:0;gap:0.5rem}
+.page-item{display:inline-block}
+.page-link{padding:0.5rem 0.75rem;border:1px solid #e5e7eb;border-radius:6px;color:#6b7280;text-decoration:none;transition:all 0.2s}
+.page-link:hover{background:#f3f4f6;color:#111827}
+.page-item.active .page-link{background:#3b82f6;color:white;border-color:#3b82f6}
+.page-item.disabled .page-link{opacity:0.5;cursor:not-allowed}

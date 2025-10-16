@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>Modals - 80+ Exemples - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <link rel="stylesheet" href="../../styles/modern-utilities.css">
+    <link rel="stylesheet" href="../../icons/simi-icons.css">
+    <style>
+        body { font-family: system-ui; background: var(--zinc-50); padding: 2rem; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .section { background: white; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .modal-demo { background: var(--zinc-100); padding: 2rem; border-radius: 12px; min-height: 200px; display: flex; align-items: center; justify-content: center; position: relative; }
+        .modal-box { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); max-width: 400px; width: 100%; }
+        .modal-header { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
+        .modal-body { color: var(--zinc-600); margin-bottom: 1rem; }
+        .modal-footer { display: flex; gap: 0.5rem; justify-content: flex-end; }
+        .btn { padding: 0.5rem 1rem; border-radius: 6px; border: none; cursor: pointer; font-weight: 500; }
+        .btn-primary { background: var(--zinc-900); color: white; }
+        .btn-secondary { background: var(--zinc-200); color: var(--zinc-900); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" style="color:var(--zinc-900);text-decoration:none;font-weight:600;margin-bottom:2rem;display:inline-block;">← Retour</a>
+        <h1 style="font-size:3rem;font-weight:700;margin-bottom:1rem;">Modals</h1>
+        <p style="font-size:1.2rem;color:var(--zinc-600);margin-bottom:3rem;">80+ exemples de modales</p>
+
+        <!-- Section 1: Tailles (10) -->
+        <section class="section">
+            <h2 class="section-title">1. Tailles de Modales (10 exemples)</h2>
+            <div class="grid">
+                <div class="modal-demo"><div class="modal-box" style="max-width:200px;"><div class="modal-header">Extra Small</div><div class="modal-body">Modal XS</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="max-width:300px;"><div class="modal-header">Small</div><div class="modal-body">Modal SM</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="max-width:400px;"><div class="modal-header">Medium</div><div class="modal-body">Modal MD (défaut)</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="max-width:500px;"><div class="modal-header">Large</div><div class="modal-body">Modal LG</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="max-width:600px;"><div class="modal-header">Extra Large</div><div class="modal-body">Modal XL</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="max-width:700px;"><div class="modal-header">2XL</div><div class="modal-body">Modal 2XL</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="max-width:90%;"><div class="modal-header">Full Width</div><div class="modal-body">Modal pleine largeur</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="max-width:250px;"><div class="modal-header">Compact</div><div class="modal-body">Modal compacte</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="max-width:450px;"><div class="modal-header">Standard</div><div class="modal-body">Taille standard</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="max-width:550px;"><div class="modal-header">Wide</div><div class="modal-body">Modal large</div></div></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Avec Header & Footer (10) -->
+        <section class="section">
+            <h2 class="section-title">2. Avec Header & Footer (10 exemples)</h2>
+            <div class="grid">
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Confirmation</div><div class="modal-body">Êtes-vous sûr ?</div><div class="modal-footer"><button class="btn btn-secondary">Annuler</button><button class="btn btn-primary">Confirmer</button></div></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Suppression</div><div class="modal-body">Supprimer cet élément ?</div><div class="modal-footer"><button class="btn btn-secondary">Non</button><button class="btn btn-primary">Oui</button></div></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Enregistrer</div><div class="modal-body">Sauvegarder les modifications ?</div><div class="modal-footer"><button class="btn btn-secondary">Ignorer</button><button class="btn btn-primary">Enregistrer</button></div></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Déconnexion</div><div class="modal-body">Se déconnecter maintenant ?</div><div class="modal-footer"><button class="btn btn-secondary">Rester</button><button class="btn btn-primary">Déconnexion</button></div></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Publier</div><div class="modal-body">Publier cet article ?</div><div class="modal-footer"><button class="btn btn-secondary">Brouillon</button><button class="btn btn-primary">Publier</button></div></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Partager</div><div class="modal-body">Partager ce contenu ?</div><div class="modal-footer"><button class="btn btn-secondary">Annuler</button><button class="btn btn-primary">Partager</button></div></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Télécharger</div><div class="modal-body">Télécharger le fichier ?</div><div class="modal-footer"><button class="btn btn-secondary">Non</button><button class="btn btn-primary">Télécharger</button></div></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Importer</div><div class="modal-body">Importer les données ?</div><div class="modal-footer"><button class="btn btn-secondary">Annuler</button><button class="btn btn-primary">Importer</button></div></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Exporter</div><div class="modal-body">Exporter en PDF ?</div><div class="modal-footer"><button class="btn btn-secondary">Non</button><button class="btn btn-primary">Exporter</button></div></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Archiver</div><div class="modal-body">Archiver ce projet ?</div><div class="modal-footer"><button class="btn btn-secondary">Annuler</button><button class="btn btn-primary">Archiver</button></div></div></div>
+            </div>
+        </section>
+
+        <!-- Section 3: Avec Icônes (10) -->
+        <section class="section">
+            <h2 class="section-title">3. Avec Icônes (10 exemples)</h2>
+            <div class="grid">
+                <div class="modal-demo"><div class="modal-box"><i class="si si-check" style="font-size:2rem;color:#10b981;margin-bottom:1rem;"></i><div class="modal-header">Succès</div><div class="modal-body">Opération réussie</div></div></div>
+                <div class="modal-demo"><div class="modal-box"><i class="si si-warning" style="font-size:2rem;color:#ef4444;margin-bottom:1rem;"></i><div class="modal-header">Erreur</div><div class="modal-body">Une erreur est survenue</div></div></div>
+                <div class="modal-demo"><div class="modal-box"><i class="si si-info" style="font-size:2rem;color:#3b82f6;margin-bottom:1rem;"></i><div class="modal-header">Information</div><div class="modal-body">Nouvelle mise à jour</div></div></div>
+                <div class="modal-demo"><div class="modal-box"><i class="si si-warning" style="font-size:2rem;color:#f59e0b;margin-bottom:1rem;"></i><div class="modal-header">Attention</div><div class="modal-body">Action irréversible</div></div></div>
+                <div class="modal-demo"><div class="modal-box"><i class="si si-mail" style="font-size:2rem;color:#3b82f6;margin-bottom:1rem;"></i><div class="modal-header">Message</div><div class="modal-body">Nouveau message reçu</div></div></div>
+                <div class="modal-demo"><div class="modal-box"><i class="si si-bell" style="font-size:2rem;color:#8b5cf6;margin-bottom:1rem;"></i><div class="modal-header">Notification</div><div class="modal-body">5 nouvelles notifications</div></div></div>
+                <div class="modal-demo"><div class="modal-box"><i class="si si-download" style="font-size:2rem;color:#10b981;margin-bottom:1rem;"></i><div class="modal-header">Téléchargement</div><div class="modal-body">Fichier prêt</div></div></div>
+                <div class="modal-demo"><div class="modal-box"><i class="si si-upload" style="font-size:2rem;color:#3b82f6;margin-bottom:1rem;"></i><div class="modal-header">Upload</div><div class="modal-body">Upload terminé</div></div></div>
+                <div class="modal-demo"><div class="modal-box"><i class="si si-star" style="font-size:2rem;color:#f59e0b;margin-bottom:1rem;"></i><div class="modal-header">Premium</div><div class="modal-body">Passer à Premium</div></div></div>
+                <div class="modal-demo"><div class="modal-box"><i class="si si-heart" style="font-size:2rem;color:#ec4899;margin-bottom:1rem;"></i><div class="modal-header">Favoris</div><div class="modal-body">Ajouté aux favoris</div></div></div>
+            </div>
+        </section>
+
+        <!-- Section 4: Positions (10) -->
+        <section class="section">
+            <h2 class="section-title">4. Positions (10 exemples)</h2>
+            <div class="grid">
+                <div class="modal-demo"><div class="modal-box" style="position:absolute;top:1rem;"><div class="modal-header">Top</div><div class="modal-body">Position haute</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="position:absolute;bottom:1rem;"><div class="modal-header">Bottom</div><div class="modal-body">Position basse</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="position:absolute;left:1rem;"><div class="modal-header">Left</div><div class="modal-body">Position gauche</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="position:absolute;right:1rem;"><div class="modal-header">Right</div><div class="modal-body">Position droite</div></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Center</div><div class="modal-body">Position centrée</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="position:absolute;top:1rem;left:1rem;"><div class="modal-header">Top Left</div><div class="modal-body">Coin haut gauche</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="position:absolute;top:1rem;right:1rem;"><div class="modal-header">Top Right</div><div class="modal-body">Coin haut droit</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="position:absolute;bottom:1rem;left:1rem;"><div class="modal-header">Bottom Left</div><div class="modal-body">Coin bas gauche</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="position:absolute;bottom:1rem;right:1rem;"><div class="modal-header">Bottom Right</div><div class="modal-body">Coin bas droit</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="margin-top:3rem;"><div class="modal-header">Offset Top</div><div class="modal-body">Décalé vers le haut</div></div></div>
+            </div>
+        </section>
+
+        <!-- Section 5: Avec Formulaires (10) -->
+        <section class="section">
+            <h2 class="section-title">5. Avec Formulaires (10 exemples)</h2>
+            <div class="grid">
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Connexion</div><input type="email" placeholder="Email" style="width:100%;padding:0.5rem;margin-bottom:0.5rem;border:1px solid var(--zinc-300);border-radius:6px;"><input type="password" placeholder="Mot de passe" style="width:100%;padding:0.5rem;margin-bottom:1rem;border:1px solid var(--zinc-300);border-radius:6px;"><button class="btn btn-primary" style="width:100%;">Se connecter</button></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Inscription</div><input type="text" placeholder="Nom" style="width:100%;padding:0.5rem;margin-bottom:0.5rem;border:1px solid var(--zinc-300);border-radius:6px;"><input type="email" placeholder="Email" style="width:100%;padding:0.5rem;margin-bottom:1rem;border:1px solid var(--zinc-300);border-radius:6px;"><button class="btn btn-primary" style="width:100%;">S'inscrire</button></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Commentaire</div><textarea placeholder="Votre commentaire..." style="width:100%;padding:0.5rem;margin-bottom:1rem;border:1px solid var(--zinc-300);border-radius:6px;" rows="3"></textarea><button class="btn btn-primary" style="width:100%;">Envoyer</button></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Recherche</div><input type="search" placeholder="Rechercher..." style="width:100%;padding:0.5rem;margin-bottom:1rem;border:1px solid var(--zinc-300);border-radius:6px;"><button class="btn btn-primary" style="width:100%;">Rechercher</button></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Mot de passe oublié</div><input type="email" placeholder="Votre email" style="width:100%;padding:0.5rem;margin-bottom:1rem;border:1px solid var(--zinc-300);border-radius:6px;"><button class="btn btn-primary" style="width:100%;">Réinitialiser</button></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Nouveau projet</div><input type="text" placeholder="Nom du projet" style="width:100%;padding:0.5rem;margin-bottom:0.5rem;border:1px solid var(--zinc-300);border-radius:6px;"><select style="width:100%;padding:0.5rem;margin-bottom:1rem;border:1px solid var(--zinc-300);border-radius:6px;"><option>Public</option><option>Privé</option></select><button class="btn btn-primary" style="width:100%;">Créer</button></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Inviter</div><input type="email" placeholder="Email de l'invité" style="width:100%;padding:0.5rem;margin-bottom:1rem;border:1px solid var(--zinc-300);border-radius:6px;"><button class="btn btn-primary" style="width:100%;">Envoyer invitation</button></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Feedback</div><textarea placeholder="Votre avis..." style="width:100%;padding:0.5rem;margin-bottom:1rem;border:1px solid var(--zinc-300);border-radius:6px;" rows="3"></textarea><button class="btn btn-primary" style="width:100%;">Envoyer</button></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Contact</div><input type="text" placeholder="Sujet" style="width:100%;padding:0.5rem;margin-bottom:0.5rem;border:1px solid var(--zinc-300);border-radius:6px;"><textarea placeholder="Message..." style="width:100%;padding:0.5rem;margin-bottom:1rem;border:1px solid var(--zinc-300);border-radius:6px;" rows="2"></textarea><button class="btn btn-primary" style="width:100%;">Envoyer</button></div></div>
+                <div class="modal-demo"><div class="modal-box"><div class="modal-header">Abonnement</div><input type="email" placeholder="Votre email" style="width:100%;padding:0.5rem;margin-bottom:1rem;border:1px solid var(--zinc-300);border-radius:6px;"><button class="btn btn-primary" style="width:100%;">S'abonner</button></div></div>
+            </div>
+        </section>
+
+        <!-- Section 6: Colorées (10) -->
+        <section class="section">
+            <h2 class="section-title">6. Modales Colorées (10 exemples)</h2>
+            <div class="grid">
+                <div class="modal-demo"><div class="modal-box" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);"><div class="modal-header">Blue Modal</div><div class="modal-body">Modal avec fond bleu</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0);"><div class="modal-header">Green Modal</div><div class="modal-body">Modal avec fond vert</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="background:linear-gradient(135deg,#fee2e2,#fecaca);"><div class="modal-header">Red Modal</div><div class="modal-body">Modal avec fond rouge</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="background:linear-gradient(135deg,#fef3c7,#fde68a);"><div class="modal-header">Yellow Modal</div><div class="modal-body">Modal avec fond jaune</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="background:linear-gradient(135deg,#e9d5ff,#d8b4fe);"><div class="modal-header">Purple Modal</div><div class="modal-body">Modal avec fond violet</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="background:linear-gradient(135deg,#fed7aa,#fdba74);"><div class="modal-header">Orange Modal</div><div class="modal-body">Modal avec fond orange</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="background:linear-gradient(135deg,#fbcfe8,#f9a8d4);"><div class="modal-header">Pink Modal</div><div class="modal-body">Modal avec fond rose</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="background:linear-gradient(135deg,#a5f3fc,#67e8f9);"><div class="modal-header">Cyan Modal</div><div class="modal-body">Modal avec fond cyan</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="background:linear-gradient(135deg,#f3f4f6,#e5e7eb);"><div class="modal-header">Gray Modal</div><div class="modal-body">Modal avec fond gris</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="background:linear-gradient(135deg,#fafafa,#e4e4e7);"><div class="modal-header">Zinc Modal</div><div class="modal-body">Modal avec fond zinc</div></div></div>
+            </div>
+        </section>
+
+        <!-- Section 7: Animations (10) -->
+        <section class="section">
+            <h2 class="section-title">7. Avec Animations (10 exemples)</h2>
+            <div class="grid">
+                <div class="modal-demo"><div class="modal-box animate-fade-in"><div class="modal-header">Fade In</div><div class="modal-body">Animation fade</div></div></div>
+                <div class="modal-demo"><div class="modal-box animate-slide-in"><div class="modal-header">Slide In</div><div class="modal-body">Animation slide</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="animation:scaleUp 0.3s;"><div class="modal-header">Scale Up</div><div class="modal-body">Animation scale</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="animation:bounce 1s;"><div class="modal-header">Bounce</div><div class="modal-body">Animation bounce</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="animation:fadeIn 0.5s;"><div class="modal-header">Quick Fade</div><div class="modal-body">Fade rapide</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="animation:slideIn 0.4s;"><div class="modal-header">Quick Slide</div><div class="modal-body">Slide rapide</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="animation:pulse 2s infinite;"><div class="modal-header">Pulse</div><div class="modal-body">Animation pulse</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="transform:translateY(-10px);transition:all 0.3s;"><div class="modal-header">Lift</div><div class="modal-body">Effet lift</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="animation:fadeIn 0.6s ease-out;"><div class="modal-header">Smooth</div><div class="modal-body">Animation douce</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="animation:slideIn 0.5s ease-in-out;"><div class="modal-header">Elastic</div><div class="modal-body">Animation élastique</div></div></div>
+            </div>
+        </section>
+
+        <!-- Section 8: Spéciales (10) -->
+        <section class="section">
+            <h2 class="section-title">8. Modales Spéciales (10 exemples)</h2>
+            <div class="grid">
+                <div class="modal-demo"><div class="modal-box" style="border-left:4px solid #3b82f6;"><div class="modal-header">Info Border</div><div class="modal-body">Avec bordure bleue</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="border-left:4px solid #10b981;"><div class="modal-header">Success Border</div><div class="modal-body">Avec bordure verte</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="border-left:4px solid #ef4444;"><div class="modal-header">Error Border</div><div class="modal-body">Avec bordure rouge</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="border:2px solid var(--zinc-300);"><div class="modal-header">Outlined</div><div class="modal-body">Modal avec bordure</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="box-shadow:0 0 20px rgba(59,130,246,0.3);"><div class="modal-header">Glow</div><div class="modal-body">Effet glow bleu</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="box-shadow:0 25px 50px rgba(0,0,0,0.25);"><div class="modal-header">Deep Shadow</div><div class="modal-body">Ombre profonde</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="border-radius:24px;"><div class="modal-header">Rounded</div><div class="modal-body">Coins très arrondis</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="border-radius:4px;"><div class="modal-header">Sharp</div><div class="modal-body">Coins peu arrondis</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="backdrop-filter:blur(10px);background:rgba(255,255,255,0.9);"><div class="modal-header">Blur</div><div class="modal-body">Effet blur</div></div></div>
+                <div class="modal-demo"><div class="modal-box" style="background:var(--zinc-900);color:white;"><div class="modal-header">Dark</div><div class="modal-body" style="color:var(--zinc-300);">Modal sombre</div></div></div>
+            </div>
+        </section>
+
+        <!-- Résumé -->
+        <section class="section" style="background:linear-gradient(135deg,var(--zinc-100),var(--zinc-50));">
+            <h2 class="section-title">📊 Résumé</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;">
+                <div><h3 style="font-size:2.5rem;margin:0;">80+</h3><p style="margin:0;">Exemples de modales</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">8</h3><p style="margin:0;">Catégories</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">✓</h3><p style="margin:0;">Animations</p></div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

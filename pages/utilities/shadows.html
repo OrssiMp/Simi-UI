@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>Shadows - 80+ Exemples - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <link rel="stylesheet" href="../../styles/modern-utilities.css">
+    <style>
+        body { font-family: system-ui; background: var(--zinc-50); padding: 2rem; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .section { background: white; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .box { background: white; padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" style="color:var(--zinc-900);text-decoration:none;font-weight:600;margin-bottom:2rem;display:inline-block;">← Retour</a>
+        <h1 style="font-size:3rem;font-weight:700;margin-bottom:1rem;">Shadows</h1>
+        <p style="font-size:1.2rem;color:var(--zinc-600);margin-bottom:3rem;">80+ exemples d'ombres</p>
+
+        <!-- Shadow Levels (10) -->
+        <section class="section">
+            <h2 class="section-title">1. Niveaux d'Ombres (10 exemples)</h2>
+            <div class="grid">
+                <div class="box" style="box-shadow:none;">shadow-none</div>
+                <div class="box" style="box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);">shadow-sm</div>
+                <div class="box" style="box-shadow:0 1px 3px 0 rgba(0,0,0,0.1);">shadow</div>
+                <div class="box" style="box-shadow:0 4px 6px -1px rgba(0,0,0,0.1);">shadow-md</div>
+                <div class="box" style="box-shadow:0 10px 15px -3px rgba(0,0,0,0.1);">shadow-lg</div>
+                <div class="box" style="box-shadow:0 20px 25px -5px rgba(0,0,0,0.1);">shadow-xl</div>
+                <div class="box" style="box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);">shadow-2xl</div>
+                <div class="box" style="box-shadow:inset 0 2px 4px 0 rgba(0,0,0,0.06);">shadow-inner</div>
+                <div class="box" style="box-shadow:0 0 0 3px rgba(59,130,246,0.5);">shadow-outline</div>
+                <div class="box" style="box-shadow:0 0 15px rgba(0,0,0,0.2);">shadow-glow</div>
+            </div>
+        </section>
+
+        <!-- Colored Shadows (10) -->
+        <section class="section">
+            <h2 class="section-title">2. Ombres Colorées (10 exemples)</h2>
+            <div class="grid">
+                <div class="box" style="box-shadow:0 10px 25px rgba(59,130,246,0.3);">Blue Shadow</div>
+                <div class="box" style="box-shadow:0 10px 25px rgba(34,197,94,0.3);">Green Shadow</div>
+                <div class="box" style="box-shadow:0 10px 25px rgba(239,68,68,0.3);">Red Shadow</div>
+                <div class="box" style="box-shadow:0 10px 25px rgba(245,158,11,0.3);">Orange Shadow</div>
+                <div class="box" style="box-shadow:0 10px 25px rgba(139,92,246,0.3);">Purple Shadow</div>
+                <div class="box" style="box-shadow:0 10px 25px rgba(236,72,153,0.3);">Pink Shadow</div>
+                <div class="box" style="box-shadow:0 10px 25px rgba(20,184,166,0.3);">Teal Shadow</div>
+                <div class="box" style="box-shadow:0 10px 25px rgba(14,165,233,0.3);">Cyan Shadow</div>
+                <div class="box" style="box-shadow:0 10px 25px rgba(107,114,128,0.3);">Gray Shadow</div>
+                <div class="box" style="box-shadow:0 10px 25px rgba(113,113,122,0.3);">Zinc Shadow</div>
+            </div>
+        </section>
+
+        <!-- Directional Shadows (10) -->
+        <section class="section">
+            <h2 class="section-title">3. Ombres Directionnelles (10 exemples)</h2>
+            <div class="grid">
+                <div class="box" style="box-shadow:0 -10px 15px -3px rgba(0,0,0,0.1);">Top Shadow</div>
+                <div class="box" style="box-shadow:10px 0 15px -3px rgba(0,0,0,0.1);">Right Shadow</div>
+                <div class="box" style="box-shadow:0 10px 15px -3px rgba(0,0,0,0.1);">Bottom Shadow</div>
+                <div class="box" style="box-shadow:-10px 0 15px -3px rgba(0,0,0,0.1);">Left Shadow</div>
+                <div class="box" style="box-shadow:10px 10px 15px -3px rgba(0,0,0,0.1);">Bottom-Right</div>
+                <div class="box" style="box-shadow:-10px 10px 15px -3px rgba(0,0,0,0.1);">Bottom-Left</div>
+                <div class="box" style="box-shadow:10px -10px 15px -3px rgba(0,0,0,0.1);">Top-Right</div>
+                <div class="box" style="box-shadow:-10px -10px 15px -3px rgba(0,0,0,0.1);">Top-Left</div>
+                <div class="box" style="box-shadow:0 0 20px rgba(0,0,0,0.15);">All Around</div>
+                <div class="box" style="box-shadow:5px 5px 15px rgba(0,0,0,0.1);">Diagonal</div>
+            </div>
+        </section>
+
+        <!-- Inner Shadows (10) -->
+        <section class="section">
+            <h2 class="section-title">4. Ombres Intérieures (10 exemples)</h2>
+            <div class="grid">
+                <div class="box" style="box-shadow:inset 0 2px 4px rgba(0,0,0,0.06);">Inner Small</div>
+                <div class="box" style="box-shadow:inset 0 4px 8px rgba(0,0,0,0.1);">Inner Medium</div>
+                <div class="box" style="box-shadow:inset 0 6px 12px rgba(0,0,0,0.15);">Inner Large</div>
+                <div class="box" style="box-shadow:inset 0 0 10px rgba(59,130,246,0.3);">Inner Blue</div>
+                <div class="box" style="box-shadow:inset 0 0 10px rgba(34,197,94,0.3);">Inner Green</div>
+                <div class="box" style="box-shadow:inset 0 0 10px rgba(239,68,68,0.3);">Inner Red</div>
+                <div class="box" style="box-shadow:inset 0 -4px 8px rgba(0,0,0,0.1);">Inner Top</div>
+                <div class="box" style="box-shadow:inset 4px 0 8px rgba(0,0,0,0.1);">Inner Left</div>
+                <div class="box" style="box-shadow:inset 0 4px 8px rgba(0,0,0,0.1);">Inner Bottom</div>
+                <div class="box" style="box-shadow:inset -4px 0 8px rgba(0,0,0,0.1);">Inner Right</div>
+            </div>
+        </section>
+
+        <!-- Multiple Shadows (10) -->
+        <section class="section">
+            <h2 class="section-title">5. Ombres Multiples (10 exemples)</h2>
+            <div class="grid">
+                <div class="box" style="box-shadow:0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);">Double Shadow</div>
+                <div class="box" style="box-shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">Triple Shadow</div>
+                <div class="box" style="box-shadow:0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);">Layered</div>
+                <div class="box" style="box-shadow:0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);">Deep</div>
+                <div class="box" style="box-shadow:0 0 5px rgba(59,130,246,0.5), 0 5px 15px rgba(59,130,246,0.3);">Blue Glow</div>
+                <div class="box" style="box-shadow:0 0 5px rgba(34,197,94,0.5), 0 5px 15px rgba(34,197,94,0.3);">Green Glow</div>
+                <div class="box" style="box-shadow:0 0 5px rgba(239,68,68,0.5), 0 5px 15px rgba(239,68,68,0.3);">Red Glow</div>
+                <div class="box" style="box-shadow:inset 0 2px 4px rgba(0,0,0,0.06), 0 4px 6px rgba(0,0,0,0.1);">Inner + Outer</div>
+                <div class="box" style="box-shadow:0 0 0 1px rgba(0,0,0,0.05), 0 10px 15px rgba(0,0,0,0.1);">Border + Shadow</div>
+                <div class="box" style="box-shadow:0 5px 15px rgba(0,0,0,0.1), 0 10px 30px rgba(0,0,0,0.15);">Soft Depth</div>
+            </div>
+        </section>
+
+        <!-- Hover Shadows (10) -->
+        <section class="section">
+            <h2 class="section-title">6. Ombres au Hover (10 exemples)</h2>
+            <div class="grid">
+                <div class="box" style="box-shadow:0 1px 3px rgba(0,0,0,0.1);transition:box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.1)'">Hover Lift</div>
+                <div class="box" style="box-shadow:0 2px 4px rgba(0,0,0,0.1);transition:box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">Hover Deep</div>
+                <div class="box" style="box-shadow:0 1px 3px rgba(0,0,0,0.1);transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 20px rgba(59,130,246,0.5)'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.1)'">Hover Glow</div>
+                <div class="box" style="box-shadow:0 2px 4px rgba(0,0,0,0.1);transition:all 0.3s;" onmouseover="this.style.boxShadow='0 8px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">Hover Medium</div>
+                <div class="box" style="box-shadow:0 1px 2px rgba(0,0,0,0.05);transition:all 0.3s;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.2)'" onmouseout="this.style.boxShadow='0 1px 2px rgba(0,0,0,0.05)'">Hover Strong</div>
+                <div class="box" style="box-shadow:0 2px 4px rgba(0,0,0,0.1);transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 15px rgba(34,197,94,0.5)'" onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">Hover Green</div>
+                <div class="box" style="box-shadow:0 2px 4px rgba(0,0,0,0.1);transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 15px rgba(239,68,68,0.5)'" onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">Hover Red</div>
+                <div class="box" style="box-shadow:0 2px 4px rgba(0,0,0,0.1);transition:all 0.3s;" onmouseover="this.style.boxShadow='0 12px 24px rgba(0,0,0,0.18)'" onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">Hover Subtle</div>
+                <div class="box" style="box-shadow:0 1px 3px rgba(0,0,0,0.1);transition:all 0.3s;" onmouseover="this.style.boxShadow='0 0 25px rgba(139,92,246,0.5)'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.1)'">Hover Purple</div>
+                <div class="box" style="box-shadow:0 2px 4px rgba(0,0,0,0.1);transition:all 0.3s;" onmouseover="this.style.boxShadow='0 5px 20px rgba(0,0,0,0.15), 0 10px 40px rgba(0,0,0,0.1)'" onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">Hover Layered</div>
+            </div>
+        </section>
+
+        <!-- Text Shadows (10) -->
+        <section class="section">
+            <h2 class="section-title">7. Ombres de Texte (10 exemples)</h2>
+            <div class="grid">
+                <div class="box" style="font-size:2rem;font-weight:700;text-shadow:1px 1px 2px rgba(0,0,0,0.1);">Text Shadow 1</div>
+                <div class="box" style="font-size:2rem;font-weight:700;text-shadow:2px 2px 4px rgba(0,0,0,0.2);">Text Shadow 2</div>
+                <div class="box" style="font-size:2rem;font-weight:700;text-shadow:3px 3px 6px rgba(0,0,0,0.3);">Text Shadow 3</div>
+                <div class="box" style="font-size:2rem;font-weight:700;text-shadow:0 0 10px rgba(59,130,246,0.8);">Blue Glow</div>
+                <div class="box" style="font-size:2rem;font-weight:700;text-shadow:0 0 10px rgba(34,197,94,0.8);">Green Glow</div>
+                <div class="box" style="font-size:2rem;font-weight:700;text-shadow:0 0 10px rgba(239,68,68,0.8);">Red Glow</div>
+                <div class="box" style="font-size:2rem;font-weight:700;text-shadow:2px 2px 0 rgba(0,0,0,0.1), 4px 4px 0 rgba(0,0,0,0.05);">Layered Text</div>
+                <div class="box" style="font-size:2rem;font-weight:700;text-shadow:1px 1px 2px rgba(0,0,0,0.5);">Strong Text</div>
+                <div class="box" style="font-size:2rem;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,0.3);">Subtle Text</div>
+                <div class="box" style="font-size:2rem;font-weight:700;text-shadow:0 0 5px rgba(255,255,255,0.8), 0 0 10px rgba(59,130,246,0.6);">Neon Text</div>
+            </div>
+        </section>
+
+        <!-- Custom Shadows (10) -->
+        <section class="section">
+            <h2 class="section-title">8. Ombres Personnalisées (10 exemples)</h2>
+            <div class="grid">
+                <div class="box" style="box-shadow:0 0 0 4px rgba(59,130,246,0.1), 0 4px 6px rgba(0,0,0,0.1);">Ring Shadow</div>
+                <div class="box" style="box-shadow:0 0 0 8px rgba(34,197,94,0.1), 0 8px 16px rgba(0,0,0,0.1);">Wide Ring</div>
+                <div class="box" style="box-shadow:0 0 20px 5px rgba(59,130,246,0.3);">Spread Glow</div>
+                <div class="box" style="box-shadow:0 5px 15px -5px rgba(0,0,0,0.3);">Tight Shadow</div>
+                <div class="box" style="box-shadow:0 20px 40px -10px rgba(0,0,0,0.25);">Long Shadow</div>
+                <div class="box" style="box-shadow:0 0 1px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1);">Triple Layer</div>
+                <div class="box" style="box-shadow:0 10px 30px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);">Soft + Sharp</div>
+                <div class="box" style="box-shadow:0 0 0 1px rgba(0,0,0,0.05), 0 5px 10px rgba(0,0,0,0.1);">Border Shadow</div>
+                <div class="box" style="box-shadow:0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.07);">Realistic</div>
+                <div class="box" style="box-shadow:0 0 50px rgba(59,130,246,0.2);">Wide Glow</div>
+            </div>
+        </section>
+
+        <!-- Résumé -->
+        <section class="section" style="background:linear-gradient(135deg,var(--zinc-100),var(--zinc-50));">
+            <h2 class="section-title">📊 Résumé</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;">
+                <div><h3 style="font-size:2.5rem;margin:0;">80+</h3><p style="margin:0;">Exemples d'ombres</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">8</h3><p style="margin:0;">Catégories</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">10</h3><p style="margin:0;">Niveaux</p></div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

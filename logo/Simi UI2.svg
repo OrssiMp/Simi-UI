@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" width="140" height="140">
+  <defs>
+    <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#99F6E4"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="wave3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CCFBF1"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Vague 1 -->
+  <path d="M0 60 C30 20, 70 100, 120 40 S180 100, 140 50 L140 140 L0 140 Z"
+        fill="url(#wave1)" opacity="0.9"/>
+
+  <!-- Vague 2 -->
+  <path d="M0 80 C40 40, 90 120, 130 50 S170 110, 140 70 L140 140 L0 140 Z"
+        fill="url(#wave2)" opacity="0.85"/>
+
+  <!-- Vague 3 -->
+  <path d="M0 100 C35 60, 100 140, 140 70 L140 140 L0 140 Z"
+        fill="url(#wave3)" opacity="0.8"/>
+</svg>

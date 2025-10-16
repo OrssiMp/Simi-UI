@@ -1,0 +1,114 @@
+// Navigation - SCSS
+@import '../variables';
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-4 $spacing-8;
+    background-color: $white;
+    box-shadow: $shadow;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-brand {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $gray-900;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: $spacing-6;
+    align-items: center;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-link {
+    color: $gray-600;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    padding: $spacing-2 $spacing-4;
+    border-radius: $radius;
+    transition: all $transition-base;
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    
+    &:hover {
+        color: $gray-900;
+        background-color: $gray-100;
+    }
+    
+    &.active {
+        color: $primary;
+        background-color: lighten($primary, 40%);
+        font-weight: $font-weight-semibold;
+    }
+}
+
+// Navbar Dark
+.navbar-dark {
+    background-color: $gray-900;
+    
+    .navbar-brand {
+        color: $white;
+    }
+    
+    .nav-link {
+        color: $gray-300;
+        
+        &:hover {
+            color: $white;
+            background-color: $gray-800;
+        }
+        
+        &.active {
+            color: $primary;
+            background-color: darken($primary, 35%);
+        }
+    }
+}
+
+// Sidebar
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: $white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: $spacing-6;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    .nav-link {
+        display: block;
+        padding: $spacing-3 $spacing-4;
+        margin-bottom: $spacing-2;
+        border-radius: $radius;
+        
+        &.active {
+            background: lighten($primary, 40%);
+            color: $primary;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+/* Cards - Simi UI */
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-img-top {
+    border-radius: 12px 12px 0 0;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.card-subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: #374151;
+    line-height: 1.6;
+}
+
+/* Card Variants */
+.card-primary { border-left: 4px solid #3b82f6; }
+.card-success { border-left: 4px solid #10b981; }
+.card-danger { border-left: 4px solid #ef4444; }
+.card-warning { border-left: 4px solid #f59e0b; }
+
+/* Card Sizes */
+.card-sm { max-width: 300px; }
+.card-md { max-width: 400px; }
+.card-lg { max-width: 600px; }
+
+/* Horizontal Card */
+.card-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-horizontal .card-img {
+    width: 200px;
+    object-fit: cover;
+}
+
+/* Card Group */
+.card-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="waveR1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="waveR2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#99F6E4"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="waveR3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CCFBF1"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cercle avec contour -->
+  <circle cx="80" cy="80" r="75" fill="#fff" stroke="#e5e7eb" stroke-width="4" />
+
+  <!-- Vagues coupées par le cercle -->
+  <clipPath id="circleClip">
+    <circle cx="80" cy="80" r="75"/>
+  </clipPath>
+
+  <g clip-path="url(#circleClip)">
+    <path d="M0 70 C30 30, 80 110, 140 50 S200 110, 160 80 L160 160 L0 160 Z"
+          fill="url(#waveR1)" opacity="0.9"/>
+    <path d="M0 90 C40 50, 100 130, 150 70 S200 140, 160 100 L160 160 L0 160 Z"
+          fill="url(#waveR2)" opacity="0.85"/>
+    <path d="M0 110 C50 70, 120 150, 160 90 L160 160 L0 160 Z"
+          fill="url(#waveR3)" opacity="0.8"/>
+  </g>
+</svg>

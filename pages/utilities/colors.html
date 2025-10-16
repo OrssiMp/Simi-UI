@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Couleurs - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 2rem;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .page-description {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 3rem;
+        }
+        
+        .color-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .color-card {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .color-swatch {
+            height: 120px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .color-swatch:hover::after {
+            content: 'Cliquer pour copier';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .color-info {
+            padding: 1rem;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .color-value {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" class="back-link">← Retour à l'accueil</a>
+    
+    <h1 class="page-title">Palette de Couleurs</h1>
+    <p class="page-description">
+        Explorez toutes les couleurs disponibles dans Simi UI, basées sur Bootstrap 5.3.7 et Tailwind CSS 3.4.17.
+        Cliquez sur une couleur pour copier son code hexadécimal.
+    </p>
+    
+    <!-- Couleurs Bootstrap principales -->
+    <section class="color-section">
+        <h2 class="section-title">Couleurs Bootstrap Principales</h2>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #0d6efd;" onclick="copyColor('#0d6efd', 'Primary')"></div>
+                <div class="color-info">
+                    <div class="color-name">Primary</div>
+                    <div class="color-value">#0d6efd</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #6c757d;" onclick="copyColor('#6c757d', 'Secondary')"></div>
+                <div class="color-info">
+                    <div class="color-name">Secondary</div>
+                    <div class="color-value">#6c757d</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #198754;" onclick="copyColor('#198754', 'Success')"></div>
+                <div class="color-info">
+                    <div class="color-name">Success</div>
+                    <div class="color-value">#198754</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #dc3545;" onclick="copyColor('#dc3545', 'Danger')"></div>
+                <div class="color-info">
+                    <div class="color-name">Danger</div>
+                    <div class="color-value">#dc3545</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #ffc107;" onclick="copyColor('#ffc107', 'Warning')"></div>
+                <div class="color-info">
+                    <div class="color-name">Warning</div>
+                    <div class="color-value">#ffc107</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #0dcaf0;" onclick="copyColor('#0dcaf0', 'Info')"></div>
+                <div class="color-info">
+                    <div class="color-name">Info</div>
+                    <div class="color-value">#0dcaf0</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Nuances de gris -->
+    <section class="color-section">
+        <h2 class="section-title">Nuances de Gris</h2>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #f8f9fa;" onclick="copyColor('#f8f9fa', 'Gray 100')"></div>
+                <div class="color-info">
+                    <div class="color-name">Gray 100</div>
+                    <div class="color-value">#f8f9fa</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #e9ecef;" onclick="copyColor('#e9ecef', 'Gray 200')"></div>
+                <div class="color-info">
+                    <div class="color-name">Gray 200</div>
+                    <div class="color-value">#e9ecef</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #dee2e6;" onclick="copyColor('#dee2e6', 'Gray 300')"></div>
+                <div class="color-info">
+                    <div class="color-name">Gray 300</div>
+                    <div class="color-value">#dee2e6</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #ced4da;" onclick="copyColor('#ced4da', 'Gray 400')"></div>
+                <div class="color-info">
+                    <div class="color-name">Gray 400</div>
+                    <div class="color-value">#ced4da</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #adb5bd;" onclick="copyColor('#adb5bd', 'Gray 500')"></div>
+                <div class="color-info">
+                    <div class="color-name">Gray 500</div>
+                    <div class="color-value">#adb5bd</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #6c757d;" onclick="copyColor('#6c757d', 'Gray 600')"></div>
+                <div class="color-info">
+                    <div class="color-name">Gray 600</div>
+                    <div class="color-value">#6c757d</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #495057;" onclick="copyColor('#495057', 'Gray 700')"></div>
+                <div class="color-info">
+                    <div class="color-name">Gray 700</div>
+                    <div class="color-value">#495057</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #343a40;" onclick="copyColor('#343a40', 'Gray 800')"></div>
+                <div class="color-info">
+                    <div class="color-name">Gray 800</div>
+                    <div class="color-value">#343a40</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #212529;" onclick="copyColor('#212529', 'Gray 900')"></div>
+                <div class="color-info">
+                    <div class="color-name">Gray 900</div>
+                    <div class="color-value">#212529</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Couleurs étendues -->
+    <section class="color-section">
+        <h2 class="section-title">Couleurs Étendues</h2>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #6610f2;" onclick="copyColor('#6610f2', 'Indigo')"></div>
+                <div class="color-info">
+                    <div class="color-name">Indigo</div>
+                    <div class="color-value">#6610f2</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #6f42c1;" onclick="copyColor('#6f42c1', 'Purple')"></div>
+                <div class="color-info">
+                    <div class="color-name">Purple</div>
+                    <div class="color-value">#6f42c1</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #d63384;" onclick="copyColor('#d63384', 'Pink')"></div>
+                <div class="color-info">
+                    <div class="color-name">Pink</div>
+                    <div class="color-value">#d63384</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #fd7e14;" onclick="copyColor('#fd7e14', 'Orange')"></div>
+                <div class="color-info">
+                    <div class="color-name">Orange</div>
+                    <div class="color-value">#fd7e14</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #20c997;" onclick="copyColor('#20c997', 'Teal')"></div>
+                <div class="color-info">
+                    <div class="color-name">Teal</div>
+                    <div class="color-value">#20c997</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Couleurs Tailwind populaires -->
+    <section class="color-section">
+        <h2 class="section-title">Couleurs Tailwind (Exemples)</h2>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #3b82f6;" onclick="copyColor('#3b82f6', 'Blue 500')"></div>
+                <div class="color-info">
+                    <div class="color-name">Blue 500</div>
+                    <div class="color-value">#3b82f6</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #10b981;" onclick="copyColor('#10b981', 'Emerald 500')"></div>
+                <div class="color-info">
+                    <div class="color-name">Emerald 500</div>
+                    <div class="color-value">#10b981</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #ef4444;" onclick="copyColor('#ef4444', 'Red 500')"></div>
+                <div class="color-info">
+                    <div class="color-name">Red 500</div>
+                    <div class="color-value">#ef4444</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #8b5cf6;" onclick="copyColor('#8b5cf6', 'Violet 500')"></div>
+                <div class="color-info">
+                    <div class="color-name">Violet 500</div>
+                    <div class="color-value">#8b5cf6</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #f59e0b;" onclick="copyColor('#f59e0b', 'Amber 500')"></div>
+                <div class="color-info">
+                    <div class="color-name">Amber 500</div>
+                    <div class="color-value">#f59e0b</div>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-swatch" style="background-color: #06b6d4;" onclick="copyColor('#06b6d4', 'Cyan 500')"></div>
+                <div class="color-info">
+                    <div class="color-name">Cyan 500</div>
+                    <div class="color-value">#06b6d4</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="../../js/similar.bundle.js"></script>
+    <script>
+        function copyColor(hex, name) {
+            SimiUI.copyToClipboard(hex);
+            SimiUI.showToast(`${name} (${hex}) copié!`, 'success', 2000);
+        }
+    </script>
+</body>
+</html>

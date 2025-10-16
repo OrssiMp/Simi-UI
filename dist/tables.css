@@ -1,0 +1,75 @@
+/* Tables - Simi UI */
+
+/* Base Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table th {
+    font-weight: 600;
+    background-color: #f9fafb;
+    color: #111827;
+}
+
+/* Table Variants */
+.table-bordered {
+    border: 1px solid #e5e7eb;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #e5e7eb;
+}
+
+.table-striped tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f3f4f6;
+    cursor: pointer;
+}
+
+/* Table Sizes */
+.table-sm th,
+.table-sm td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.table-lg th,
+.table-lg td {
+    padding: 1rem 1.5rem;
+    font-size: 1.125rem;
+}
+
+/* Table Colors */
+.table-primary { background-color: #dbeafe; }
+.table-success { background-color: #dcfce7; }
+.table-danger { background-color: #fee2e2; }
+.table-warning { background-color: #fef3c7; }
+.table-info { background-color: #e0f2fe; }
+
+/* Responsive Table */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Table Fixed Layout */
+.table-fixed {
+    table-layout: fixed;
+}
+
+/* Table Auto Layout */
+.table-auto {
+    table-layout: auto;
+}

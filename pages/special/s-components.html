@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composants -s- - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/simi-custom/simi-custom-components.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 2rem;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .page-description {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 3rem;
+        }
+        
+        .component-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .demo-area {
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Composants -s- spéciaux */
+        .-s-card-animated {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .-s-card-animated:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+        }
+        
+        .-s-btn-gradient {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .-s-btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transition: left 0.3s;
+        }
+        
+        .-s-btn-gradient:hover::before {
+            left: 0;
+        }
+        
+        .-s-btn-gradient span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .-s-badge-pulse {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #0d6efd;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
+            }
+        }
+        
+        .-s-input-glow {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .-s-input-glow:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2),
+                        0 0 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .-s-progress-animated {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .-s-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+            background-size: 200% 100%;
+            animation: progressShine 2s linear infinite;
+            border-radius: 10px;
+        }
+        
+        @keyframes progressShine {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+        
+        .-s-alert-modern {
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: slideInRight 0.3s ease;
+        }
+        
+        .-s-alert-success {
+            border-left-color: #198754;
+        }
+        
+        .-s-alert-warning {
+            border-left-color: #ffc107;
+        }
+        
+        .-s-alert-danger {
+            border-left-color: #dc3545;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .-s-tooltip-custom {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+        
+        .-s-tooltip-text {
+            visibility: hidden;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: all 0.3s;
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+        
+        .-s-tooltip-custom:hover .-s-tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .-s-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 4px;
+        }
+        
+        @keyframes skeleton-loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+        
+        .-s-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: #e7f3ff;
+            color: #0066cc;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .-s-tag:hover {
+            background: #cce5ff;
+            transform: scale(1.05);
+        }
+        
+        .-s-tag-close {
+            cursor: pointer;
+            font-weight: bold;
+            opacity: 0.7;
+        }
+        
+        .-s-tag-close:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" class="back-link">← Retour à l'accueil</a>
+    
+    <h1 class="page-title">Composants Spéciaux -s-</h1>
+    <p class="page-description">
+        Collection de composants avancés avec le préfixe <strong>-s-</strong> offrant des animations 
+        et des effets visuels modernes pour des interfaces exceptionnelles.
+    </p>
+    
+    <!-- Carte animée -->
+    <section class="component-section">
+        <h2 class="section-title">-s-card-animated</h2>
+        <p>Carte avec animation au survol (lift + scale)</p>
+        <div class="demo-area">
+            <div class="-s-card-animated" style="max-width: 300px;">
+                <h3 style="margin-bottom: 0.5rem;">Carte Animée</h3>
+                <p style="color: #6c757d; margin: 0;">Survolez pour voir l'animation</p>
+            </div>
+        </div>
+        <pre style="background: #282c34; color: #abb2bf; padding: 1rem; border-radius: 8px; overflow-x: auto;">&lt;div class="-s-card-animated"&gt;
+  &lt;h3&gt;Carte Animée&lt;/h3&gt;
+  &lt;p&gt;Contenu de la carte&lt;/p&gt;
+&lt;/div&gt;</pre>
+    </section>
+    
+    <!-- Bouton gradient -->
+    <section class="component-section">
+        <h2 class="section-title">-s-btn-gradient</h2>
+        <p>Bouton avec dégradé et effet de glissement au survol</p>
+        <div class="demo-area">
+            <button class="-s-btn-gradient">
+                <span>Bouton Gradient</span>
+            </button>
+        </div>
+        <pre style="background: #282c34; color: #abb2bf; padding: 1rem; border-radius: 8px; overflow-x: auto;">&lt;button class="-s-btn-gradient"&gt;
+  &lt;span&gt;Bouton Gradient&lt;/span&gt;
+&lt;/button&gt;</pre>
+    </section>
+    
+    <!-- Badge pulse -->
+    <section class="component-section">
+        <h2 class="section-title">-s-badge-pulse</h2>
+        <p>Badge avec animation de pulsation</p>
+        <div class="demo-area">
+            <span class="-s-badge-pulse">Nouveau</span>
+            <span class="-s-badge-pulse" style="background: #198754; margin-left: 1rem;">En ligne</span>
+            <span class="-s-badge-pulse" style="background: #dc3545; margin-left: 1rem;">Important</span>
+        </div>
+        <pre style="background: #282c34; color: #abb2bf; padding: 1rem; border-radius: 8px; overflow-x: auto;">&lt;span class="-s-badge-pulse"&gt;Nouveau&lt;/span&gt;</pre>
+    </section>
+    
+    <!-- Input glow -->
+    <section class="component-section">
+        <h2 class="section-title">-s-input-glow</h2>
+        <p>Input avec effet de lueur au focus</p>
+        <div class="demo-area">
+            <input type="text" class="-s-input-glow" placeholder="Cliquez pour voir l'effet...">
+        </div>
+        <pre style="background: #282c34; color: #abb2bf; padding: 1rem; border-radius: 8px; overflow-x: auto;">&lt;input type="text" class="-s-input-glow" placeholder="Texte..."&gt;</pre>
+    </section>
+    
+    <!-- Progress animée -->
+    <section class="component-section">
+        <h2 class="section-title">-s-progress-animated</h2>
+        <p>Barre de progression avec animation de brillance</p>
+        <div class="demo-area">
+            <div class="-s-progress-animated">
+                <div class="-s-progress-bar" style="width: 70%;"></div>
+            </div>
+        </div>
+        <pre style="background: #282c34; color: #abb2bf; padding: 1rem; border-radius: 8px; overflow-x: auto;">&lt;div class="-s-progress-animated"&gt;
+  &lt;div class="-s-progress-bar" style="width: 70%;"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+    </section>
+    
+    <!-- Alertes modernes -->
+    <section class="component-section">
+        <h2 class="section-title">-s-alert-modern</h2>
+        <p>Alertes avec design moderne et animations</p>
+        <div class="demo-area">
+            <div class="-s-alert-modern -s-alert-success" style="margin-bottom: 1rem;">
+                <span style="font-size: 1.5rem;">✓</span>
+                <span>Opération réussie avec succès!</span>
+            </div>
+            <div class="-s-alert-modern -s-alert-warning" style="margin-bottom: 1rem;">
+                <span style="font-size: 1.5rem;">⚠</span>
+                <span>Attention, action requise!</span>
+            </div>
+            <div class="-s-alert-modern -s-alert-danger">
+                <span style="font-size: 1.5rem;">✕</span>
+                <span>Erreur lors de l'opération!</span>
+            </div>
+        </div>
+        <pre style="background: #282c34; color: #abb2bf; padding: 1rem; border-radius: 8px; overflow-x: auto;">&lt;div class="-s-alert-modern -s-alert-success"&gt;
+  &lt;span&gt;✓&lt;/span&gt;
+  &lt;span&gt;Message de succès&lt;/span&gt;
+&lt;/div&gt;</pre>
+    </section>
+    
+    <!-- Tooltip custom -->
+    <section class="component-section">
+        <h2 class="section-title">-s-tooltip-custom</h2>
+        <p>Tooltip avec dégradé personnalisé</p>
+        <div class="demo-area">
+            <div class="-s-tooltip-custom">
+                Survolez-moi
+                <span class="-s-tooltip-text">Tooltip avec dégradé!</span>
+            </div>
+        </div>
+        <pre style="background: #282c34; color: #abb2bf; padding: 1rem; border-radius: 8px; overflow-x: auto;">&lt;div class="-s-tooltip-custom"&gt;
+  Survolez-moi
+  &lt;span class="-s-tooltip-text"&gt;Tooltip!&lt;/span&gt;
+&lt;/div&gt;</pre>
+    </section>
+    
+    <!-- Skeleton loader -->
+    <section class="component-section">
+        <h2 class="section-title">-s-skeleton</h2>
+        <p>Skeleton loader pour chargement de contenu</p>
+        <div class="demo-area">
+            <div class="-s-skeleton" style="height: 20px; width: 80%; margin-bottom: 1rem;"></div>
+            <div class="-s-skeleton" style="height: 20px; width: 60%; margin-bottom: 1rem;"></div>
+            <div class="-s-skeleton" style="height: 100px; width: 100%;"></div>
+        </div>
+        <pre style="background: #282c34; color: #abb2bf; padding: 1rem; border-radius: 8px; overflow-x: auto;">&lt;div class="-s-skeleton" style="height: 20px; width: 80%;"&gt;&lt;/div&gt;</pre>
+    </section>
+    
+    <!-- Tags -->
+    <section class="component-section">
+        <h2 class="section-title">-s-tag</h2>
+        <p>Tags interactifs avec bouton de fermeture</p>
+        <div class="demo-area">
+            <span class="-s-tag">
+                JavaScript
+                <span class="-s-tag-close" onclick="this.parentElement.remove()">×</span>
+            </span>
+            <span class="-s-tag" style="background: #e8f5e9; color: #2e7d32;">
+                CSS
+                <span class="-s-tag-close" onclick="this.parentElement.remove()">×</span>
+            </span>
+            <span class="-s-tag" style="background: #fff3e0; color: #e65100;">
+                HTML
+                <span class="-s-tag-close" onclick="this.parentElement.remove()">×</span>
+            </span>
+        </div>
+        <pre style="background: #282c34; color: #abb2bf; padding: 1rem; border-radius: 8px; overflow-x: auto;">&lt;span class="-s-tag"&gt;
+  JavaScript
+  &lt;span class="-s-tag-close"&gt;×&lt;/span&gt;
+&lt;/span&gt;</pre>
+    </section>
+    
+    <script src="../../js/similar.bundle.js"></script>
+</body>
+</html>

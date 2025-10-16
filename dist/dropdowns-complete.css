@@ -1,0 +1,33 @@
+/* Dropdowns Complete - Simi UI - Tous les styles des exemples */
+
+.dropdown{position:relative;display:inline-block}
+.dropdown-toggle{padding:0.625rem 1.25rem;background:#111827;color:white;border:none;border-radius:6px;cursor:pointer;display:flex;align-items:center;gap:0.5rem;font-weight:500;transition:all 0.2s}
+.dropdown-toggle:hover{background:#1f2937}
+.dropdown-toggle::after{content:"▼";font-size:0.75rem;margin-left:0.25rem}
+.dropdown-menu{display:none;position:absolute;background:white;border:1px solid #e5e7eb;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);min-width:200px;margin-top:0.5rem;z-index:1000;padding:0.5rem 0;animation:dropdownSlideIn 0.2s ease}
+@keyframes dropdownSlideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.dropdown.active .dropdown-menu{display:block}
+.dropdown-item{padding:0.75rem 1rem;cursor:pointer;transition:background 0.2s;border:none;background:none;width:100%;text-align:left;color:#374151;font-size:0.9375rem;display:flex;align-items:center;gap:0.75rem}
+.dropdown-item:hover{background:#f3f4f6;color:#111827}
+.dropdown-item:active{background:#e5e7eb}
+.dropdown-item.active{background:#dbeafe;color:#3b82f6;font-weight:500}
+.dropdown-item.disabled{opacity:0.5;cursor:not-allowed;pointer-events:none}
+.dropdown-divider{height:1px;background:#e5e7eb;margin:0.5rem 0}
+.dropdown-header{padding:0.5rem 1rem;font-size:0.875rem;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em}
+.dropdown-right .dropdown-menu{right:0;left:auto}
+.dropdown-left .dropdown-menu{left:0}
+.dropdown-up .dropdown-menu{bottom:100%;top:auto;margin-bottom:0.5rem;margin-top:0}
+.dropdown-primary .dropdown-toggle{background:#3b82f6}
+.dropdown-primary .dropdown-toggle:hover{background:#2563eb}
+.dropdown-success .dropdown-toggle{background:#10b981}
+.dropdown-success .dropdown-toggle:hover{background:#059669}
+.dropdown-danger .dropdown-toggle{background:#ef4444}
+.dropdown-danger .dropdown-toggle:hover{background:#dc2626}
+.dropdown-sm .dropdown-toggle{padding:0.5rem 1rem;font-size:0.875rem}
+.dropdown-sm .dropdown-menu{min-width:150px}
+.dropdown-lg .dropdown-toggle{padding:0.75rem 1.5rem;font-size:1.125rem}
+.dropdown-lg .dropdown-menu{min-width:250px}
+.dropdown-menu-dark{background:#111827;border-color:#374151}
+.dropdown-menu-dark .dropdown-item{color:#d1d5db}
+.dropdown-menu-dark .dropdown-item:hover{background:#1f2937;color:white}
+.dropdown-menu-dark .dropdown-divider{background:#374151}

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Simi UI</title>
+    <link rel="stylesheet" href="../similar.css">
+    <link rel="stylesheet" href="../styles/themes.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        
+        .doc-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: #212529;
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+        
+        .code-inline {
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #d63384;
+        }
+        
+        .code-block {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1.5rem 0;
+        }
+        
+        .note {
+            background: #cfe2ff;
+            border-left: 4px solid #0d6efd;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="doc-container">
+        <a href="../index.html" class="back-link">← Retour à l'accueil</a>
+        
+        <h1 class="page-title">Documentation Simi UI</h1>
+        <p class="page-subtitle">Guide complet d'utilisation de la bibliothèque Simi UI</p>
+        
+        <h2>Introduction</h2>
+        <p>
+            Simi UI est une bibliothèque de composants UI moderne construite sur <strong>Bootstrap 5.3.7</strong> et 
+            <strong>Tailwind CSS 3.4.17</strong>. Elle offre une collection complète de composants réutilisables,
+            personnalisables et accessibles pour créer des interfaces utilisateur professionnelles.
+        </p>
+        
+        <h2>Installation</h2>
+        
+        <h3>1. Inclure les fichiers CSS</h3>
+        <p>Ajoutez les liens suivants dans la section <code class="code-inline">&lt;head&gt;</code> de votre HTML :</p>
+        <div class="code-block">
+&lt;!-- CSS de base (Bootstrap + Tailwind) --&gt;
+&lt;link rel="stylesheet" href="similar.css"&gt;
+
+&lt;!-- Composants Simi UI --&gt;
+&lt;link rel="stylesheet" href="styles/simi-original/simi-components.css"&gt;
+
+&lt;!-- Thèmes --&gt;
+&lt;link rel="stylesheet" href="styles/themes.css"&gt;
+        </div>
+        
+        <h3>2. Inclure les fichiers JavaScript</h3>
+        <p>Ajoutez le script avant la fermeture de la balise <code class="code-inline">&lt;/body&gt;</code> :</p>
+        <div class="code-block">
+&lt;!-- Version complète --&gt;
+&lt;script src="js/similar.bundle.js"&gt;&lt;/script&gt;
+
+&lt;!-- OU version minifiée (recommandé en production) --&gt;
+&lt;script src="js/similar.bundle.min.js"&gt;&lt;/script&gt;
+        </div>
+        
+        <div class="note">
+            <strong>Note :</strong> Le fichier <code class="code-inline">similar.css</code> contient à la fois Bootstrap et Tailwind CSS.
+            Vous pouvez utiliser les classes des deux frameworks simultanément.
+        </div>
+        
+        <h2>Structure des Fichiers</h2>
+        <div class="code-block">
+smi_ui/
+├── index.html                 # Page d'accueil
+├── similar.css               # CSS de base (Bootstrap + Tailwind)
+├── styles/
+│   ├── themes.css           # Système de thèmes
+│   ├── simi-original/       # Composants basés sur similar.css
+│   │   └── simi-components.css
+│   └── simi-custom/         # Composants personnalisés
+│       └── simi-custom-components.css
+├── js/
+│   ├── similar.bundle.js    # JavaScript complet
+│   └── similar.bundle.min.js # Version minifiée
+├── sass/                     # Sources SASS
+│   ├── main.scss
+│   ├── abstracts/
+│   ├── components/
+│   ├── layout/
+│   └── utilities/
+├── pages/                    # Pages de documentation
+│   ├── components/
+│   ├── layout/
+│   └── utilities/
+└── logo/                     # Logos du projet
+        </div>
+        
+        <h2>Utilisation des Composants</h2>
+        
+        <h3>Boutons</h3>
+        <p>Utilisez les classes <code class="code-inline">simi-btn</code> pour créer des boutons :</p>
+        <div class="code-block">
+&lt;button class="simi-btn simi-btn-primary"&gt;Bouton Primary&lt;/button&gt;
+&lt;button class="simi-btn simi-btn-secondary"&gt;Bouton Secondary&lt;/button&gt;
+&lt;button class="simi-btn simi-btn-success"&gt;Bouton Success&lt;/button&gt;
+        </div>
+        
+        <h3>Cartes</h3>
+        <div class="code-block">
+&lt;div class="simi-card"&gt;
+    &lt;div class="simi-card-body"&gt;
+        &lt;h3&gt;Titre de la carte&lt;/h3&gt;
+        &lt;p&gt;Contenu de la carte&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </div>
+        
+        <h3>Formulaires</h3>
+        <div class="code-block">
+&lt;div class="simi-form-group"&gt;
+    &lt;label class="simi-form-label"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="simi-form-input" placeholder="email@example.com"&gt;
+&lt;/div&gt;
+        </div>
+        
+        <h2>Système de Thèmes</h2>
+        <p>Simi UI inclut 5 thèmes prédéfinis :</p>
+        <ul>
+            <li><strong>Light</strong> - Thème clair (par défaut)</li>
+            <li><strong>Dark</strong> - Thème sombre</li>
+            <li><strong>Blue</strong> - Thème bleu</li>
+            <li><strong>Purple</strong> - Thème violet</li>
+            <li><strong>Green</strong> - Thème vert</li>
+        </ul>
+        
+        <h3>Changer de thème</h3>
+        <div class="code-block">
+// En JavaScript
+document.documentElement.setAttribute('data-theme', 'dark');
+
+// Sauvegarder dans localStorage
+localStorage.setItem('simiui-theme', 'dark');
+        </div>
+        
+        <h2>JavaScript API</h2>
+        
+        <h3>Modales</h3>
+        <div class="code-block">
+// Ouvrir une modale
+SimiUI.openModal('myModal');
+
+// Fermer une modale
+SimiUI.closeModal('myModal');
+        </div>
+        
+        <h3>Toasts (Notifications)</h3>
+        <div class="code-block">
+// Afficher un toast
+SimiUI.showToast('Message de succès!', 'success', 3000);
+
+// Types disponibles: 'success', 'error', 'warning', 'info'
+        </div>
+        
+        <h3>Alertes</h3>
+        <div class="code-block">
+// Créer une alerte dynamique
+SimiUI.createAlert('Message important', 'warning', 5000);
+        </div>
+        
+        <h3>Copier dans le presse-papiers</h3>
+        <div class="code-block">
+SimiUI.copyToClipboard('Texte à copier');
+        </div>
+        
+        <h2>Utilisation de SASS</h2>
+        <p>Pour personnaliser les styles, modifiez les fichiers SASS dans le dossier <code class="code-inline">sass/</code> :</p>
+        
+        <h3>Variables personnalisées</h3>
+        <p>Éditez <code class="code-inline">sass/abstracts/_variables.scss</code> :</p>
+        <div class="code-block">
+// Couleurs personnalisées
+$primary: #0d6efd;
+$secondary: #6c757d;
+
+// Espacements
+$spacing-base: 1rem;
+
+// Bordures
+$border-radius: 0.5rem;
+        </div>
+        
+        <h3>Compiler SASS</h3>
+        <div class="code-block">
+# Installer SASS
+npm install -g sass
+
+# Compiler
+sass sass/main.scss styles/compiled.css
+
+# Watch mode (recompilation automatique)
+sass --watch sass/main.scss:styles/compiled.css
+        </div>
+        
+        <h2>Classes Utilitaires</h2>
+        
+        <h3>Espacement</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Classe</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code class="code-inline">m-{0-10}</code></td>
+                    <td>Margin sur tous les côtés</td>
+                </tr>
+                <tr>
+                    <td><code class="code-inline">mt-{0-10}</code></td>
+                    <td>Margin top</td>
+                </tr>
+                <tr>
+                    <td><code class="code-inline">p-{0-10}</code></td>
+                    <td>Padding sur tous les côtés</td>
+                </tr>
+                <tr>
+                    <td><code class="code-inline">pt-{0-10}</code></td>
+                    <td>Padding top</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Affichage</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Classe</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code class="code-inline">d-none</code></td>
+                    <td>Masquer l'élément</td>
+                </tr>
+                <tr>
+                    <td><code class="code-inline">d-block</code></td>
+                    <td>Display block</td>
+                </tr>
+                <tr>
+                    <td><code class="code-inline">d-flex</code></td>
+                    <td>Display flex</td>
+                </tr>
+                <tr>
+                    <td><code class="code-inline">d-grid</code></td>
+                    <td>Display grid</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Composants Spéciaux (-s-)</h2>
+        <p>
+            Les composants avec le préfixe <code class="code-inline">-s-</code> sont des composants avancés
+            avec des fonctionnalités spéciales. Consultez la page dédiée pour plus d'informations.
+        </p>
+        
+        <div class="warning">
+            <strong>Important :</strong> Les composants -s- peuvent nécessiter JavaScript pour fonctionner correctement.
+            Assurez-vous d'inclure <code class="code-inline">similar.bundle.js</code>.
+        </div>
+        
+        <h2>Compatibilité</h2>
+        <p>Simi UI est compatible avec :</p>
+        <ul>
+            <li>Chrome (dernières versions)</li>
+            <li>Firefox (dernières versions)</li>
+            <li>Safari (dernières versions)</li>
+            <li>Edge (dernières versions)</li>
+        </ul>
+        
+        <h2>Support et Contribution</h2>
+        <p>
+            Pour signaler un bug ou proposer une amélioration, consultez le fichier
+            <code class="code-inline">AMELIORATIONS.txt</code> à la racine du projet.
+        </p>
+        
+        <h2>Licence</h2>
+        <p>
+            Simi UI utilise Bootstrap (MIT License) et Tailwind CSS (MIT License).
+            Les composants personnalisés Simi UI sont également sous licence MIT.
+        </p>
+    </div>
+    
+    <script src="../js/similar.bundle.js"></script>
+</body>
+</html>

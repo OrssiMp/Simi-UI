@@ -1,0 +1,189 @@
+// Alerts Complete - SCSS - Tous les styles des exemples
+@import '../variables';
+@import '../mixins';
+
+.alert {
+    padding: $spacing-4 $spacing-5;
+    border-radius: $radius-md;
+    margin-bottom: $spacing-4;
+    border-left: 4px solid;
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-3;
+    font-size: $font-size-sm + 0.0625rem;
+    line-height: 1.6;
+}
+
+// Alert Icons
+.alert-icon {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.125rem;
+}
+
+// Alert Variants
+.alert-primary {
+    background-color: lighten($primary, 40%);
+    border-color: $primary;
+    color: darken($primary, 30%);
+}
+
+.alert-success {
+    background-color: lighten($success, 45%);
+    border-color: $success;
+    color: darken($success, 40%);
+}
+
+.alert-danger {
+    background-color: lighten($danger, 40%);
+    border-color: $danger;
+    color: darken($danger, 35%);
+}
+
+.alert-warning {
+    background-color: lighten($warning, 40%);
+    border-color: $warning;
+    color: darken($warning, 40%);
+}
+
+.alert-info {
+    background-color: lighten($info, 40%);
+    border-color: $info;
+    color: darken($info, 35%);
+}
+
+// Alert Dismissible
+.alert-dismissible {
+    position: relative;
+    padding-right: $spacing-12;
+}
+
+.alert-close {
+    position: absolute;
+    top: 50%;
+    right: $spacing-4;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: $font-size-xl;
+    cursor: pointer;
+    color: currentColor;
+    opacity: 0.6;
+    padding: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius-sm;
+    transition: all $transition-base;
+    line-height: 1;
+    
+    &:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+// Alert Outline
+.alert-outline {
+    background-color: transparent;
+    border: 2px solid;
+    border-left-width: 4px;
+    
+    &.alert-primary {
+        border-color: $primary;
+        color: $primary;
+    }
+    
+    &.alert-success {
+        border-color: $success;
+        color: $success;
+    }
+    
+    &.alert-danger {
+        border-color: $danger;
+        color: $danger;
+    }
+    
+    &.alert-warning {
+        border-color: $warning;
+        color: $warning;
+    }
+    
+    &.alert-info {
+        border-color: $info;
+        color: $info;
+    }
+}
+
+// Alert Solid
+.alert-solid {
+    color: $white;
+    border-left-width: 0;
+    
+    &.alert-primary {
+        background-color: $primary;
+    }
+    
+    &.alert-success {
+        background-color: $success;
+    }
+    
+    &.alert-danger {
+        background-color: $danger;
+    }
+    
+    &.alert-warning {
+        background-color: $warning;
+    }
+    
+    &.alert-info {
+        background-color: $info;
+    }
+}
+
+// Alert with Title
+.alert-title {
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-1;
+    font-size: $font-size-base;
+}
+
+// Alert Sizes
+.alert-sm {
+    padding: $spacing-3 $spacing-4;
+    font-size: $font-size-sm;
+}
+
+.alert-lg {
+    padding: $spacing-5 $spacing-6;
+    font-size: $font-size-base;
+}
+
+// Alert with Border
+.alert-bordered {
+    border: 2px solid;
+    border-radius: $radius-md;
+    
+    &.alert-primary {
+        border-color: $primary;
+    }
+    
+    &.alert-success {
+        border-color: $success;
+    }
+    
+    &.alert-danger {
+        border-color: $danger;
+    }
+    
+    &.alert-warning {
+        border-color: $warning;
+    }
+    
+    &.alert-info {
+        border-color: $info;
+    }
+}

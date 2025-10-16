@@ -1,0 +1,164 @@
+// Mixins SCSS - Simi UI
+// Mixins réutilisables pour faciliter le développement
+
+@import 'variables';
+
+// Flexbox Center
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Transition
+@mixin transition($property: all, $duration: $transition-base) {
+    transition: $property $duration;
+}
+
+// Button Base
+@mixin button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-2 + 0.125rem $spacing-5;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: $radius;
+    cursor: pointer;
+    user-select: none;
+    @include transition;
+    
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: $shadow-md;
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+    
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+}
+
+// Button Variant
+@mixin button-variant($bg, $hover-bg, $color: $white) {
+    background-color: $bg;
+    color: $color;
+    border-color: $bg;
+    
+    &:hover:not(:disabled) {
+        background-color: $hover-bg;
+        border-color: $hover-bg;
+    }
+}
+
+// Button Outline
+@mixin button-outline($color, $hover-bg) {
+    background-color: transparent;
+    color: $color;
+    border-color: $color;
+    
+    &:hover:not(:disabled) {
+        background-color: $hover-bg;
+        color: $white;
+    }
+}
+
+// Card Base
+@mixin card-base {
+    background: $white;
+    border: 1px solid $gray-200;
+    border-radius: $radius-lg;
+    padding: $spacing-6;
+    @include transition;
+    box-shadow: $shadow;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+// Alert Base
+@mixin alert-base {
+    padding: $spacing-4 $spacing-5;
+    border-radius: $radius-md;
+    margin-bottom: $spacing-4;
+    border-left: 4px solid;
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-3;
+}
+
+// Alert Variant
+@mixin alert-variant($bg, $border, $color) {
+    background-color: $bg;
+    border-color: $border;
+    color: $color;
+}
+
+// Form Control
+@mixin form-control {
+    width: 100%;
+    padding: $spacing-2 + 0.125rem $spacing-3 + 0.125rem;
+    font-size: $font-size-base;
+    line-height: 1.5;
+    color: $gray-900;
+    background-color: $white;
+    border: 1px solid $gray-300;
+    border-radius: $radius;
+    @include transition(all, $transition-base);
+    
+    &:focus {
+        outline: none;
+        border-color: $primary;
+        box-shadow: 0 0 0 3px rgba($primary, 0.1);
+    }
+    
+    &:disabled {
+        background-color: $gray-100;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+// Responsive Breakpoints
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == 'sm' {
+        @media (min-width: $breakpoint-sm) { @content; }
+    }
+    @else if $breakpoint == 'md' {
+        @media (min-width: $breakpoint-md) { @content; }
+    }
+    @else if $breakpoint == 'lg' {
+        @media (min-width: $breakpoint-lg) { @content; }
+    }
+    @else if $breakpoint == 'xl' {
+        @media (min-width: $breakpoint-xl) { @content; }
+    }
+}
+
+// Truncate Text
+@mixin truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Box Shadow
+@mixin box-shadow($shadow: $shadow) {
+    box-shadow: $shadow;
+}
+
+// Border
+@mixin border($width: 1px, $color: $gray-200) {
+    border: $width solid $color;
+}

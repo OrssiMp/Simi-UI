@@ -1,0 +1,139 @@
+// Buttons Complete - SCSS - Tous les styles des exemples
+@import '../variables';
+@import '../mixins';
+
+.btn {
+    @include button-base;
+}
+
+// Button Variants
+.btn-primary {
+    @include button-variant($primary, $primary-dark);
+}
+
+.btn-success {
+    @include button-variant($success, $success-dark);
+}
+
+.btn-danger {
+    @include button-variant($danger, $danger-dark);
+}
+
+.btn-warning {
+    @include button-variant($warning, $warning-dark);
+}
+
+.btn-info {
+    @include button-variant($info, $info-dark);
+}
+
+.btn-dark {
+    @include button-variant($gray-900, $gray-800);
+}
+
+.btn-light {
+    @include button-variant($gray-100, $gray-200, $gray-900);
+}
+
+// Button Outline
+.btn-outline-primary {
+    @include button-outline($primary, $primary);
+}
+
+.btn-outline-success {
+    @include button-outline($success, $success);
+}
+
+.btn-outline-danger {
+    @include button-outline($danger, $danger);
+}
+
+.btn-outline-warning {
+    @include button-outline($warning, $warning);
+}
+
+.btn-outline-dark {
+    @include button-outline($gray-900, $gray-900);
+}
+
+// Button Sizes
+.btn-sm {
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-sm;
+}
+
+.btn-lg {
+    padding: $spacing-3 $spacing-6;
+    font-size: $font-size-lg;
+}
+
+.btn-xl {
+    padding: $spacing-4 $spacing-8;
+    font-size: $font-size-xl;
+}
+
+// Button Block
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+// Button Rounded
+.btn-rounded {
+    border-radius: $radius-full;
+}
+
+// Button Square
+.btn-square {
+    border-radius: 0;
+}
+
+// Button Icon
+.btn-icon {
+    padding: $spacing-2 + 0.125rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+// Button Group
+.btn-group {
+    display: inline-flex;
+    
+    .btn {
+        border-radius: 0;
+        margin-left: -1px;
+        
+        &:first-child {
+            border-top-left-radius: $radius;
+            border-bottom-left-radius: $radius;
+        }
+        
+        &:last-child {
+            border-top-right-radius: $radius;
+            border-bottom-right-radius: $radius;
+        }
+    }
+}
+
+// Button Loading
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid currentColor;
+        border-right-color: transparent;
+        border-radius: 50%;
+        animation: spin 0.6s linear infinite;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

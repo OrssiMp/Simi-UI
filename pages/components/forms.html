@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms - 80+ Exemples - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <link rel="stylesheet" href="../../styles/modern-utilities.css">
+    <link rel="stylesheet" href="../../icons/simi-icons.css">
+    <style>
+        body { font-family: system-ui; background: var(--zinc-50); padding: 2rem; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .section { background: white; border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+        .form-input { width: 100%; padding: 0.75rem; border: 1px solid var(--zinc-300); border-radius: 8px; font-size: 1rem; }
+        .form-input:focus { outline: none; border-color: var(--zinc-500); box-shadow: 0 0 0 3px rgba(113,113,122,0.1); }
+        .form-input:valid { border-color: #10b981; }
+        .form-input:invalid:not(:placeholder-shown) { border-color: #ef4444; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" style="color:var(--zinc-900);text-decoration:none;font-weight:600;margin-bottom:2rem;display:inline-block;">← Retour</a>
+        <h1 style="font-size:3rem;font-weight:700;margin-bottom:1rem;">Forms</h1>
+        <p style="font-size:1.2rem;color:var(--zinc-600);margin-bottom:3rem;">80+ exemples de formulaires avec validation</p>
+
+        <!-- Section 1: Text Inputs (10) -->
+        <section class="section">
+            <h2 class="section-title">1. Text Inputs (10 exemples)</h2>
+            <div class="grid">
+                <div class="form-group"><label class="form-label">Nom</label><input type="text" class="form-input" placeholder="Votre nom"></div>
+                <div class="form-group"><label class="form-label">Prénom</label><input type="text" class="form-input" placeholder="Votre prénom"></div>
+                <div class="form-group"><label class="form-label">Pseudo</label><input type="text" class="form-input" placeholder="@username"></div>
+                <div class="form-group"><label class="form-label">Titre</label><input type="text" class="form-input" placeholder="Titre du document"></div>
+                <div class="form-group"><label class="form-label">Entreprise</label><input type="text" class="form-input" placeholder="Nom de l'entreprise"></div>
+                <div class="form-group"><label class="form-label">Poste</label><input type="text" class="form-input" placeholder="Votre poste"></div>
+                <div class="form-group"><label class="form-label">Ville</label><input type="text" class="form-input" placeholder="Votre ville"></div>
+                <div class="form-group"><label class="form-label">Code postal</label><input type="text" class="form-input" placeholder="75001"></div>
+                <div class="form-group"><label class="form-label">Adresse</label><input type="text" class="form-input" placeholder="123 rue Example"></div>
+                <div class="form-group"><label class="form-label">Pays</label><input type="text" class="form-input" placeholder="France"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Email & Password (10) -->
+        <section class="section">
+            <h2 class="section-title">2. Email & Password (10 exemples)</h2>
+            <div class="grid">
+                <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="email@example.com" required></div>
+                <div class="form-group"><label class="form-label">Email professionnel</label><input type="email" class="form-input" placeholder="pro@company.com"></div>
+                <div class="form-group"><label class="form-label">Email secondaire</label><input type="email" class="form-input" placeholder="autre@email.com"></div>
+                <div class="form-group"><label class="form-label">Mot de passe</label><input type="password" class="form-input" placeholder="••••••••" required></div>
+                <div class="form-group"><label class="form-label">Confirmer mot de passe</label><input type="password" class="form-input" placeholder="••••••••"></div>
+                <div class="form-group"><label class="form-label">Ancien mot de passe</label><input type="password" class="form-input" placeholder="••••••••"></div>
+                <div class="form-group"><label class="form-label">Nouveau mot de passe</label><input type="password" class="form-input" placeholder="••••••••" minlength="8"></div>
+                <div class="form-group"><label class="form-label">Code PIN</label><input type="password" class="form-input" placeholder="••••" maxlength="4"></div>
+                <div class="form-group"><label class="form-label">Email avec validation</label><input type="email" class="form-input input-validated" placeholder="email@example.com" required></div>
+                <div class="form-group"><label class="form-label">Password avec validation</label><input type="password" class="form-input input-validated" placeholder="••••••••" minlength="8" required></div>
+            </div>
+        </section>
+
+        <!-- Section 3: Number & Date (10) -->
+        <section class="section">
+            <h2 class="section-title">3. Number & Date (10 exemples)</h2>
+            <div class="grid">
+                <div class="form-group"><label class="form-label">Âge</label><input type="number" class="form-input" placeholder="25" min="0" max="120"></div>
+                <div class="form-group"><label class="form-label">Quantité</label><input type="number" class="form-input" placeholder="1" min="1"></div>
+                <div class="form-group"><label class="form-label">Prix</label><input type="number" class="form-input" placeholder="99.99" step="0.01"></div>
+                <div class="form-group"><label class="form-label">Téléphone</label><input type="tel" class="form-input" placeholder="+33 6 12 34 56 78"></div>
+                <div class="form-group"><label class="form-label">Date de naissance</label><input type="date" class="form-input"></div>
+                <div class="form-group"><label class="form-label">Date de début</label><input type="date" class="form-input"></div>
+                <div class="form-group"><label class="form-label">Date de fin</label><input type="date" class="form-input"></div>
+                <div class="form-group"><label class="form-label">Heure</label><input type="time" class="form-input"></div>
+                <div class="form-group"><label class="form-label">Date et heure</label><input type="datetime-local" class="form-input"></div>
+                <div class="form-group"><label class="form-label">Mois</label><input type="month" class="form-input"></div>
+            </div>
+        </section>
+
+        <!-- Section 4: Textareas (10) -->
+        <section class="section">
+            <h2 class="section-title">4. Textareas (10 exemples)</h2>
+            <div class="grid">
+                <div class="form-group"><label class="form-label">Message</label><textarea class="form-input" rows="3" placeholder="Votre message..."></textarea></div>
+                <div class="form-group"><label class="form-label">Description</label><textarea class="form-input" rows="4" placeholder="Description détaillée..."></textarea></div>
+                <div class="form-group"><label class="form-label">Commentaire</label><textarea class="form-input" rows="3" placeholder="Votre commentaire..."></textarea></div>
+                <div class="form-group"><label class="form-label">Bio</label><textarea class="form-input" rows="5" placeholder="Parlez-nous de vous..." maxlength="500"></textarea></div>
+                <div class="form-group"><label class="form-label">Adresse complète</label><textarea class="form-input" rows="3" placeholder="Adresse complète..."></textarea></div>
+                <div class="form-group"><label class="form-label">Notes</label><textarea class="form-input" rows="4" placeholder="Vos notes..."></textarea></div>
+                <div class="form-group"><label class="form-label">Feedback</label><textarea class="form-input" rows="3" placeholder="Votre feedback..."></textarea></div>
+                <div class="form-group"><label class="form-label">Raison</label><textarea class="form-input" rows="3" placeholder="Expliquez pourquoi..."></textarea></div>
+                <div class="form-group"><label class="form-label">Contenu</label><textarea class="form-input" rows="6" placeholder="Contenu de l'article..."></textarea></div>
+                <div class="form-group"><label class="form-label">Instructions</label><textarea class="form-input" rows="4" placeholder="Instructions spéciales..."></textarea></div>
+            </div>
+        </section>
+
+        <!-- Section 5: Selects (10) -->
+        <section class="section">
+            <h2 class="section-title">5. Selects (10 exemples)</h2>
+            <div class="grid">
+                <div class="form-group"><label class="form-label">Pays</label><select class="form-input"><option>France</option><option>Belgique</option><option>Suisse</option></select></div>
+                <div class="form-group"><label class="form-label">Genre</label><select class="form-input"><option>Homme</option><option>Femme</option><option>Autre</option></select></div>
+                <div class="form-group"><label class="form-label">Catégorie</label><select class="form-input"><option>Tech</option><option>Design</option><option>Marketing</option></select></div>
+                <div class="form-group"><label class="form-label">Priorité</label><select class="form-input"><option>Basse</option><option>Moyenne</option><option>Haute</option></select></div>
+                <div class="form-group"><label class="form-label">Statut</label><select class="form-input"><option>Actif</option><option>Inactif</option><option>En attente</option></select></div>
+                <div class="form-group"><label class="form-label">Rôle</label><select class="form-input"><option>Admin</option><option>Utilisateur</option><option>Invité</option></select></div>
+                <div class="form-group"><label class="form-label">Langue</label><select class="form-input"><option>Français</option><option>English</option><option>Español</option></select></div>
+                <div class="form-group"><label class="form-label">Devise</label><select class="form-input"><option>EUR €</option><option>USD $</option><option>GBP £</option></select></div>
+                <div class="form-group"><label class="form-label">Taille</label><select class="form-input"><option>S</option><option>M</option><option>L</option><option>XL</option></select></div>
+                <div class="form-group"><label class="form-label">Couleur</label><select class="form-input"><option>Rouge</option><option>Bleu</option><option>Vert</option></select></div>
+            </div>
+        </section>
+
+        <!-- Section 6: Checkboxes (10) -->
+        <section class="section">
+            <h2 class="section-title">6. Checkboxes (10 exemples)</h2>
+            <div class="grid">
+                <div class="form-group"><label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox"> J'accepte les conditions</label></div>
+                <div class="form-group"><label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox"> Newsletter</label></div>
+                <div class="form-group"><label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox"> Notifications email</label></div>
+                <div class="form-group"><label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox"> Notifications push</label></div>
+                <div class="form-group"><label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox"> Se souvenir de moi</label></div>
+                <div class="form-group"><label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox" checked> Activer le mode sombre</label></div>
+                <div class="form-group"><label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox"> Partager mes données</label></div>
+                <div class="form-group"><label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox"> Recevoir des offres</label></div>
+                <div class="form-group"><label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox"> Profil public</label></div>
+                <div class="form-group"><label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox" required> J'ai lu la politique de confidentialité</label></div>
+            </div>
+        </section>
+
+        <!-- Section 7: Radios (10) -->
+        <section class="section">
+            <h2 class="section-title">7. Radio Buttons (10 exemples)</h2>
+            <div class="grid">
+                <div class="form-group"><label class="form-label">Méthode de paiement</label><label style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><input type="radio" name="payment1"> Carte bancaire</label><label style="display:flex;align-items:center;gap:0.5rem;"><input type="radio" name="payment1"> PayPal</label></div>
+                <div class="form-group"><label class="form-label">Livraison</label><label style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><input type="radio" name="delivery1"> Standard</label><label style="display:flex;align-items:center;gap:0.5rem;"><input type="radio" name="delivery1"> Express</label></div>
+                <div class="form-group"><label class="form-label">Abonnement</label><label style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><input type="radio" name="sub1"> Mensuel</label><label style="display:flex;align-items:center;gap:0.5rem;"><input type="radio" name="sub1"> Annuel</label></div>
+                <div class="form-group"><label class="form-label">Taille</label><label style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><input type="radio" name="size1"> Petit</label><label style="display:flex;align-items:center;gap:0.5rem;"><input type="radio" name="size1"> Grand</label></div>
+                <div class="form-group"><label class="form-label">Format</label><label style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><input type="radio" name="format1"> PDF</label><label style="display:flex;align-items:center;gap:0.5rem;"><input type="radio" name="format1"> Word</label></div>
+                <div class="form-group"><label class="form-label">Visibilité</label><label style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><input type="radio" name="vis1"> Public</label><label style="display:flex;align-items:center;gap:0.5rem;"><input type="radio" name="vis1"> Privé</label></div>
+                <div class="form-group"><label class="form-label">Notification</label><label style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><input type="radio" name="notif1"> Activé</label><label style="display:flex;align-items:center;gap:0.5rem;"><input type="radio" name="notif1"> Désactivé</label></div>
+                <div class="form-group"><label class="form-label">Thème</label><label style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><input type="radio" name="theme1"> Clair</label><label style="display:flex;align-items:center;gap:0.5rem;"><input type="radio" name="theme1"> Sombre</label></div>
+                <div class="form-group"><label class="form-label">Langue</label><label style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><input type="radio" name="lang1"> FR</label><label style="display:flex;align-items:center;gap:0.5rem;"><input type="radio" name="lang1"> EN</label></div>
+                <div class="form-group"><label class="form-label">Niveau</label><label style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><input type="radio" name="level1"> Débutant</label><label style="display:flex;align-items:center;gap:0.5rem;"><input type="radio" name="level1"> Expert</label></div>
+            </div>
+        </section>
+
+        <!-- Section 8: File & Range (10) -->
+        <section class="section">
+            <h2 class="section-title">8. File & Range (10 exemples)</h2>
+            <div class="grid">
+                <div class="form-group"><label class="form-label">Upload fichier</label><input type="file" class="form-input"></div>
+                <div class="form-group"><label class="form-label">Upload image</label><input type="file" class="form-input" accept="image/*"></div>
+                <div class="form-group"><label class="form-label">Upload PDF</label><input type="file" class="form-input" accept=".pdf"></div>
+                <div class="form-group"><label class="form-label">Multiple fichiers</label><input type="file" class="form-input" multiple></div>
+                <div class="form-group"><label class="form-label">Volume</label><input type="range" class="form-input" min="0" max="100"></div>
+                <div class="form-group"><label class="form-label">Luminosité</label><input type="range" class="form-input" min="0" max="100" value="50"></div>
+                <div class="form-group"><label class="form-label">Zoom</label><input type="range" class="form-input" min="1" max="10" step="0.1"></div>
+                <div class="form-group"><label class="form-label">Prix max</label><input type="range" class="form-input" min="0" max="1000" step="10"></div>
+                <div class="form-group"><label class="form-label">Qualité</label><input type="range" class="form-input" min="1" max="5"></div>
+                <div class="form-group"><label class="form-label">Opacité</label><input type="range" class="form-input" min="0" max="1" step="0.1" value="1"></div>
+            </div>
+        </section>
+
+        <!-- Résumé -->
+        <section class="section" style="background:linear-gradient(135deg,var(--zinc-100),var(--zinc-50));">
+            <h2 class="section-title">📊 Résumé</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;">
+                <div><h3 style="font-size:2.5rem;margin:0;">80+</h3><p style="margin:0;">Exemples de formulaires</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">8</h3><p style="margin:0;">Catégories</p></div>
+                <div><h3 style="font-size:2.5rem;margin:0;">✓</h3><p style="margin:0;">Validation incluse</p></div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

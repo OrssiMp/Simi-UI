@@ -1,0 +1,132 @@
+/**
+ * Simi UI - Fichier SASS Principal
+ * Architecture SASS complète pour personnalisation et maintenance
+ * Basé sur similar.css avec extensions personnalisées
+ */
+
+// ============================================
+// IMPORTS DES MODULES
+// ============================================
+
+// 1. Configuration et variables
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/functions';
+
+// 2. Base et reset
+@import 'base/reset';
+@import 'base/typography';
+
+// 3. Layout
+@import 'layout/grid';
+@import 'layout/containers';
+@import 'layout/flexbox';
+
+// 4. Composants
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/forms';
+@import 'components/modals';
+@import 'components/alerts';
+@import 'components/badges';
+@import 'components/navigation';
+@import 'components/tables';
+@import 'components/tooltips';
+@import 'components/dropdowns';
+
+// 5. Composants spéciaux avec préfixe -s-
+@import 'special/s-components';
+
+// 6. Utilitaires
+@import 'utilities/colors';
+@import 'utilities/spacing';
+@import 'utilities/filters';
+@import 'utilities/shadows';
+
+// 7. Thèmes
+@import 'themes/light';
+@import 'themes/dark';
+@import 'themes/custom';
+
+// ============================================
+// STYLES GLOBAUX
+// ============================================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    color: $text-color-primary;
+    background-color: $bg-color-primary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// ============================================
+// CLASSES UTILITAIRES RAPIDES
+// ============================================
+
+// Marges et paddings
+@each $size, $value in $spacing-sizes {
+    .m-#{$size} { margin: $value !important; }
+    .mt-#{$size} { margin-top: $value !important; }
+    .mb-#{$size} { margin-bottom: $value !important; }
+    .ml-#{$size} { margin-left: $value !important; }
+    .mr-#{$size} { margin-right: $value !important; }
+    
+    .p-#{$size} { padding: $value !important; }
+    .pt-#{$size} { padding-top: $value !important; }
+    .pb-#{$size} { padding-bottom: $value !important; }
+    .pl-#{$size} { padding-left: $value !important; }
+    .pr-#{$size} { padding-right: $value !important; }
+}
+
+// Affichage
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex { display: flex !important; }
+.d-grid { display: grid !important; }
+
+// Flexbox
+.flex-row { flex-direction: row !important; }
+.flex-column { flex-direction: column !important; }
+.justify-start { justify-content: flex-start !important; }
+.justify-center { justify-content: center !important; }
+.justify-end { justify-content: flex-end !important; }
+.justify-between { justify-content: space-between !important; }
+.align-start { align-items: flex-start !important; }
+.align-center { align-items: center !important; }
+.align-end { align-items: flex-end !important; }
+
+// Texte
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+.text-bold { font-weight: 700 !important; }
+.text-normal { font-weight: 400 !important; }
+.text-uppercase { text-transform: uppercase !important; }
+.text-lowercase { text-transform: lowercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+// Responsive
+@media (max-width: 768px) {
+    .d-md-none { display: none !important; }
+    .d-md-block { display: block !important; }
+}
+
+@media (max-width: 576px) {
+    .d-sm-none { display: none !important; }
+    .d-sm-block { display: block !important; }
+}

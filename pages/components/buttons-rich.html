@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutons - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/simi-original/simi-components.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <link rel="stylesheet" href="../../icons/simi-icons.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .page-header {
+            margin-bottom: 3rem;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+        
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .section-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .example-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+        
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #0d6efd;
+            color: white;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Styles additionnels pour les exemples */
+        .btn-square {
+            width: 48px;
+            height: 48px;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-circle {
+            border-radius: 50%;
+        }
+        
+        .btn-pill {
+            border-radius: 50px;
+        }
+        
+        .btn-ghost {
+            background: transparent;
+            border: none;
+            color: var(--primary-color);
+        }
+        
+        .btn-ghost:hover {
+            background: rgba(13, 110, 253, 0.1);
+        }
+        
+        .btn-link {
+            background: transparent;
+            border: none;
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-loading {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        
+        .btn-loading::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border: 2px solid currentColor;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .btn-group {
+            display: inline-flex;
+        }
+        
+        .btn-group button {
+            border-radius: 0;
+            margin-left: -1px;
+        }
+        
+        .btn-group button:first-child {
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+        }
+        
+        .btn-group button:last-child {
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+        
+        .btn-animated {
+            transition: all 0.3s;
+        }
+        
+        .btn-animated:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+        }
+        
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link"><i class="si si-arrow-left"></i> Retour à l'accueil</a>
+        
+        <div class="page-header">
+            <h1 class="page-title">Boutons</h1>
+            <p class="page-description">
+                Collection complète de styles de boutons pour toutes les situations.
+                Plus de 50 variantes et exemples.
+            </p>
+        </div>
+        
+        <!-- Section 1: Couleurs -->
+        <section class="section">
+            <h2 class="section-title">1. Couleurs <span class="badge">8 variantes</span></h2>
+            <p class="section-description">
+                Huit couleurs prédéfinies pour différents contextes et actions.
+            </p>
+            
+            <div class="example-row">
+                <button class="simi-btn-primary">Primary</button>
+                <button class="simi-btn-secondary">Secondary</button>
+                <button class="simi-btn-success">Success</button>
+                <button class="simi-btn-danger">Danger</button>
+                <button class="simi-btn-warning">Warning</button>
+                <button class="simi-btn-info">Info</button>
+                <button class="simi-btn-light">Light</button>
+                <button class="simi-btn-dark">Dark</button>
+            </div>
+            
+            <div class="code-block">&lt;button class="simi-btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="simi-btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="simi-btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="simi-btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="simi-btn-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="simi-btn-info"&gt;Info&lt;/button&gt;
+&lt;button class="simi-btn-light"&gt;Light&lt;/button&gt;
+&lt;button class="simi-btn-dark"&gt;Dark&lt;/button&gt;</div>
+        </section>
+        
+        <!-- Section 2: Outlines -->
+        <section class="section">
+            <h2 class="section-title">2. Boutons Outline <span class="badge">6 variantes</span></h2>
+            <p class="section-description">
+                Boutons avec bordure et fond transparent, parfaits pour les actions secondaires.
+            </p>
+            
+            <div class="example-row">
+                <button class="simi-btn-outline-primary">Primary</button>
+                <button class="simi-btn-outline-secondary">Secondary</button>
+                <button class="simi-btn-outline-success">Success</button>
+                <button class="simi-btn-outline-danger">Danger</button>
+                <button class="simi-btn-outline-warning">Warning</button>
+                <button class="simi-btn-outline-info">Info</button>
+            </div>
+            
+            <div class="code-block">&lt;button class="simi-btn-outline-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="simi-btn-outline-secondary"&gt;Secondary&lt;/button&gt;</div>
+        </section>
+        
+        <!-- Section 3: Tailles -->
+        <section class="section">
+            <h2 class="section-title">3. Tailles <span class="badge">3 tailles</span></h2>
+            <p class="section-description">
+                Trois tailles pour s'adapter à différents contextes d'interface.
+            </p>
+            
+            <div class="example-row">
+                <button class="simi-btn-primary simi-btn-sm">Small</button>
+                <button class="simi-btn-primary">Normal</button>
+                <button class="simi-btn-primary simi-btn-lg">Large</button>
+            </div>
+            
+            <div class="code-block">&lt;button class="simi-btn-primary simi-btn-sm"&gt;Small&lt;/button&gt;
+&lt;button class="simi-btn-primary"&gt;Normal&lt;/button&gt;
+&lt;button class="simi-btn-primary simi-btn-lg"&gt;Large&lt;/button&gt;</div>
+        </section>
+        
+        <!-- Section 4: Avec Icônes -->
+        <section class="section">
+            <h2 class="section-title">4. Avec Icônes <span class="badge">Multiple positions</span></h2>
+            <p class="section-description">
+                Boutons avec icônes à gauche, à droite ou seules.
+            </p>
+            
+            <div class="example-row">
+                <button class="simi-btn-primary">
+                    <i class="si si-home"></i> Accueil
+                </button>
+                <button class="simi-btn-success">
+                    Enregistrer <i class="si si-check"></i>
+                </button>
+                <button class="simi-btn-danger">
+                    <i class="si si-delete"></i> Supprimer
+                </button>
+                <button class="simi-btn-info btn-square">
+                    <i class="si si-search"></i>
+                </button>
+                <button class="simi-btn-secondary btn-square">
+                    <i class="si si-settings"></i>
+                </button>
+            </div>
+            
+            <div class="code-block">&lt;button class="simi-btn-primary"&gt;
+    &lt;i class="si si-home"&gt;&lt;/i&gt; Accueil
+&lt;/button&gt;
+&lt;button class="simi-btn-info btn-square"&gt;
+    &lt;i class="si si-search"&gt;&lt;/i&gt;
+&lt;/button&gt;</div>
+        </section>
+        
+        <!-- Section 5: Formes -->
+        <section class="section">
+            <h2 class="section-title">5. Formes <span class="badge">4 formes</span></h2>
+            <p class="section-description">
+                Différentes formes pour différents designs : carré, arrondi, cercle, pilule.
+            </p>
+            
+            <div class="example-row">
+                <button class="simi-btn-primary" style="border-radius: 0;">Carré</button>
+                <button class="simi-btn-primary">Arrondi (défaut)</button>
+                <button class="simi-btn-primary btn-pill">Pilule</button>
+                <button class="simi-btn-primary btn-square btn-circle">
+                    <i class="si si-heart"></i>
+                </button>
+            </div>
+            
+            <div class="code-block">&lt;button class="simi-btn-primary" style="border-radius: 0;"&gt;Carré&lt;/button&gt;
+&lt;button class="simi-btn-primary btn-pill"&gt;Pilule&lt;/button&gt;
+&lt;button class="simi-btn-primary btn-square btn-circle"&gt;
+    &lt;i class="si si-heart"&gt;&lt;/i&gt;
+&lt;/button&gt;</div>
+        </section>
+        
+        <!-- Section 6: États -->
+        <section class="section">
+            <h2 class="section-title">6. États <span class="badge">4 états</span></h2>
+            <p class="section-description">
+                Différents états visuels pour indiquer l'interaction utilisateur.
+            </p>
+            
+            <div class="example-row">
+                <button class="simi-btn-primary">Normal</button>
+                <button class="simi-btn-primary" style="opacity: 0.7;">Hover (simulé)</button>
+                <button class="simi-btn-primary" style="opacity: 0.5;">Active (simulé)</button>
+                <button class="simi-btn-primary" disabled>Désactivé</button>
+                <button class="simi-btn-primary btn-loading">Chargement</button>
+            </div>
+            
+            <div class="code-block">&lt;button class="simi-btn-primary"&gt;Normal&lt;/button&gt;
+&lt;button class="simi-btn-primary" disabled&gt;Désactivé&lt;/button&gt;
+&lt;button class="simi-btn-primary btn-loading"&gt;Chargement&lt;/button&gt;</div>
+        </section>
+        
+        <!-- Section 7: Styles Spéciaux -->
+        <section class="section">
+            <h2 class="section-title">7. Styles Spéciaux <span class="badge">4 styles</span></h2>
+            <p class="section-description">
+                Styles alternatifs pour des designs uniques.
+            </p>
+            
+            <div class="example-row">
+                <button class="btn-ghost">Ghost</button>
+                <button class="btn-link">Link</button>
+                <button class="btn-glass" style="color: #333;">Glass</button>
+                <button class="btn-gradient">Gradient</button>
+            </div>
+            
+            <div class="code-block">&lt;button class="btn-ghost"&gt;Ghost&lt;/button&gt;
+&lt;button class="btn-link"&gt;Link&lt;/button&gt;
+&lt;button class="btn-glass"&gt;Glass&lt;/button&gt;
+&lt;button class="btn-gradient"&gt;Gradient&lt;/button&gt;</div>
+        </section>
+        
+        <!-- Section 8: Groupes de Boutons -->
+        <section class="section">
+            <h2 class="section-title">8. Groupes de Boutons <span class="badge">Multiples variantes</span></h2>
+            <p class="section-description">
+                Boutons groupés pour des actions connexes.
+            </p>
+            
+            <div class="example-row">
+                <div class="btn-group">
+                    <button class="simi-btn-primary">Gauche</button>
+                    <button class="simi-btn-primary">Centre</button>
+                    <button class="simi-btn-primary">Droite</button>
+                </div>
+            </div>
+            
+            <div class="example-row">
+                <div class="btn-group">
+                    <button class="simi-btn-outline-primary"><i class="si si-arrow-left"></i></button>
+                    <button class="simi-btn-outline-primary">1</button>
+                    <button class="simi-btn-outline-primary">2</button>
+                    <button class="simi-btn-outline-primary">3</button>
+                    <button class="simi-btn-outline-primary"><i class="si si-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="code-block">&lt;div class="btn-group"&gt;
+    &lt;button class="simi-btn-primary"&gt;Gauche&lt;/button&gt;
+    &lt;button class="simi-btn-primary"&gt;Centre&lt;/button&gt;
+    &lt;button class="simi-btn-primary"&gt;Droite&lt;/button&gt;
+&lt;/div&gt;</div>
+        </section>
+        
+        <!-- Section 9: Boutons Pleine Largeur -->
+        <section class="section">
+            <h2 class="section-title">9. Pleine Largeur <span class="badge">Block</span></h2>
+            <p class="section-description">
+                Boutons qui prennent toute la largeur de leur conteneur.
+            </p>
+            
+            <div style="max-width: 400px;">
+                <button class="simi-btn-primary simi-btn-block">Bouton Pleine Largeur</button>
+                <button class="simi-btn-outline-secondary simi-btn-block" style="margin-top: 1rem;">
+                    <i class="si si-download"></i> Télécharger
+                </button>
+            </div>
+            
+            <div class="code-block">&lt;button class="simi-btn-primary simi-btn-block"&gt;
+    Bouton Pleine Largeur
+&lt;/button&gt;</div>
+        </section>
+        
+        <!-- Section 10: Boutons Animés -->
+        <section class="section">
+            <h2 class="section-title">10. Boutons Animés <span class="badge">Hover effects</span></h2>
+            <p class="section-description">
+                Boutons avec animations au survol pour une meilleure interactivité.
+            </p>
+            
+            <div class="example-row">
+                <button class="simi-btn-primary btn-animated">Lift Effect</button>
+                <button class="simi-btn-success btn-animated">Scale Effect</button>
+                <button class="simi-btn-danger btn-animated">Combined</button>
+            </div>
+            
+            <div class="code-block">&lt;button class="simi-btn-primary btn-animated"&gt;
+    Lift Effect
+&lt;/button&gt;</div>
+        </section>
+        
+        <!-- Section 11: Combinaisons -->
+        <section class="section">
+            <h2 class="section-title">11. Combinaisons <span class="badge">Mix & Match</span></h2>
+            <p class="section-description">
+                Combinez différentes classes pour créer des boutons uniques.
+            </p>
+            
+            <div class="example-row">
+                <button class="simi-btn-primary simi-btn-lg btn-pill btn-animated">
+                    <i class="si si-star"></i> Large Pill Animé
+                </button>
+                <button class="simi-btn-outline-success simi-btn-sm btn-circle btn-square">
+                    <i class="si si-plus"></i>
+                </button>
+                <button class="btn-gradient simi-btn-lg btn-animated">
+                    <i class="si si-arrow-right"></i> Gradient Animé
+                </button>
+            </div>
+            
+            <div class="code-block">&lt;button class="simi-btn-primary simi-btn-lg btn-pill btn-animated"&gt;
+    &lt;i class="si si-star"&gt;&lt;/i&gt; Large Pill Animé
+&lt;/button&gt;</div>
+        </section>
+        
+        <!-- Section 12: Boutons Sociaux -->
+        <section class="section">
+            <h2 class="section-title">12. Boutons Sociaux <span class="badge">Réseaux sociaux</span></h2>
+            <p class="section-description">
+                Boutons stylisés pour les réseaux sociaux.
+            </p>
+            
+            <div class="example-row">
+                <button class="simi-btn-primary" style="background: #1877f2;">
+                    <i class="si si-user"></i> Facebook
+                </button>
+                <button class="simi-btn-primary" style="background: #1da1f2;">
+                    <i class="si si-mail"></i> Twitter
+                </button>
+                <button class="simi-btn-primary" style="background: #0a66c2;">
+                    <i class="si si-user"></i> LinkedIn
+                </button>
+                <button class="simi-btn-primary" style="background: #333;">
+                    <i class="si si-star"></i> GitHub
+                </button>
+            </div>
+        </section>
+        
+        <!-- Section 13: Responsive -->
+        <section class="section">
+            <h2 class="section-title">13. Responsive <span class="badge">Adaptatif</span></h2>
+            <p class="section-description">
+                Boutons qui s'adaptent aux différentes tailles d'écran.
+            </p>
+            
+            <div class="example-row">
+                <button class="simi-btn-primary simi-btn-sm md:simi-btn-lg">
+                    Small sur mobile, Large sur desktop
+                </button>
+                <button class="simi-btn-block md:simi-btn-primary">
+                    Block sur mobile, Normal sur desktop
+                </button>
+            </div>
+        </section>
+        
+        <!-- Section 14: Accessibilité -->
+        <section class="section">
+            <h2 class="section-title">14. Accessibilité <span class="badge">A11Y</span></h2>
+            <p class="section-description">
+                Bonnes pratiques pour l'accessibilité des boutons.
+            </p>
+            
+            <div class="example-row">
+                <button class="simi-btn-primary" aria-label="Fermer la fenêtre">
+                    <i class="si si-close"></i>
+                </button>
+                <button class="simi-btn-success" aria-describedby="save-help">
+                    Enregistrer
+                </button>
+                <span id="save-help" style="font-size: 0.85rem; color: var(--text-secondary);">
+                    Enregistre vos modifications
+                </span>
+            </div>
+            
+            <div class="code-block">&lt;button class="simi-btn-primary" aria-label="Fermer la fenêtre"&gt;
+    &lt;i class="si si-close"&gt;&lt;/i&gt;
+&lt;/button&gt;</div>
+        </section>
+        
+        <!-- Section 15: Cas d'Usage -->
+        <section class="section">
+            <h2 class="section-title">15. Cas d'Usage Courants <span class="badge">Exemples réels</span></h2>
+            <p class="section-description">
+                Exemples de boutons dans des contextes réels.
+            </p>
+            
+            <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; margin-bottom: 1rem;">
+                <h3 style="margin-top: 0;">Formulaire de Contact</h3>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="simi-btn-primary">
+                        <i class="si si-mail"></i> Envoyer
+                    </button>
+                    <button class="simi-btn-outline-secondary">Annuler</button>
+                </div>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; margin-bottom: 1rem;">
+                <h3 style="margin-top: 0;">Actions sur Carte</h3>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="simi-btn-success simi-btn-sm">
+                        <i class="si si-check"></i> Approuver
+                    </button>
+                    <button class="simi-btn-danger simi-btn-sm">
+                        <i class="si si-close"></i> Rejeter
+                    </button>
+                    <button class="simi-btn-outline-primary simi-btn-sm">
+                        <i class="si si-info"></i> Détails
+                    </button>
+                </div>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px;">
+                <h3 style="margin-top: 0;">Barre d'Actions</h3>
+                <div class="btn-group">
+                    <button class="simi-btn-outline-primary">
+                        <i class="si si-edit"></i>
+                    </button>
+                    <button class="simi-btn-outline-primary">
+                        <i class="si si-download"></i>
+                    </button>
+                    <button class="simi-btn-outline-primary">
+                        <i class="si si-delete"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Résumé -->
+        <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h2 class="section-title" style="color: white;">📊 Résumé</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3 style="font-size: 2.5rem; margin: 0;">50+</h3>
+                    <p style="margin: 0; opacity: 0.9;">Exemples de boutons</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 2.5rem; margin: 0;">15</h3>
+                    <p style="margin: 0; opacity: 0.9;">Catégories</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 2.5rem; margin: 0;">100+</h3>
+                    <p style="margin: 0; opacity: 0.9;">Combinaisons possibles</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="../../js/similar.bundle.js"></script>
+</body>
+</html>

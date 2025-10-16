@@ -1,0 +1,193 @@
+/**
+ * Functions SASS - Fonctions utilitaires
+ * Fonctions pour calculs et manipulations
+ */
+
+// ============================================
+// COULEURS
+// ============================================
+
+/// Éclaircir une couleur
+/// @param {Color} $color - Couleur de base
+/// @param {Number} $percentage - Pourcentage d'éclaircissement
+/// @return {Color} - Couleur éclaircie
+@function lighten-color($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+/// Assombrir une couleur
+/// @param {Color} $color - Couleur de base
+/// @param {Number} $percentage - Pourcentage d'assombrissement
+/// @return {Color} - Couleur assombrie
+@function darken-color($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+
+/// Obtenir la couleur de contraste (noir ou blanc)
+/// @param {Color} $color - Couleur de base
+/// @return {Color} - Noir ou blanc selon le contraste
+@function contrast-color($color) {
+    $lightness: lightness($color);
+    
+    @if $lightness > 50% {
+        @return $black;
+    } @else {
+        @return $white;
+    }
+}
+
+/// Convertir px en rem
+/// @param {Number} $pixels - Valeur en pixels
+/// @param {Number} $base - Taille de base (défaut: 16px)
+/// @return {Number} - Valeur en rem
+@function px-to-rem($pixels, $base: 16) {
+    @return ($pixels / $base) * 1rem;
+}
+
+/// Convertir rem en px
+/// @param {Number} $rems - Valeur en rem
+/// @param {Number} $base - Taille de base (défaut: 16px)
+/// @return {Number} - Valeur en pixels
+@function rem-to-px($rems, $base: 16) {
+    @return ($rems / 1rem) * $base * 1px;
+}
+
+// ============================================
+// ESPACEMENTS
+// ============================================
+
+/// Obtenir une valeur d'espacement
+/// @param {Number} $size - Taille de l'espacement (0-10)
+/// @return {Number} - Valeur de l'espacement
+@function spacing($size) {
+    @if map-has-key($spacing-sizes, $size) {
+        @return map-get($spacing-sizes, $size);
+    } @else {
+        @warn "La taille d'espacement `#{$size}` n'existe pas.";
+        @return 0;
+    }
+}
+
+// ============================================
+// BREAKPOINTS
+// ============================================
+
+/// Obtenir la valeur d'un breakpoint
+/// @param {String} $name - Nom du breakpoint
+/// @return {Number} - Valeur du breakpoint
+@function breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @return map-get($breakpoints, $name);
+    } @else {
+        @warn "Le breakpoint `#{$name}` n'existe pas.";
+        @return 0;
+    }
+}
+
+// ============================================
+// CALCULS
+// ============================================
+
+/// Calculer un pourcentage
+/// @param {Number} $target - Valeur cible
+/// @param {Number} $context - Valeur de contexte
+/// @return {Number} - Pourcentage
+@function percentage-of($target, $context) {
+    @return ($target / $context) * 100%;
+}
+
+/// Strip unit (retirer l'unité d'une valeur)
+/// @param {Number} $number - Nombre avec unité
+/// @return {Number} - Nombre sans unité
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+// ============================================
+// STRINGS
+// ============================================
+
+/// Capitaliser la première lettre
+/// @param {String} $string - Chaîne à capitaliser
+/// @return {String} - Chaîne capitalisée
+@function capitalize($string) {
+    @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+}
+
+/// Remplacer dans une chaîne
+/// @param {String} $string - Chaîne de base
+/// @param {String} $search - Texte à rechercher
+/// @param {String} $replace - Texte de remplacement
+/// @return {String} - Chaîne modifiée
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + 
+                str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    
+    @return $string;
+}
+
+// ============================================
+// Z-INDEX
+// ============================================
+
+/// Obtenir une valeur de z-index
+/// @param {String} $layer - Nom de la couche
+/// @return {Number} - Valeur z-index
+@function z-index($layer) {
+    $z-indexes: (
+        'dropdown': $zindex-dropdown,
+        'sticky': $zindex-sticky,
+        'fixed': $zindex-fixed,
+        'modal-backdrop': $zindex-modal-backdrop,
+        'modal': $zindex-modal,
+        'popover': $zindex-popover,
+        'tooltip': $zindex-tooltip
+    );
+    
+    @if map-has-key($z-indexes, $layer) {
+        @return map-get($z-indexes, $layer);
+    } @else {
+        @warn "La couche z-index `#{$layer}` n'existe pas.";
+        @return 0;
+    }
+}
+
+// ============================================
+// MAP UTILITIES
+// ============================================
+
+/// Deep get dans une map imbriquée
+/// @param {Map} $map - Map à parcourir
+/// @param {Arglist} $keys - Clés à rechercher
+/// @return {*} - Valeur trouvée
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+/// Fusionner des maps en profondeur
+/// @param {Map} $map1 - Première map
+/// @param {Map} $map2 - Deuxième map
+/// @return {Map} - Map fusionnée
+@function map-deep-merge($map1, $map2) {
+    $result: $map1;
+    
+    @each $key, $value in $map2 {
+        @if type-of(map-get($result, $key)) == 'map' and type-of($value) == 'map' {
+            $result: map-merge($result, ($key: map-deep-merge(map-get($result, $key), $value)));
+        } @else {
+            $result: map-merge($result, ($key: $value));
+        }
+    }
+    
+    @return $result;
+}

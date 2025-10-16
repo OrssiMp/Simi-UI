@@ -1,0 +1,274 @@
+// Cards Complete - SCSS - Tous les styles des exemples
+@import '../variables';
+@import '../mixins';
+
+// Base Card
+.card {
+    background: $white;
+    border: 1px solid $gray-200;
+    border-radius: $radius-lg;
+    padding: $spacing-6;
+    transition: all $transition-slow;
+    box-shadow: $shadow;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+// Card Elements
+.card-img {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, $gray-100, $gray-200);
+    border-radius: $radius-md;
+    margin-bottom: $spacing-4;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-2;
+    color: $gray-900;
+}
+
+.card-subtitle {
+    font-size: $font-size-sm;
+    color: $gray-600;
+    margin-bottom: $spacing-4;
+}
+
+.card-text {
+    color: $gray-600;
+    margin-bottom: $spacing-4;
+    line-height: 1.6;
+}
+
+.card-btn {
+    background: $gray-900;
+    color: $white;
+    padding: $spacing-2 $spacing-4;
+    border-radius: $radius;
+    border: none;
+    cursor: pointer;
+    font-weight: $font-weight-medium;
+    transition: all $transition-base;
+    
+    &:hover {
+        background: $gray-700;
+        transform: translateY(-1px);
+    }
+}
+
+// Card Header/Footer
+.card-header {
+    padding: $spacing-6;
+    border-bottom: 1px solid $gray-200;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-lg;
+    margin: -$spacing-6 -$spacing-6 $spacing-6 -$spacing-6;
+    background: $gray-50;
+    border-radius: $radius-lg $radius-lg 0 0;
+}
+
+.card-body {
+    padding: $spacing-6;
+}
+
+.card-footer {
+    padding: $spacing-4 $spacing-6;
+    border-top: 1px solid $gray-200;
+    background: $gray-50;
+    margin: $spacing-6 -$spacing-6 -$spacing-6 -$spacing-6;
+    border-radius: 0 0 $radius-lg $radius-lg;
+}
+
+// Card Variants - Colored
+.card-primary {
+    border-left: 4px solid $primary;
+    background: linear-gradient(135deg, $white, lighten($primary, 40%));
+}
+
+.card-success {
+    border-left: 4px solid $success;
+    background: linear-gradient(135deg, $white, lighten($success, 45%));
+}
+
+.card-danger {
+    border-left: 4px solid $danger;
+    background: linear-gradient(135deg, $white, lighten($danger, 40%));
+}
+
+.card-warning {
+    border-left: 4px solid $warning;
+    background: linear-gradient(135deg, $white, lighten($warning, 40%));
+}
+
+.card-info {
+    border-left: 4px solid $info;
+    background: linear-gradient(135deg, $white, lighten($info, 40%));
+}
+
+// Card with Image Top
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $radius-lg $radius-lg 0 0;
+    margin: -$spacing-6 -$spacing-6 $spacing-4 -$spacing-6;
+}
+
+// Horizontal Card
+.card-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-6;
+    
+    .card-img {
+        width: 150px;
+        height: 150px;
+        flex-shrink: 0;
+        margin-bottom: 0;
+    }
+}
+
+// Pricing Card
+.card-pricing {
+    text-align: center;
+    padding: $spacing-8;
+    
+    .price {
+        font-size: $font-size-3xl + 1rem;
+        font-weight: $font-weight-bold;
+        color: $primary;
+        margin: $spacing-4 0;
+    }
+    
+    .price-period {
+        font-size: $font-size-base;
+        color: $gray-600;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: $spacing-6 0;
+        
+        li {
+            padding: $spacing-2 0;
+            border-bottom: 1px solid $gray-200;
+        }
+    }
+}
+
+// Stats Card
+.card-stats {
+    text-align: center;
+    
+    .stat-value {
+        font-size: $font-size-3xl + 0.5rem;
+        font-weight: $font-weight-bold;
+        color: $gray-900;
+        margin-bottom: $spacing-2;
+    }
+    
+    .stat-label {
+        font-size: $font-size-sm;
+        color: $gray-600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+}
+
+// Card with Icon
+.card-icon {
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+    
+    .icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, $primary, $primary-dark);
+        border-radius: $radius-lg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: $font-size-2xl;
+        flex-shrink: 0;
+    }
+}
+
+// Card Sizes
+.card-sm {
+    padding: $spacing-4;
+    max-width: 250px;
+}
+
+.card-lg {
+    padding: $spacing-8;
+    max-width: 600px;
+}
+
+// Card Shadow Variants
+.card-shadow-sm {
+    box-shadow: $shadow-sm;
+}
+
+.card-shadow-md {
+    box-shadow: $shadow-md;
+}
+
+.card-shadow-lg {
+    box-shadow: $shadow-lg;
+}
+
+.card-shadow-xl {
+    box-shadow: $shadow-xl;
+}
+
+// Card Grid Layout
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: $spacing-6;
+}
+
+// Card Overlay
+.card-overlay {
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7));
+        opacity: 0;
+        transition: opacity $transition-slow;
+    }
+    
+    &:hover::before {
+        opacity: 1;
+    }
+}
+
+// Card Badge
+.card-badge {
+    position: absolute;
+    top: $spacing-4;
+    right: $spacing-4;
+    background: $danger;
+    color: $white;
+    padding: $spacing-1 $spacing-3;
+    border-radius: $radius-full;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+}

@@ -1,0 +1,90 @@
+═══════════════════════════════════════════════════════════════════════════════
+  SIMI UI - STRUCTURE DU PROJET
+═══════════════════════════════════════════════════════════════════════════════
+
+📁 RACINE DU PROJET
+├── index.html                    # Page d'accueil avec sidebar et recherche
+├── similar.css                   # CSS de base (Bootstrap + Tailwind)
+├── README.md                     # Documentation principale
+├── AMELIORATIONS.txt            # Propositions d'amélioration
+└── STRUCTURE.txt                # Ce fichier
+
+📁 STYLES
+├── styles/
+│   ├── themes.css               # 5 thèmes (light, dark, blue, purple, green)
+│   ├── simi-original/
+│   │   └── simi-components.css  # Composants basés sur similar.css
+│   └── simi-custom/
+│       └── simi-custom-components.css  # Composants -s- spéciaux
+
+📁 JAVASCRIPT
+├── js/
+│   ├── similar.bundle.js        # JavaScript complet avec commentaires
+│   └── similar.bundle.min.js    # Version minifiée pour production
+
+📁 SASS
+├── sass/
+│   ├── main.scss                # Fichier principal
+│   ├── abstracts/
+│   │   ├── _variables.scss      # Variables (couleurs, espacements, etc.)
+│   │   ├── _mixins.scss         # Mixins réutilisables
+│   │   └── _functions.scss      # Fonctions utilitaires
+│   ├── components/
+│   │   └── _buttons.scss        # Styles des boutons
+│   ├── layout/
+│   ├── utilities/
+│   ├── special/
+│   └── themes/
+
+📁 PAGES
+├── pages/
+│   ├── documentation.html       # Documentation complète
+│   ├── components/
+│   │   └── buttons.html         # Page des boutons
+│   ├── layout/
+│   │   └── grid.html            # Système de grille
+│   ├── utilities/
+│   │   ├── colors.html          # Palette de couleurs
+│   │   └── filters.html         # Filtres CSS
+│   └── special/
+│       └── s-components.html    # Composants spéciaux -s-
+
+📁 LOGOS
+└── logo/
+    ├── Simi UI2.svg
+    ├── simiui.svg
+    ├── simiui4.svg
+    ├── sumiui2.svg
+    └── sumiui3.svg
+
+═══════════════════════════════════════════════════════════════════════════════
+  FONCTIONNALITÉS IMPLÉMENTÉES
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Système de navigation avec sidebar
+✅ Recherche en temps réel des composants
+✅ 5 thèmes avec changement dynamique
+✅ Composants interactifs (modales, dropdowns, tooltips, etc.)
+✅ API JavaScript complète (SimiUI)
+✅ Documentation exhaustive
+✅ Composants spéciaux avec préfixe -s-
+✅ Structure SASS pour personnalisation
+✅ Exemples de code copiables
+✅ Responsive design
+
+═══════════════════════════════════════════════════════════════════════════════
+  UTILISATION
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Ouvrir index.html dans un navigateur
+2. Explorer les composants via la sidebar
+3. Utiliser la recherche pour trouver rapidement
+4. Changer de thème avec le sélecteur
+5. Copier les codes d'exemple
+6. Consulter la documentation complète
+
+Pour compiler SASS:
+  sass sass/main.scss styles/compiled.css
+  sass --watch sass/main.scss:styles/compiled.css
+
+═══════════════════════════════════════════════════════════════════════════════

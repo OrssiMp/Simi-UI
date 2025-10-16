@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composants Full & Less - Simi UI</title>
+    <link rel="stylesheet" href="../similar.css">
+    <link rel="stylesheet" href="../styles/themes.css">
+    <link rel="stylesheet" href="../components/full-components.css">
+    <link rel="stylesheet" href="../components/less-components.css">
+    <link rel="stylesheet" href="../icons/simi-icons.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 2rem;
+        }
+        
+        .page-header {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .page-description {
+            font-size: 1.2rem;
+            color: #6c757d;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .section {
+            max-width: 1400px;
+            margin: 0 auto 4rem;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .comparison-item {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .comparison-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background: #667eea;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .badge.stateful {
+            background: #10b981;
+        }
+        
+        .badge.stateless {
+            background: #f59e0b;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="max-width: 1400px; margin: 0 auto;">
+        <a href="../index.html" class="back-link"><i class="si si-arrow-left"></i> Retour à l'accueil</a>
+    </div>
+    
+    <div class="page-header">
+        <h1 class="page-title">Composants Full & Less</h1>
+        <p class="page-description">
+            Inspiré de Flutter, Simi UI propose deux types de composants: 
+            <strong>Full (Stateful)</strong> - composants complets sans classes additionnelles, et 
+            <strong>Less (Stateless)</strong> - composants avec style de base nécessitant des classes pour les éléments.
+        </p>
+    </div>
+    
+    <!-- FULL COMPONENTS -->
+    <section class="section">
+        <h2 class="section-title">
+            <i class="si si-star"></i> Full Components 
+            <span class="badge stateful">Stateful</span>
+        </h2>
+        <p class="section-subtitle">
+            Composants complets qui génèrent automatiquement leur contenu et style. 
+            Aucune classe additionnelle nécessaire - tout est stylisé automatiquement.
+        </p>
+        
+        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Exemple: Form Register</h3>
+        <div class="full-component component-form form-register">
+            <input type="text" placeholder="Nom complet">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Mot de passe">
+            <button>S'inscrire</button>
+        </div>
+        
+        <div class="code-block">
+&lt;!-- Full Component - Aucune classe sur les éléments enfants --&gt;
+&lt;div class="full-component component-form form-register"&gt;
+    &lt;input type="text" placeholder="Nom complet"&gt;
+    &lt;input type="email" placeholder="Email"&gt;
+    &lt;input type="password" placeholder="Mot de passe"&gt;
+    &lt;button&gt;S'inscrire&lt;/button&gt;
+&lt;/div&gt;</div>
+        
+        <h3 style="margin-top: 3rem; margin-bottom: 1rem;">Exemple: Hero Section</h3>
+        <div class="full-component component-hero"></div>
+        
+        <div class="code-block">
+&lt;!-- Full Component Hero - Contenu généré automatiquement --&gt;
+&lt;div class="full-component component-hero"&gt;&lt;/div&gt;</div>
+        
+        <h3 style="margin-top: 3rem; margin-bottom: 1rem;">Exemple: CTA Button</h3>
+        <div style="text-align: center; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+            <button class="full-component component-cta"></button>
+        </div>
+        
+        <div class="code-block">
+&lt;!-- Full Component CTA - Texte généré automatiquement --&gt;
+&lt;button class="full-component component-cta"&gt;&lt;/button&gt;</div>
+    </section>
+    
+    <!-- LESS COMPONENTS -->
+    <section class="section">
+        <h2 class="section-title">
+            <i class="si si-edit"></i> Less Components 
+            <span class="badge stateless">Stateless</span>
+        </h2>
+        <p class="section-subtitle">
+            Composants avec style de base qui nécessitent des classes spécifiques pour les éléments enfants. 
+            Plus de flexibilité et de contrôle sur le contenu.
+        </p>
+        
+        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Exemple: Form Register</h3>
+        <div class="less-component form-component form-register">
+            <h2 class="form-title">Créer un compte</h2>
+            <p class="form-subtitle">Rejoignez notre communauté</p>
+            <input type="text" class="form-input" placeholder="Nom complet">
+            <input type="email" class="form-input" placeholder="Email">
+            <input type="password" class="form-input" placeholder="Mot de passe">
+            <button class="form-btn">S'inscrire</button>
+        </div>
+        
+        <div class="code-block">
+&lt;!-- Less Component - Classes nécessaires sur les éléments --&gt;
+&lt;div class="less-component form-component form-register"&gt;
+    &lt;h2 class="form-title"&gt;Créer un compte&lt;/h2&gt;
+    &lt;p class="form-subtitle"&gt;Rejoignez notre communauté&lt;/p&gt;
+    &lt;input type="text" class="form-input" placeholder="Nom complet"&gt;
+    &lt;input type="email" class="form-input" placeholder="Email"&gt;
+    &lt;input type="password" class="form-input" placeholder="Mot de passe"&gt;
+    &lt;button class="form-btn"&gt;S'inscrire&lt;/button&gt;
+&lt;/div&gt;</div>
+        
+        <h3 style="margin-top: 3rem; margin-bottom: 1rem;">Exemple: Card Product</h3>
+        <div style="display: flex; justify-content: center;">
+            <div class="less-component card-component card-product">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect fill='%23667eea' width='300' height='200'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='white' font-size='24'%3EProduit%3C/text%3E%3C/svg%3E" class="card-image" alt="Produit">
+                <div class="card-body">
+                    <h3 class="card-title">Produit Premium</h3>
+                    <p class="card-price">$99.99</p>
+                    <p class="card-description">Description détaillée du produit avec toutes ses fonctionnalités.</p>
+                    <button class="card-btn">Acheter</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="code-block">
+&lt;div class="less-component card-component card-product"&gt;
+    &lt;img src="..." class="card-image" alt="Produit"&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h3 class="card-title"&gt;Produit Premium&lt;/h3&gt;
+        &lt;p class="card-price"&gt;$99.99&lt;/p&gt;
+        &lt;p class="card-description"&gt;Description...&lt;/p&gt;
+        &lt;button class="card-btn"&gt;Acheter&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+    </section>
+    
+    <!-- COMPARAISON -->
+    <section class="section">
+        <h2 class="section-title"><i class="si si-info"></i> Comparaison</h2>
+        
+        <div class="comparison">
+            <div class="comparison-item">
+                <h3 class="comparison-title">
+                    <i class="si si-check"></i> Full Components (Stateful)
+                </h3>
+                <ul style="line-height: 2;">
+                    <li>✅ Aucune classe sur les éléments enfants</li>
+                    <li>✅ Contenu auto-généré</li>
+                    <li>✅ Rapide à implémenter</li>
+                    <li>✅ Cohérence garantie</li>
+                    <li>❌ Moins de flexibilité</li>
+                    <li>❌ Contenu prédéfini</li>
+                </ul>
+            </div>
+            
+            <div class="comparison-item">
+                <h3 class="comparison-title">
+                    <i class="si si-edit"></i> Less Components (Stateless)
+                </h3>
+                <ul style="line-height: 2;">
+                    <li>✅ Contrôle total du contenu</li>
+                    <li>✅ Très flexible</li>
+                    <li>✅ Personnalisable</li>
+                    <li>✅ Réutilisable</li>
+                    <li>❌ Classes nécessaires</li>
+                    <li>❌ Plus de code HTML</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- LISTE COMPLÈTE -->
+    <section class="section">
+        <h2 class="section-title"><i class="si si-folder"></i> Composants Disponibles</h2>
+        
+        <h3 style="margin-top: 2rem; color: #10b981;">Full Components</h3>
+        <ul style="line-height: 2; font-size: 1.05rem;">
+            <li><code>full-component component-form form-register</code></li>
+            <li><code>full-component component-form form-login</code></li>
+            <li><code>full-component component-card card-product</code></li>
+            <li><code>full-component component-pricing</code></li>
+            <li><code>full-component component-hero</code></li>
+            <li><code>full-component component-navbar</code></li>
+            <li><code>full-component component-footer</code></li>
+            <li><code>full-component component-testimonial</code></li>
+            <li><code>full-component component-stats</code></li>
+            <li><code>full-component component-cta</code></li>
+        </ul>
+        
+        <h3 style="margin-top: 2rem; color: #f59e0b;">Less Components</h3>
+        <ul style="line-height: 2; font-size: 1.05rem;">
+            <li><code>less-component form-component form-register</code></li>
+            <li><code>less-component card-component card-product</code></li>
+            <li><code>less-component pricing-component</code></li>
+            <li><code>less-component hero-component</code></li>
+            <li><code>less-component navbar-component</code></li>
+            <li><code>less-component footer-component</code></li>
+            <li><code>less-component testimonial-component</code></li>
+        </ul>
+    </section>
+    
+    <script src="../js/similar.bundle.js"></script>
+</body>
+</html>

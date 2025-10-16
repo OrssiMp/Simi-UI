@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signaler un Bug - Simi UI</title>
+    <link rel="stylesheet" href="../similar.css">
+    <link rel="stylesheet" href="../styles/themes.css">
+    <link rel="stylesheet" href="../icons/simi-icons.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .bug-report-container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .bug-report-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .bug-report-header h1 {
+            font-size: 2rem;
+            color: #212529;
+            margin-bottom: 0.5rem;
+        }
+        
+        .bug-report-header p {
+            color: #6c757d;
+            font-size: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #212529;
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .form-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .form-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+        
+        .alert.success {
+            background: #d1e7dd;
+            color: #0f5132;
+            display: block;
+        }
+        
+        .alert.error {
+            background: #f8d7da;
+            color: #842029;
+            display: block;
+        }
+        
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0d6efd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .info-box h3 {
+            margin: 0 0 0.5rem 0;
+            color: #0d6efd;
+            font-size: 1.1rem;
+        }
+        
+        .info-box p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #495057;
+        }
+        
+        .info-box code {
+            background: white;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d63384;
+        }
+    </style>
+</head>
+<body>
+    <div style="max-width: 700px; width: 100%;">
+        <a href="../index.html" class="back-link">← Retour à l'accueil</a>
+        
+        <div class="bug-report-container">
+            <div class="bug-report-header">
+                <h1><i class="si si-warning"></i> Signaler un Bug</h1>
+                <p>Aidez-nous à améliorer Simi UI en signalant les problèmes</p>
+            </div>
+            
+            <div class="info-box">
+                <h3>Configuration EmailJS</h3>
+                <p><strong>Service ID:</strong> <code>service_8163mli</code></p>
+                <p><strong>Template ID:</strong> Créez un template sur EmailJS</p>
+                <p><strong>Public Key:</strong> Votre clé publique EmailJS</p>
+                <p style="margin-top: 0.5rem;">Consultez <code>emailjs-config.txt</code> pour les instructions complètes.</p>
+            </div>
+            
+            <div id="alertBox" class="alert"></div>
+            
+            <form id="bugReportForm">
+                <div class="form-group">
+                    <label class="form-label" for="user_name">Votre Nom *</label>
+                    <input type="text" id="user_name" name="user_name" class="form-input" required placeholder="Jean Dupont">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="user_email">Votre Email *</label>
+                    <input type="email" id="user_email" name="user_email" class="form-input" required placeholder="jean@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="bug_type">Type de Bug *</label>
+                    <select id="bug_type" name="bug_type" class="form-select" required>
+                        <option value="">Sélectionnez un type</option>
+                        <option value="visual">Problème Visuel</option>
+                        <option value="functionality">Fonctionnalité Cassée</option>
+                        <option value="performance">Performance</option>
+                        <option value="compatibility">Compatibilité Navigateur</option>
+                        <option value="documentation">Documentation</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="bug_title">Titre du Bug *</label>
+                    <input type="text" id="bug_title" name="bug_title" class="form-input" required placeholder="Résumé court du problème">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="bug_description">Description Détaillée *</label>
+                    <textarea id="bug_description" name="bug_description" class="form-textarea" required placeholder="Décrivez le bug en détail...&#10;&#10;Étapes pour reproduire:&#10;1. ...&#10;2. ...&#10;&#10;Comportement attendu:&#10;...&#10;&#10;Comportement actuel:&#10;..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="browser_info">Navigateur & OS</label>
+                    <input type="text" id="browser_info" name="browser_info" class="form-input" placeholder="Ex: Chrome 120 sur Windows 11">
+                </div>
+                
+                <button type="submit" id="submitBtn" class="form-btn">
+                    <i class="si si-mail"></i> Envoyer le Rapport
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Configuration EmailJS
+        (function() {
+            // IMPORTANT: Remplacez par votre clé publique EmailJS
+            emailjs.init("YOUR_PUBLIC_KEY_HERE");
+        })();
+        
+        const form = document.getElementById('bugReportForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const alertBox = document.getElementById('alertBox');
+        
+        // Remplir automatiquement les infos du navigateur
+        document.getElementById('browser_info').value = `${navigator.userAgent}`;
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Désactiver le bouton
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+            
+            // Envoyer via EmailJS
+            emailjs.sendForm('service_8163mli', 'YOUR_TEMPLATE_ID', this)
+                .then(function() {
+                    // Succès
+                    showAlert('success', 'Merci! Votre rapport de bug a été envoyé avec succès. Nous vous contacterons bientôt.');
+                    form.reset();
+                    document.getElementById('browser_info').value = navigator.userAgent;
+                }, function(error) {
+                    // Erreur
+                    showAlert('error', 'Erreur lors de l\'envoi: ' + JSON.stringify(error) + '. Vérifiez votre configuration EmailJS.');
+                })
+                .finally(function() {
+                    // Réactiver le bouton
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="si si-mail"></i> Envoyer le Rapport';
+                });
+        });
+        
+        function showAlert(type, message) {
+            alertBox.className = 'alert ' + type;
+            alertBox.textContent = message;
+            alertBox.style.display = 'block';
+            
+            // Masquer après 5 secondes
+            setTimeout(() => {
+                alertBox.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

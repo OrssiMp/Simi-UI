@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système de Grille - Simi UI</title>
+    <link rel="stylesheet" href="../../similar.css">
+    <link rel="stylesheet" href="../../styles/themes.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 2rem;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .page-description {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 3rem;
+        }
+        
+        .grid-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .grid-demo {
+            margin-bottom: 1.5rem;
+        }
+        
+        .demo-col {
+            background: #0d6efd;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .code-block {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #3e4451;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" class="back-link">← Retour à l'accueil</a>
+    
+    <h1 class="page-title">Système de Grille</h1>
+    <p class="page-description">
+        Système de grille responsive à 12 colonnes basé sur Bootstrap et Tailwind CSS.
+        Créez des layouts complexes et adaptatifs facilement.
+    </p>
+    
+    <!-- Grille Bootstrap -->
+    <section class="grid-section">
+        <h2 class="section-title">Grille Bootstrap (12 colonnes)</h2>
+        
+        <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Colonnes égales</h3>
+        <div class="grid-demo">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="demo-col">col</div>
+                    </div>
+                    <div class="col">
+                        <div class="demo-col">col</div>
+                    </div>
+                    <div class="col">
+                        <div class="demo-col">col</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this.nextElementSibling.textContent)">Copier</button>
+            <pre>&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;col&lt;/div&gt;
+    &lt;div class="col"&gt;col&lt;/div&gt;
+    &lt;div class="col"&gt;col&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+        
+        <h3 style="font-size: 1.2rem; margin: 2rem 0 1rem;">Colonnes avec largeurs spécifiques</h3>
+        <div class="grid-demo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="demo-col">col-4</div>
+                    </div>
+                    <div class="col-8">
+                        <div class="demo-col">col-8</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="demo-col">col-3</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="demo-col">col-6</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="demo-col">col-3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this.nextElementSibling.textContent)">Copier</button>
+            <pre>&lt;div class="row"&gt;
+  &lt;div class="col-4"&gt;col-4&lt;/div&gt;
+  &lt;div class="col-8"&gt;col-8&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+        
+        <h3 style="font-size: 1.2rem; margin: 2rem 0 1rem;">Grille Responsive</h3>
+        <div class="grid-demo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="demo-col">col-12 col-md-6 col-lg-4</div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="demo-col">col-12 col-md-6 col-lg-4</div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-4">
+                        <div class="demo-col">col-12 col-md-12 col-lg-4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this.nextElementSibling.textContent)">Copier</button>
+            <pre>&lt;div class="row"&gt;
+  &lt;div class="col-12 col-md-6 col-lg-4"&gt;...&lt;/div&gt;
+  &lt;div class="col-12 col-md-6 col-lg-4"&gt;...&lt;/div&gt;
+  &lt;div class="col-12 col-md-12 col-lg-4"&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+    </section>
+    
+    <!-- Grille Tailwind -->
+    <section class="grid-section">
+        <h2 class="section-title">Grille Tailwind CSS</h2>
+        
+        <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Grid avec colonnes automatiques</h3>
+        <div class="grid-demo">
+            <div class="grid grid-cols-3 gap-4">
+                <div class="demo-col">1</div>
+                <div class="demo-col">2</div>
+                <div class="demo-col">3</div>
+                <div class="demo-col">4</div>
+                <div class="demo-col">5</div>
+                <div class="demo-col">6</div>
+            </div>
+        </div>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this.nextElementSibling.textContent)">Copier</button>
+            <pre>&lt;div class="grid grid-cols-3 gap-4"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+        
+        <h3 style="font-size: 1.2rem; margin: 2rem 0 1rem;">Grid avec span</h3>
+        <div class="grid-demo">
+            <div class="grid grid-cols-4 gap-4">
+                <div class="demo-col col-span-2">col-span-2</div>
+                <div class="demo-col">1</div>
+                <div class="demo-col">1</div>
+                <div class="demo-col">1</div>
+                <div class="demo-col col-span-3">col-span-3</div>
+            </div>
+        </div>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this.nextElementSibling.textContent)">Copier</button>
+            <pre>&lt;div class="grid grid-cols-4 gap-4"&gt;
+  &lt;div class="col-span-2"&gt;col-span-2&lt;/div&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;1&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+        
+        <h3 style="font-size: 1.2rem; margin: 2rem 0 1rem;">Grid Responsive Tailwind</h3>
+        <div class="grid-demo">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="demo-col">1</div>
+                <div class="demo-col">2</div>
+                <div class="demo-col">3</div>
+                <div class="demo-col">4</div>
+            </div>
+        </div>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this.nextElementSibling.textContent)">Copier</button>
+            <pre>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+    </section>
+    
+    <!-- Exemples avancés -->
+    <section class="grid-section">
+        <h2 class="section-title">Exemples de Layouts Avancés</h2>
+        
+        <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Layout Dashboard</h3>
+        <div class="grid-demo">
+            <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-12">
+                    <div class="demo-col" style="background: #6c757d;">Header (12 colonnes)</div>
+                </div>
+                <div class="col-span-3">
+                    <div class="demo-col" style="background: #198754; height: 200px;">Sidebar (3 colonnes)</div>
+                </div>
+                <div class="col-span-9">
+                    <div class="demo-col" style="background: #0dcaf0; height: 200px;">Content (9 colonnes)</div>
+                </div>
+                <div class="col-span-12">
+                    <div class="demo-col" style="background: #6c757d;">Footer (12 colonnes)</div>
+                </div>
+            </div>
+        </div>
+        
+        <h3 style="font-size: 1.2rem; margin: 2rem 0 1rem;">Layout Blog</h3>
+        <div class="grid-demo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="demo-col" style="height: 300px;">Article Principal</div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="demo-col" style="background: #ffc107; color: #000; height: 140px; margin-bottom: 1rem;">Widget 1</div>
+                        <div class="demo-col" style="background: #ffc107; color: #000; height: 140px;">Widget 2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="../../js/similar.bundle.js"></script>
+    <script>
+        function copyCode(code) {
+            SimiUI.copyToClipboard(code);
+            SimiUI.showToast('Code copié!', 'success', 2000);
+        }
+    </script>
+</body>
+</html>
