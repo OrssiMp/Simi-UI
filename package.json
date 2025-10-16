@@ -1,0 +1,30 @@
+{
+  "name": "simi-ui",
+  "version": "1.0.0",
+  "description": "Bibliothèque de composants UI moderne basée sur Bootstrap et Tailwind CSS",
+  "main": "js/similar.bundle.js",
+  "scripts": {
+    "sass": "sass sass/main.scss styles/compiled.css",
+    "sass:watch": "sass --watch sass/main.scss:styles/compiled.css",
+    "sass:build": "sass sass/main.scss styles/compiled.css --style compressed"
+  },
+  "keywords": [
+    "ui",
+    "components",
+    "bootstrap",
+    "tailwind",
+    "css",
+    "framework",
+    "design-system"
+  ],
+  "author": "Simi UI Team",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+}
